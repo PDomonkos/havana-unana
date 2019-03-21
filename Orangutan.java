@@ -16,15 +16,14 @@ public class Orangutan extends Animal {
 	private Tile myTile;
 	private Panda follower;
 	
-	public void Step() {
-		
-	}
-	
-	public void Move() {
-	}
+	public void Step() {}
 	
 	public void HitBy(Animal a) {
 		a.CollideWith(this);
+	}
+	
+	public void Die() {
+		//Vége a játéknak
 	}
 	
 	public void CollideWith(Orangutan o) {	
@@ -32,5 +31,8 @@ public class Orangutan extends Animal {
 	
 	public void CollideWith(Panda p) {
 		myTile.Add(p);
+		//orángutánnak kéne továbblépni, de hova?
+		this.follower=p;
+		p.DisableSteps();
 	}
 }

@@ -39,9 +39,11 @@ public class Tile implements Steppable {
 	
 	public void Add(Animal a) {
 		a.SetTile(this);
+		myAnimal=a;
 	}
 	
 	public void Remove() {
+		myAnimal=null;
 	}
 	
 	public Animal getAnimal() {

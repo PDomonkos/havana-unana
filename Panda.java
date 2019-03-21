@@ -33,6 +33,8 @@ public class Panda extends Animal {
 	}
 	
 	public void Let() {
+		follower.Let();
+		follower=null;
 	}
 	
 	public void Grab(Panda p) {
