@@ -10,8 +10,6 @@
 //
 
 
-
-
 public abstract class Animal implements Steppable {
 	private Tile myTile;
 	private Panda follower;
@@ -24,9 +22,28 @@ public abstract class Animal implements Steppable {
 	public void ReactToBeep() {
 	}
 	
-	public boolean Exit() {
+	public void Exit() {
 	}
 	
 	public void SetTile(Tile t) {
+	}
+	
+	public void Move(Tile t) {
+		myTile.Remove();
+		follower.Move(myTile);
+		t.Add(this);
+	}
+	
+	public void CollideWith(Orangutan o) {	
+	}
+	
+	public void CollideWith(Panda p) {
+	}
+	
+	public void HitBy(Animal a) {
+	}
+	
+	public void TakeASeat(Armchair a) {
+		
 	}
 }

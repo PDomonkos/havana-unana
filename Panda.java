@@ -13,7 +13,14 @@
 
 
 public class Panda extends Animal {
-	private boolean isPulled;
+	private boolean canStep;
+	private Tile myTile;
+	private Panda follower;
+	
+	public void Die() {
+		myTile.Remove();
+	}
+	
 	public void Step() {
 	}
 	
@@ -24,5 +31,27 @@ public class Panda extends Animal {
 	}
 	
 	public void Grab(Panda p) {
+	}
+	
+	public void EnableSteps() {
+		
+	}
+	
+	public void DisableSteps() {
+		
+	}
+	
+	public void HitBy(Animal a) {
+		a.CollideWith(this);
+	}
+	
+	public void CollideWith(Orangutan o) {	
+	}
+	
+	public void CollideWith(Panda p) {
+	}
+	
+	public void Exit() {
+		
 	}
 }

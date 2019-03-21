@@ -13,9 +13,22 @@
 
 
 public class Orangutan extends Animal {
+	private Tile myTile;
+	private Panda follower;
+	
 	public void Step() {
 	}
 	
 	public void Move() {
+	}
+	
+	public void HitBy(Animal a) {
+		a.CollideWith(this);
+	}
+	
+	public void CollideWith(Orangutan o) {	
+	}
+	
+	public void CollideWith(Panda p) {
 	}
 }

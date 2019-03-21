@@ -11,9 +11,42 @@
 
 
 
-
 public class WeakTile extends Tile {
 	public int Count;
+	
+	private Tile[] neighbours;
+	private Animal myAnimal;
+	public void Step() {
+	}
+	
+	public Tile[] GetNeighbours() {
+		return neighbours;
+	}
+	
 	public boolean Accept(Animal a) {
+		if(myAnimal==null)
+			a.Move(this);
+		
+		else {
+			myAnimal.HitBy(a);
+		}
+		
+		return true;
+	}
+	
+	public void Remove() {
+	}
+	
+	public Animal getAnimal() {
+		return myAnimal;
+	}
+	
+	public void DecreaseCount() {
+		Count--;
+	}
+	public void Add(Animal a) {
+		DecreaseCount();
+		if(Count==0)
+			a.Die();
 	}
 }

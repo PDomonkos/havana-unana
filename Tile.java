@@ -22,10 +22,23 @@ public class Tile implements Steppable {
 		return neighbours;
 	}
 	
+	public void SetNeighbours(Tile[] t) {
+		neighbours=t;
+	}
+	
 	public boolean Accept(Animal a) {
+		if(myAnimal==null)
+			a.Move(this);
+		
+		else {
+			myAnimal.HitBy(a);
+		}
+		
+		return true;
 	}
 	
 	public void Add(Animal a) {
+		a.SetTile(this);
 	}
 	
 	public void Remove() {
