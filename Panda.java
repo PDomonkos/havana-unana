@@ -22,6 +22,11 @@ public class Panda extends Animal {
 	}
 	
 	public void Step() {
+		Tile[] neighbours=myTile.GetNeighbours();
+		Tile t2=neighbours[0];
+		t2.Accept(this); //random válaszottam ki a 0.-t
+		this.Move(t2);
+		
 	}
 	
 	public void Follow(Object Tile) {

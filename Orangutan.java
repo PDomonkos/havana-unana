@@ -17,6 +17,7 @@ public class Orangutan extends Animal {
 	private Panda follower;
 	
 	public void Step() {
+		
 	}
 	
 	public void Move() {
@@ -30,5 +31,6 @@ public class Orangutan extends Animal {
 	}
 	
 	public void CollideWith(Panda p) {
+		myTile.Add(p);
 	}
 }
