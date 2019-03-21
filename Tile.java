@@ -13,12 +13,13 @@
 
 
 public class Tile implements Steppable {
-	private Tile neighbours;
+	private Tile[] neighbours;
 	private Animal myAnimal;
 	public void Step() {
 	}
 	
 	public Tile[] GetNeighbours() {
+		return neighbours;
 	}
 	
 	public boolean Accept(Animal a) {
@@ -31,5 +32,6 @@ public class Tile implements Steppable {
 	}
 	
 	public Animal getAnimal() {
+		return myAnimal;
 	}
 }
