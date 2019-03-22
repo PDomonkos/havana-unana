@@ -1,4 +1,5 @@
 package def;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import scenario.PandaSteps_1_1;
@@ -10,7 +11,8 @@ public class Main {
 		int num;
 		//külön printline-ba szedve átláthatóbb szerintem
 		System.out.println("Havana Beach Skeleton\n");
-		System.out.println("1: Panda véletlenszerûen lép");
+		System.out.println("1.1: Panda üres mezõre mozog");
+		System.out.println("1.2: Panda foglalt mezõre mozog");
 		System.out.println("2: Pandát törékeny csempére húznak, miközben õ is húz egy pandát");
 		System.out.println("3: Orángután törékeny csempére lép és lezuhan");
 		System.out.println("4: Éhes panda csilingelés hatására ugrik egyet");
@@ -22,44 +24,21 @@ public class Main {
 		System.out.println("10: Ijedõs Panda megijed és elengedi a mögötte álló kezét");
 		
 		System.out.print("Válassz menüpontot: ");
-		num=in.nextInt();
+		String input = in.nextLine();
+		in.close();
+		
+		// Scenariok betoltese a map-be
+		HashMap<String, Scenario> Scenarios = new HashMap<String, Scenario>();
+		Scenarios.put("1.1", new PandaSteps_1_1());
 		
 		// static_logger inicializálása
 		Logger.init_static_logger();
+				
+		// Scenario kivalasztasa es futtatasa
+		Scenario selected = Scenarios.get(input);
+		selected.execute();
 		
-		switch(num) {
-		case 1: 
-			Scenario s = new PandaSteps_1_1();
-			s.execute();
-			break;
-			
-		case 2: 
-			break;
-			
-		case 3: 
-			break;
-			
-		case 4: 
-			break;
-			
-		case 5: 
-			break;
-			
-		case 6: 
-			break;
-			
-		case 7: 
-			break;
-			
-		case 8: 
-			break;
-			
-		case 9: 
-			break;
-			
-		case 10: 
-			break;
 		
-		}
+		
 	}
 }
