@@ -8,13 +8,20 @@
 //  @ Author : 
 //
 //
-
+import java.util.Random;
 
 public abstract class Animal implements Steppable {
-	private Tile myTile;
-	private Panda follower;
-	public void Die() {
+	protected Tile myTile;
+	protected Panda follower;
+	public void Die() {}
+	
+	public void Step() {
+		Tile[] neighbours=myTile.GetNeighbours();
+		Random rand=new Random();
+		int index=rand.nextInt(neighbours.length);
 		
+		Tile t=neighbours[index];
+		t.Accept(this);
 	}
 	
 	public void ReactToJingle() {}
@@ -31,9 +38,10 @@ public abstract class Animal implements Steppable {
 		myTile.Remove();
 		follower.Move(myTile);
 		t.Add(this);
+		this.SetTile(t);
 	}
 	
-	public void CollideWith(Orangutan o) {	}
+	public void CollideWith(Orangutan o) {}
 	
 	public void CollideWith(Panda p) {}
 	

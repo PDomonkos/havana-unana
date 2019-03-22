@@ -16,7 +16,7 @@ public class Panda extends Animal {
 	private boolean canStep;
 	
 	public void Die() {
-
+		myTile.Remove();
 	}
 	
 	public void Step() {

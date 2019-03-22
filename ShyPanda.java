@@ -14,5 +14,6 @@
 
 public class ShyPanda extends Panda {
 	public void ReactToJingle() {
+		this.Let();
 	}
 }

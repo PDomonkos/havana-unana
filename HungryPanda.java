@@ -14,5 +14,6 @@
 
 public class HungryPanda extends Panda {
 	public void ReactToBeep() {
+		myTile.Add(this);
 	}
 }
