@@ -2,13 +2,12 @@ package def;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import scenario.PandaSteps_1_1;
-import scenario.Scenario;
+import scenario.*;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		int num;
+		
 		//külön printline-ba szedve átláthatóbb szerintem
 		System.out.println("Havana Beach Skeleton\n");
 		System.out.println("1.1: Panda üres mezõre mozog");
@@ -30,6 +29,7 @@ public class Main {
 		// Scenariok betoltese a map-be
 		HashMap<String, Scenario> Scenarios = new HashMap<String, Scenario>();
 		Scenarios.put("1.1", new PandaSteps_1_1());
+		Scenarios.put("1.2", new PandaSteps_1_2());
 		
 		// static_logger inicializálása
 		Logger.init_static_logger();

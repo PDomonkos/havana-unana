@@ -54,31 +54,39 @@ public class Panda extends Animal {
 	
 	public void Grab(Panda p) {
 		Logger.get_static_logger().enter(this, "Grab", new Object[] {p});
+		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}
 	
 	public void EnableSteps() {
 		Logger.get_static_logger().enter(this, "EnableSteps", null);
+		Logger.get_static_logger().exit(this, "EnableSteps", null, "");
 	}
 	
 	public void DisableSteps() {
 		Logger.get_static_logger().enter(this, "DisableSteps", null);
+		Logger.get_static_logger().exit(this, "EnableSteps", null, "");
 	}
 	
 	public void HitBy(Animal a) {
 		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
 		
 		a.CollideWith(this);
+		
+		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
 	
 	public void CollideWith(Orangutan o) {	
 		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
+		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {o}, "");
 	}
 	
 	public void CollideWith(Panda p) {
 		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
+		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
 	}
 	
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
+		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 }
