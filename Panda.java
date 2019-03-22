@@ -14,11 +14,9 @@
 
 public class Panda extends Animal {
 	private boolean canStep;
-	private Tile myTile;
-	private Panda follower;
 	
 	public void Die() {
-		myTile.Remove();
+
 	}
 	
 	public void Step() {

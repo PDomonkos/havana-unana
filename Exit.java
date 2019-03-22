@@ -15,5 +15,6 @@
 public class Exit extends Tile {
 	private Entry entry;
 	public boolean Accept(Animal a) {
+		return true; //hogy ne dobjon errort
 	}
 }

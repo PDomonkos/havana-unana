@@ -14,5 +14,6 @@
 
 public class Entry extends Tile {
 	public boolean Accept(Animal a) {
+		return true; //hogy ne dobjon errort
 	}
 }

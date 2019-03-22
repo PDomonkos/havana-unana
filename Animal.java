@@ -13,7 +13,9 @@
 public abstract class Animal implements Steppable {
 	private Tile myTile;
 	private Panda follower;
-	public void Die() {}
+	public void Die() {
+		
+	}
 	
 	public void ReactToJingle() {}
 	
@@ -21,7 +23,9 @@ public abstract class Animal implements Steppable {
 	
 	public void Exit() {}
 	
-	public void SetTile(Tile t) {}
+	public void SetTile(Tile t) {
+		myTile=t;
+	}
 	
 	public void Move(Tile t) {
 		myTile.Remove();
