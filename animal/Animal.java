@@ -2,6 +2,7 @@ package animal;
 import def.Steppable;
 import tile.Armchair;
 import tile.Tile;
+import def.Logger;
 
 //
 //
@@ -37,14 +38,23 @@ public abstract class Animal implements Steppable {
 	public void Exit() {}
 	
 	public void SetTile(Tile t) {
+		Logger.get_static_logger().enter(this, "SetTile", new Object[] {t});
+		
 		myTile=t;
+		
+		Logger.get_static_logger().exit(this, "SetTile", new Object[] {t}, "");
 	}
 	
 	public void Move(Tile t) {
+		Logger.get_static_logger().enter(this, "Move", new Object[] {t});
+		
 		myTile.Remove();
-		follower.Move(myTile);
+		if (follower != null)
+			follower.Move(myTile);
 		t.Add(this);
 		this.SetTile(t);
+		
+		Logger.get_static_logger().exit(this, "Move", new Object[] {t}, "");
 	}
 	
 	public void CollideWith(Orangutan o) {}

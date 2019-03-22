@@ -1,6 +1,9 @@
 package def;
 import java.util.Scanner;
 
+import scenario.PandaSteps_1_1;
+import scenario.Scenario;
+
 public class Main {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -21,8 +24,13 @@ public class Main {
 		System.out.print("Válassz menüpontot: ");
 		num=in.nextInt();
 		
+		// static_logger inicializálása
+		Logger.init_static_logger();
+		
 		switch(num) {
 		case 1: 
+			Scenario s = new PandaSteps_1_1();
+			s.execute();
 			break;
 			
 		case 2: 

@@ -1,4 +1,5 @@
 package animal;
+import def.Logger;
 import tile.Tile;
 
 //
@@ -19,47 +20,65 @@ public class Panda extends Animal {
 	private boolean canStep;
 	
 	public void Die() {
+		Logger.get_static_logger().enter(this, "Die", null);
+		
 		myTile.Remove();
+		
+		Logger.get_static_logger().exit(this, "Die", null, "");
 	}
 	
 	public void Step() {
+		Logger.get_static_logger().enter(this, "Step", null);
+		
 		Tile[] neighbours=myTile.GetNeighbours();
 		Tile t2=neighbours[0];
 		t2.Accept(this); //random válaszottam ki a 0.-t
-		this.Move(t2);
+		//this.Move(t2);
 		
+		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
 	public void Follow(Object Tile) {
+		Logger.get_static_logger().enter(this, "Follow", new Object[] {Tile});
+		Logger.get_static_logger().exit(this, "Follow", null, "");
 	}
 	
 	public void Let() {
+		Logger.get_static_logger().enter(this, "Let", null);
+		
 		follower.Let();
 		follower=null;
+		
+		Logger.get_static_logger().exit(this, "Die", null, "");
 	}
 	
 	public void Grab(Panda p) {
+		Logger.get_static_logger().enter(this, "Grab", new Object[] {p});
 	}
 	
 	public void EnableSteps() {
-		
+		Logger.get_static_logger().enter(this, "EnableSteps", null);
 	}
 	
 	public void DisableSteps() {
-		
+		Logger.get_static_logger().enter(this, "DisableSteps", null);
 	}
 	
 	public void HitBy(Animal a) {
+		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
+		
 		a.CollideWith(this);
 	}
 	
 	public void CollideWith(Orangutan o) {	
+		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
 	}
 	
 	public void CollideWith(Panda p) {
+		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
 	}
 	
 	public void Exit() {
-		
+		Logger.get_static_logger().enter(this, "Exit", null);
 	}
 }
