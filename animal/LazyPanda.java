@@ -10,8 +10,10 @@ package animal;
 //
 //
 
-
-
+import tile.Armchair;
 
 public class LazyPanda extends Panda {
+	public void TakeASeat(Armchair a) {
+		Move(a);
+	}
 }
