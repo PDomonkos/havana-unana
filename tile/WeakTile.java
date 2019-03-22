@@ -1,5 +1,6 @@
 package tile;
 import animal.Animal;
+import def.Logger;
 
 //
 //
@@ -21,16 +22,21 @@ public class WeakTile extends Tile {
 	}
 	
 	public Tile[] GetNeighbours() {
+		Logger.get_static_logger().enter(this, "GetNeighbours", null);
+		Logger.get_static_logger().exit(this, "GetNeighbours", null, "super.neighbours");
 		return super.GetNeighbours();
 	}
 	
 	public boolean Accept(Animal a) {
-		if(super.getAnimal()==null)
-			a.Move(this);
+		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
 		
-		else {
+		if(super.getAnimal() == null) {
+			a.Move(this);
+		} else {
 			super.getAnimal().HitBy(a);
 		}
+		
+		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "true");
 		
 		return true;
 	}
@@ -46,8 +52,16 @@ public class WeakTile extends Tile {
 		Count--;
 	}
 	public void Add(Animal a) {
+		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
+		
 		DecreaseCount();
-		if(Count==0)
+		if(Count == 0)
 			a.Die();
+		
+		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
 	}
+	
+	// Skeletonhoz
+	// Be kell tudni allitani, hogy mennyi az elete
+	public void set_count(int cnt) { this.Count = cnt; }
 }

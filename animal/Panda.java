@@ -54,6 +54,9 @@ public class Panda extends Animal {
 	
 	public void Grab(Panda p) {
 		Logger.get_static_logger().enter(this, "Grab", new Object[] {p});
+		
+		this.follower = p;
+		
 		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}
 	
