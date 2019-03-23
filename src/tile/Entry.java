@@ -1,5 +1,6 @@
 package tile;
 import animal.Animal;
+import def.Logger;
 
 //
 //
@@ -16,11 +17,14 @@ import animal.Animal;
 
 
 public class Entry extends Tile {
-	public boolean Accept(Animal a) {
-		return true; //hogy ne dobjon errort
-	}
 	
 	public void Add(Animal a) {
+		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
+		
+		a.SetTile(this);
+		myAnimal=a;
 		a.Exit();
+		
+		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
 	}
 }

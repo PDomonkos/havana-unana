@@ -1,5 +1,6 @@
 package tile;
 import animal.Animal;
+import def.Logger;
 
 //
 //
@@ -17,7 +18,19 @@ import animal.Animal;
 
 public class Exit extends Tile {
 	private Entry entry;
+	
 	public boolean Accept(Animal a) {
-		return true; //hogy ne dobjon errort
+		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
+		
+		// Nem kell leellenrizni, hogy áll-e rajta valaki, mivel olyan nem fordulhat elõ
+		a.Move(entry);
+		
+		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "");
+		
+		return true;
+	}
+	
+	public void setEntry(Entry en) {
+		entry = en;
 	}
 }

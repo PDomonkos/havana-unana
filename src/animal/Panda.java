@@ -45,10 +45,11 @@ public class Panda extends Animal {
 	public void Let() {
 		Logger.get_static_logger().enter(this, "Let", null);
 		
-		follower.Let();
+		if (follower != null)
+			follower.Let();
 		follower=null;
 		
-		Logger.get_static_logger().exit(this, "Die", null, "");
+		Logger.get_static_logger().exit(this, "Let", null, "");
 	}
 	/* animal-be átkerült
 	public void Grab(Panda p) {

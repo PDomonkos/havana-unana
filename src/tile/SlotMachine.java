@@ -1,5 +1,6 @@
 package tile;
 import animal.Animal;
+import def.Logger;
 
 //
 //
@@ -17,6 +18,14 @@ import animal.Animal;
 
 public class SlotMachine extends Tile {
 	public void Step() {
+		Logger.get_static_logger().enter(this, "Step", null);
+		
+		// random kell csilingelnie, most (skeletonban) minden esetben csilingel
+		for (Tile t : neighbours) {
+			t.getAnimal().ReactToJingle();
+		}
+		
+		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
 	public boolean Accept(Animal a) {
