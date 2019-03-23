@@ -33,7 +33,7 @@ public class Orangutan_grabs_6 implements Scenario{
 		myT.SetNeighbours(new Tile[] {t1,t2});
 		t1.SetNeighbours(new Tile[] {t2, myT});
 		t2.SetNeighbours(new Tile[] {t1, myT});
-		p.Grab(p2);
+		o.Grab(p2);
 	}
 	
 	private void run() {

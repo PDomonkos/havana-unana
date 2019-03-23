@@ -24,11 +24,12 @@ public class Orangutan extends Animal {
 		Logger.get_static_logger().enter(this, "Step", null);
 		Tile[] neighbours=myTile.GetNeighbours();
 		
+		/*
 		Random rand=new Random();
-		int index=rand.nextInt(neighbours.length);
+		int index=rand.nextInt(neighbours.length);*/
 		
-		Tile t=neighbours[index];
-		t.Accept(this);
+		Tile t2=neighbours[0];
+		t2.Accept(this);
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
@@ -53,6 +54,7 @@ public class Orangutan extends Animal {
 		p.Grab(this.follower);
 		this.follower=p;
 		p.DisableSteps();
+		//ide kéne valami, hogy t1-et addoljuk
 		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
 	}
 }

@@ -19,7 +19,7 @@ public class Orangutan_steps_7 implements Scenario{
 		t2 = new Tile();
 		t3 = new Tile();
 		
-		l.Add(follower, "p");
+		l.Add(follower, "follower");
 		l.Add(t1, "t1");
 		l.Add(t2, "t2");
 		l.Add(t3, "myT");
@@ -31,6 +31,7 @@ public class Orangutan_steps_7 implements Scenario{
 		t1.SetNeighbours(new Tile[] {t2,t3});
 		t2.SetNeighbours(new Tile[] {t1, t3});
 		t3.SetNeighbours(new Tile[] {t1, t2});
+		o.Grab(follower);
 	}
 	
 	private void run() {
