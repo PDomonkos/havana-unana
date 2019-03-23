@@ -10,10 +10,15 @@ package animal;
 //
 //
 
+import def.Logger;
 import tile.Armchair;
 
 public class LazyPanda extends Panda {
 	public void TakeASeat(Armchair a) {
+		Logger.get_static_logger().enter(this, "TakeASeat", null);
+		
 		Move(a);
+		
+		Logger.get_static_logger().exit(this, "TakeASeat", null, "");
 	}
 }
