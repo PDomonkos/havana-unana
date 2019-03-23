@@ -15,5 +15,6 @@ package tile;
 
 public class Cupboard extends Tile {
 	public void Step() {
+		
 	}
 }

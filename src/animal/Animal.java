@@ -55,6 +55,14 @@ public abstract class Animal implements Steppable {
 		Logger.get_static_logger().exit(this, "Move", new Object[] {t}, "");
 	}
 	
+	public void Grab(Panda p) {
+		Logger.get_static_logger().enter(this, "Grab", new Object[] {p});
+		
+		this.follower = p;
+		
+		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
+	}
+	
 	public void CollideWith(Orangutan o) {}
 	
 	public void CollideWith(Panda p) {}

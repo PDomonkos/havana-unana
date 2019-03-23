@@ -36,6 +36,7 @@ public class Main {
 		Scenarios.put("4", new HungryPanda_Jumps_4());
 		Scenarios.put("6", new Orangutan_grabs_6());
 		Scenarios.put("7", new Orangutan_steps_7());
+		Scenarios.put("8", new OrangutanPullTroughCupboard_8());
 		
 		// static_logger inicializálása
 		Logger.init_static_logger();

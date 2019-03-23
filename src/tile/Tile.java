@@ -44,7 +44,6 @@ public class Tile implements Steppable {
 		
 		else {
 			myAnimal.HitBy(a);
-			a.Move(this);
 		}
 		
 		Logger.get_static_logger().exit(this, "Accept", null, "true");

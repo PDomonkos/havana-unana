@@ -23,6 +23,7 @@ public class Orangutan extends Animal {
 	public void Step() {
 		Logger.get_static_logger().enter(this, "Step", null);
 		Tile[] neighbours=myTile.GetNeighbours();
+		
 		Random rand=new Random();
 		int index=rand.nextInt(neighbours.length);
 		
