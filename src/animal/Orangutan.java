@@ -1,4 +1,7 @@
 package animal;
+import java.util.Random;
+
+import def.Logger;
 import tile.Tile;
 
 //
@@ -16,26 +19,39 @@ import tile.Tile;
 
 
 public class Orangutan extends Animal {
-	private Tile myTile;
-	private Panda follower;
 	
-	public void Step() {}
+	public void Step() {
+		Logger.get_static_logger().enter(this, "Step", null);
+		Tile[] neighbours=myTile.GetNeighbours();
+		Random rand=new Random();
+		int index=rand.nextInt(neighbours.length);
+		
+		Tile t=neighbours[index];
+		t.Accept(this);
+		Logger.get_static_logger().exit(this, "Step", null, "");
+	}
 	
 	public void HitBy(Animal a) {
+		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
 		a.CollideWith(this);
+		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
 	
 	public void Die() {
+		Logger.get_static_logger().enter(this, "Die", null);
 		//Vége a játéknak
+		Logger.get_static_logger().exit(this, "Die", null, "");
 	}
 	
 	public void CollideWith(Orangutan o) {	
 	}
 	
 	public void CollideWith(Panda p) {
+		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
 		myTile.Add(p);
-		//orángutánnak kéne továbblépni, de hova?
+		p.Grab(this.follower);
 		this.follower=p;
 		p.DisableSteps();
+		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
 	}
 }

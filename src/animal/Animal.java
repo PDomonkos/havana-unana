@@ -20,15 +20,14 @@ public abstract class Animal implements Steppable {
 	protected Tile myTile;
 	protected Panda follower;
 	
+	public Animal() {
+		myTile=null;
+		follower=null;
+	}
+	
 	public void Die() {}
 	
 	public void Step() {
-		Tile[] neighbours=myTile.GetNeighbours();
-		Random rand=new Random();
-		int index=rand.nextInt(neighbours.length);
-		
-		Tile t=neighbours[index];
-		t.Accept(this);
 	}
 	
 	public void ReactToJingle() {}
@@ -50,9 +49,8 @@ public abstract class Animal implements Steppable {
 		
 		myTile.Remove();
 		if (follower != null)
-			follower.Move(myTile);
+			follower.Move(myTile); 
 		t.Add(this);
-		this.SetTile(t);
 		
 		Logger.get_static_logger().exit(this, "Move", new Object[] {t}, "");
 	}

@@ -33,7 +33,6 @@ public class Panda extends Animal {
 		Tile[] neighbours=myTile.GetNeighbours();
 		Tile t2=neighbours[0];
 		t2.Accept(this); //random válaszottam ki a 0.-t
-		//this.Move(t2);
 		
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
@@ -67,7 +66,7 @@ public class Panda extends Animal {
 	
 	public void DisableSteps() {
 		Logger.get_static_logger().enter(this, "DisableSteps", null);
-		Logger.get_static_logger().exit(this, "EnableSteps", null, "");
+		Logger.get_static_logger().exit(this, "DisableSteps", null, "");
 	}
 	
 	public void HitBy(Animal a) {
