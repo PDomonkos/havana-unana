@@ -10,8 +10,19 @@ package tile;
 //
 //
 
-
-
+import animal.Animal;
+import def.Logger;
 
 public class Armchair extends Tile {
+	
+	public void Step() {
+		Logger.get_static_logger().enter(this, "Step", null);
+		
+		for(Tile n: neighbours) {
+			Animal a=n.getAnimal();
+			a.TakeASeat(this);
+		}
+		
+		Logger.get_static_logger().exit(this, "Step", null, "");
+	}
 }
