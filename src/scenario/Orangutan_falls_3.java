@@ -24,6 +24,10 @@ public class Orangutan_falls_3 implements Scenario{
 		t1=new Tile();
 		wt=new WeakTile();
 		
+		l.Add(o, "o");
+		l.Add(t1, "t1");
+		l.Add(wt, "wt");
+		
 		t1.Add(o);
 		wt.SetNeighbours(new Tile[] {t1});
 		t1.SetNeighbours(new Tile[] {wt});
