@@ -6,12 +6,20 @@ import java.util.Random;
 /**
  * Panda osztály
  *
+ * Játékosok álltal nem irányítható állat
  */
 public class Panda extends Animal {
 	/**
 	 * Meghatározza, hogy a panda léphet e magától
 	 */
 	private boolean canStep;
+	
+	/**
+	 * Konstruktor, a panda alapból léphet
+	 */
+	public Panda() {
+		canStep=true;
+	}
 	
 	/**
 	 * Panda lezuhan és meghal
@@ -43,7 +51,6 @@ public class Panda extends Animal {
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
-
 	/*public void Follow(Object Tile) {
 		Logger.get_static_logger().enter(this, "Follow", new Object[] {Tile});
 		Logger.get_static_logger().exit(this, "Follow", null, "");
@@ -52,13 +59,16 @@ public class Panda extends Animal {
 	/**
 	 * Panda elengedi a mögötte lévõ panda kezét 
 	 * 
-	 * A mögötte lévõ pandák is elengedik egymást, felbomlik a sor
+	 * A mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
 	 */
 	public void Let() {
 		Logger.get_static_logger().enter(this, "Let", null);
 		
-		if (follower != null)
+		if (follower != null) {
 			follower.Let();
+			follower.EnableSteps();
+		}
+		
 		follower=null;
 		
 		Logger.get_static_logger().exit(this, "Let", null, "");
@@ -87,7 +97,7 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Egy állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
+	 * Egy másik állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
 	 */
 	public void HitBy(Animal a) {
 		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
