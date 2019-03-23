@@ -18,8 +18,8 @@ import def.Steppable;
 
 
 public class Tile implements Steppable {
-	private Tile[] neighbours;
-	private Animal myAnimal;
+	protected Tile[] neighbours;
+	protected Animal myAnimal;
 	public void Step() {
 		Logger.get_static_logger().enter(this, "Step", null);
 		Logger.get_static_logger().exit(this, "Step", null, "");

@@ -54,6 +54,9 @@ public class WeakTile extends Tile {
 	public void Add(Animal a) {
 		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
 		
+		a.SetTile(this);
+		myAnimal=a;
+		
 		DecreaseCount();
 		if(Count == 0)
 			a.Die();

@@ -10,11 +10,14 @@ package animal;
 //
 //
 
-
-
+import def.Logger;
 
 public class HungryPanda extends Panda {
 	public void ReactToBeep() {
+		Logger.get_static_logger().enter(this, "ReactToBeep", new Object[] {});
+		
 		myTile.Add(this);
+		
+		Logger.get_static_logger().exit(this, "ReactToBeep", new Object[] {},"");
 	}
 }
