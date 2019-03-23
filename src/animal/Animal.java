@@ -27,8 +27,7 @@ public abstract class Animal implements Steppable {
 	
 	public void Die() {}
 	
-	public void Step() {
-	}
+	public void Step() {}
 	
 	public void ReactToJingle() {}
 	
