@@ -5,7 +5,7 @@ import tile.Tile;
 import def.Logger;
 
 /**
- * Állatokat reprezentáló absztakt õsosztály
+ * Állatokat reprezentáló absztakt, léptethetõ õsosztály
  *
  */
 public abstract class Animal implements Steppable {

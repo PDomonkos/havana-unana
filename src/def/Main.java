@@ -4,13 +4,22 @@ import java.util.Scanner;
 
 import scenario.*;
 
+/**
+ * Fõ osztály
+ * 
+ */
 public class Main {
+////////////ez micsoda szebi nem mutatta
 	public static Scanner in;
 	
+	/**
+	 * Menü listázása, választott szcenárió futtatása
+	 * 
+	 * @param args parancssori argumentumok
+	 */
 	public static void main(String[] args) {
 		in = new Scanner(System.in);
-		
-		//külön printline-ba szedve átláthatóbb szerintem
+				
 		System.out.println("Havana Beach Skeleton\n");
 		System.out.println("1.1: Panda üres mezõre mozog");
 		System.out.println("1.2: Panda foglalt mezõre mozog");
@@ -47,8 +56,7 @@ public class Main {
 		// Scenario kivalasztasa es futtatasa
 		Scenario selected = Scenarios.get(input);
 		selected.execute();
-		
-		
+			
 		in.close();
 	}
 }

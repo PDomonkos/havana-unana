@@ -45,6 +45,7 @@ public class Orangutan extends Animal {
 
 ///////////////////////
 	//szintén lehetne õsben
+/////// logger sincs
 	public void CollideWith(Orangutan o) {	
 	}
 	
