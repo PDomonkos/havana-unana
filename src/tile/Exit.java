@@ -32,10 +32,10 @@ public class Exit extends Tile {
 	 * @param en bejárat
 	 */
 	public void setEntry(Entry en) {
-		Logger.get_static_logger().enter(this, "Accept", new Object[] {en});
+		Logger.get_static_logger().enter(this, "setEntry", new Object[] {en});
 		
 		entry = en;
 		
-		Logger.get_static_logger().exit(this, "Accept", new Object[] {en}, "");
+		Logger.get_static_logger().exit(this, "setEntry", new Object[] {en}, "");
 	}
 }

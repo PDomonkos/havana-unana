@@ -22,7 +22,9 @@ public class PandaToWeakTile_2 implements Scenario {
 		t0 = new Tile();
 		t1 = new Tile();
 		wt = new WeakTile();
-		wt.set_count(1);
+		
+		if (eltorjon_e)
+			wt.set_count(1);
 		
 		l.Add(p, "p");
 		l.Add(follower, "follower");

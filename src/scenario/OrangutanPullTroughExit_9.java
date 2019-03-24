@@ -61,7 +61,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 	}
 	
 	private void run() {
-		ex.Accept(o);
+		o.Move(ex);
 		ex.Step();
 		o.Move(t2);
 	}
