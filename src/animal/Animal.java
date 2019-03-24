@@ -102,9 +102,6 @@ public abstract class Animal implements Steppable {
 		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}
 
-//////// itt definiálni?
-	public void CollideWith(Orangutan o) {}
-
 	/**
 	 * Állat ütközik egy pandával
 	 * 
@@ -114,8 +111,11 @@ public abstract class Animal implements Steppable {
 	 */
 	public void CollideWith(Panda p) {}
 
-/////// itt is ki lehetne fejteni
-	public void HitBy(Animal a) {}
+	/**
+	 * Állatnak nekimenve az jelez, hogy ütköztek vele
+	 */
+	public void HitBy(Animal a) {
+	}
 	
 	/**
 	 * Állat reakciója egy adott fotel közelségére, alapértelmezetten semmi

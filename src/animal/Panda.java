@@ -53,10 +53,6 @@ public class Panda extends Animal {
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
-	/*public void Follow(Object Tile) {
-		Logger.get_static_logger().enter(this, "Follow", new Object[] {Tile});
-		Logger.get_static_logger().exit(this, "Follow", null, "");
-	}*/
 	
 	/**
 	 * Panda elengedi a mögötte lévõ panda kezét 
@@ -108,17 +104,7 @@ public class Panda extends Animal {
 		
 		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
-	
-	/**
-	 * Panda nekimenne egy orángutánnak
-	 * 
-	 * Nem történik semmi, nem léphet oda
-	 */
-	public void CollideWith(Orangutan o) {	
-		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
-		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {o}, "");
-	}
-	
+		
 	/**
 	 * Panda nekimenne egy másik pandának
 	 * 
@@ -138,5 +124,20 @@ public class Panda extends Animal {
 		((Entry)myTile).addPoint();
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
+	}
+	
+	/**
+	 * Panda helyet cserél egy orángutánnal
+	 * 
+	 * @param t orángután csempéje
+	 * @param o orángután
+	 */
+	public void Swap(Tile t, Orangutan o) {
+		Logger.get_static_logger().enter(this, "Swap", null);
+		
+		myTile.Add(o);
+		t.Add(this);
+		
+		Logger.get_static_logger().exit(this, "Swap", null, "");
 	}
 }
