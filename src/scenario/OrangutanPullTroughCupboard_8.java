@@ -39,8 +39,10 @@ public class OrangutanPullTroughCupboard_8 implements Scenario {
 		// t1 - t2 - cb1 - cb2 - t3 - t4
 		t1.SetNeighbours(new Tile[] {t2});
 		t2.SetNeighbours(new Tile[] {t1, cb1});
-		cb1.SetNeighbours(new Tile[] {t3, t2});
-		cb2.SetNeighbours(new Tile[] {t2, t3});
+		cb1.SetCupboards(new Cupboard[] {cb2});
+		cb1.SetNeighbours(new Tile[] {t2});
+		cb2.SetNeighbours(new Tile[] {t3});
+		cb2.SetCupboards(new Cupboard[] {cb1});
 		t3.SetNeighbours(new Tile[] {cb2, t4});
 		t4.SetNeighbours(new Tile[] {t3});
 		
@@ -53,7 +55,7 @@ public class OrangutanPullTroughCupboard_8 implements Scenario {
 	}
 	
 	private void run() {
-		o.Move(cb1);
+		cb1.Accept(o);
 		o.Move(t3);
 		o.Move(t4);
 	}

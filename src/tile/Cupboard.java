@@ -19,11 +19,11 @@ public class Cupboard extends Tile {
 	 * Beállítja a szomszédos szekrényeit
 	 */
 	public void SetCupboards(Cupboard[] c) {
-		Logger.get_static_logger().enter(this, "Accept", new Object[] {c});
+		Logger.get_static_logger().enter(this, "SetCupboards", new Object[] {c});
 		
 		cupboards=c;
 		
-		Logger.get_static_logger().exit(this, "Accept", new Object[] {c},"");
+		Logger.get_static_logger().exit(this, "SetCupboards", new Object[] {c},"");
 		
 	}
 	
