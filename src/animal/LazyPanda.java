@@ -19,7 +19,8 @@ public class LazyPanda extends Panda {
 		Logger.get_static_logger().enter(this, "TakeASeat", null);
 		
 		this.Let();
-		Move(a);
+		a.Accept(this);
+		this.DisableSteps();
 		
 		Logger.get_static_logger().exit(this, "TakeASeat", null, "");
 	}

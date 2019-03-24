@@ -10,9 +10,14 @@ import def.Logger;
  *
  */
 public class Cupboard extends Tile {
-	
+	/**
+	 * szomszédos szekrények
+	 */
 	Cupboard[] cupboards;
 	
+	/**
+	 * Beállítja a szomszédos szekrényeit
+	 */
 	public void SetCupboards(Cupboard[] c) {
 		Logger.get_static_logger().enter(this, "Accept", new Object[] {c});
 		
@@ -22,16 +27,23 @@ public class Cupboard extends Tile {
 		
 	}
 	
-	public boolean Accept(Animal a) {
+	/**
+	 * Állat lép a szekrénybe
+	 * 
+	 * Ha állat állt rajta akkor ütköztet, ha nincs mozgatja egy szomszédra
+	 * ha elkapott egy orángután egy pandát akkor az orángután átrakja
+	 */
+	public void Accept(Animal a) {
 		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
 		
 		Animal oldAnimal=myAnimal;
 		
-		if(!myAnimal.equals(null)) myAnimal.HitBy(a);
+		if(myAnimal!=null) myAnimal.HitBy(a);
 		else {
 			Random rand=new Random();
 			a.Move(cupboards[rand.nextInt(cupboards.length)]);
 		}
+		
 		//Orángután elkapja a pandát esetben fut le (csak ekkor változik az állat)
 		if(myAnimal!=oldAnimal) {
 			Random rand=new Random();
@@ -40,10 +52,6 @@ public class Cupboard extends Tile {
 		
 		
 		Logger.get_static_logger().exit(this, "Accept", new Object[] {a},"");
-		return true;
 	}
 	
-	public void Step() {
-		
-	}
 }

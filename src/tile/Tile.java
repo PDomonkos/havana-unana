@@ -74,7 +74,7 @@ public class Tile implements Steppable {
 	 * @param a érkezõ állat
 	 * @return kuki
 	 */
-	public boolean Accept(Animal a) {
+	public void Accept(Animal a) {
 		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
 		
 		if(myAnimal==null)
@@ -83,13 +83,7 @@ public class Tile implements Steppable {
 			myAnimal.HitBy(a);
 		}
 
-/////////////////////////
-		//most itt direkt nincs paraméter?
-		//egyáltalán kell exitnél paraméter? nem lehetne a paraméter a return?
-		Logger.get_static_logger().exit(this, "Accept", null, "true");
-//////////////
-		//hát ennek valóban nincs értelme
-		return true;
+		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "true");
 	}
 	
 	/**

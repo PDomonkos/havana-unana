@@ -9,7 +9,6 @@ import scenario.*;
  * 
  */
 public class Main {
-////////////ez micsoda szebi nem mutatta
 	public static Scanner in;
 	
 	/**
