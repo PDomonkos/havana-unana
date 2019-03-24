@@ -2,12 +2,29 @@ package tile;
 import animal.Animal;
 import def.Logger;
 import def.Steppable;
+import def.Game;
 
 /**
  * Csempe õsosztály
  * 
  */
 public class Tile implements Steppable {
+	/**
+	 * Játékot reprezentáló osztály
+	 */
+	static Game game;
+	
+	/**
+	 * Adott játék beállítása
+	 * 
+	 * @param g játék
+	 */
+	public static void setGame(Game g) {
+
+		game=g;
+		
+	}
+	
 	/**
 	 * Szomszédos csempék tömbje
 	 */

@@ -1,7 +1,9 @@
 package animal;
+import java.util.Random;
+
 import def.Logger;
 import tile.Tile;
-import java.util.Random;
+import tile.Entry;
 
 /**
  * Panda osztály
@@ -128,12 +130,13 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Panda elhagyja a pályát
+	 * Panda elhagyja a pályát, pontot ad a megfelelõ orángutánnak
 	 */
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
-///////////////////////////////////////////////////
-		//ide kéne hogy az orángutánnak ad pontot, meg tárolni hogy ki a húzó
+
+		((Entry)myTile).addPoint();
+		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 }

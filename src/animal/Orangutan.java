@@ -1,5 +1,7 @@
 package animal;
+import def.Game;
 import def.Logger;
+import tile.Entry;
 import tile.Tile;
 
 /**
@@ -8,7 +10,22 @@ import tile.Tile;
  * Játékosok által irányított állat 
  */
 public class Orangutan extends Animal {
+	/**
+	 * Játékot reprezentáló osztály
+	 */
+	static Game game;
 	
+	/**
+	 * Adott játék beállítása
+	 * 
+	 * @param g játék
+	 */
+	public static void setGame(Game g) {
+
+		game=g;
+		
+	}
+		
 	/**
 	 * Orángután lép
 	 */
@@ -37,8 +54,9 @@ public class Orangutan extends Animal {
 	 */
 	public void Die() {
 		Logger.get_static_logger().enter(this, "Die", null);
-/////////////////////////////
-		//gamen hívhatan egy endet
+
+		game.end(this);
+		
 		Logger.get_static_logger().exit(this, "Die", null, "");
 	}
 	
@@ -65,5 +83,16 @@ public class Orangutan extends Animal {
 		//szerintem csak accept tudná hívni a hitby után de akkor mégis cscak kéne az a bool visszatérés
 		
 		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
+	}
+	
+	/**
+	 * Orángután kijáraton áthaladva beállítja a bejáraton, hogy õ ment át rajta utána
+	 */
+	public void Exit() {
+		Logger.get_static_logger().enter(this, "Exit", null);
+
+		((Entry)myTile).setOrangutan(this);
+		
+		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 }
