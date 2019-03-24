@@ -20,8 +20,7 @@ public class Main {
 		in = new Scanner(System.in);
 				
 		System.out.println("Havana Beach Skeleton\n");
-		System.out.println("1.1: Panda üres mezõre mozog");
-		System.out.println("1.2: Panda foglalt mezõre mozog");
+		System.out.println("1: Panda lép");
 		System.out.println("2: Pandát törékeny csempére húznak, miközben õ is húz egy pandát.");
 		System.out.println("3: Orángután törékeny csempére lép és lezuhan");
 		System.out.println("4: Éhes panda csilingelés hatására ugrik egyet");

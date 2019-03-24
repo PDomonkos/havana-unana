@@ -15,6 +15,7 @@ public class PandaToWeakTile_2 implements Scenario {
 	
 	private void init(boolean eltorjon_e) {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		p = new Panda();
 		follower = new Panda();
@@ -37,7 +38,7 @@ public class PandaToWeakTile_2 implements Scenario {
 		wt.SetNeighbours(new Tile[] {t1});
 		t1.SetNeighbours(new Tile[] {t0, wt});
 		
-		
+		Logger.breakLine();
 	}
 	
 	private void run() {

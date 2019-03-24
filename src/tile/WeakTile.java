@@ -27,7 +27,7 @@ public class WeakTile extends Tile {
 		
 		Count--;
 		
-		Logger.get_static_logger().enter(this, "DecreaseCount", null);
+		Logger.get_static_logger().exit(this, "DecreaseCount", null, "");
 	}
 	
 	/**

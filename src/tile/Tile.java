@@ -83,7 +83,7 @@ public class Tile implements Steppable {
 			myAnimal.HitBy(a);
 		}
 
-		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "true");
+		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "");
 	}
 	
 	/**
