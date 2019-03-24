@@ -45,7 +45,7 @@ public class PandaSteps_1 implements Scenario {
 	public void execute() {
 		Scanner s = Main.in;
 		System.out.println("Foglaltra lépjen? (I/N)");
-		boolean answ = s.nextLine().equals("I");
+		boolean answ = s.nextLine().toUpperCase().equals("I");
 		init(answ);
 		run();
 	}

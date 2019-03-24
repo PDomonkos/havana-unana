@@ -19,7 +19,7 @@ public class HungryPanda_Jumps_4 implements Scenario{
 	public void execute() {
 		Scanner s = Main.in;
 		System.out.println("Eltörjön a csempe? (I/N)");
-		boolean answ = s.nextLine().equals("I")||s.nextLine().equals("i");
+		boolean answ = s.nextLine().toUpperCase().equals("I");
 		init(answ);
 		run();
 	}
