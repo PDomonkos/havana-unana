@@ -12,6 +12,7 @@ public class Orangutan_steps_7 implements Scenario{
 	
 	private void init() {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		o=new Orangutan();
 		follower = new Panda();
@@ -32,6 +33,8 @@ public class Orangutan_steps_7 implements Scenario{
 		t2.SetNeighbours(new Tile[] {t1, t3});
 		t3.SetNeighbours(new Tile[] {t1, t2});
 		o.Grab(follower);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

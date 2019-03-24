@@ -14,6 +14,7 @@ public class PandaSteps_1 implements Scenario {
 	
 	private void init(boolean foglalt) {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		p1 = new Panda();
 		if (foglalt)
@@ -32,6 +33,8 @@ public class PandaSteps_1 implements Scenario {
 			t2.Add(p2);
 		t1.SetNeighbours(new Tile[] {t2});
 		t2.SetNeighbours(new Tile[] {t1});
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

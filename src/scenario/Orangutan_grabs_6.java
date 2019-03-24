@@ -12,6 +12,7 @@ public class Orangutan_grabs_6 implements Scenario{
 	
 	private void init() {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		o=new Orangutan();
 		p = new Panda();
@@ -34,6 +35,8 @@ public class Orangutan_grabs_6 implements Scenario{
 		t1.SetNeighbours(new Tile[] {t2, myT});
 		t2.SetNeighbours(new Tile[] {t1, myT});
 		o.Grab(p2);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

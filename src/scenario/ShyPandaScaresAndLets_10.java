@@ -21,6 +21,7 @@ public class ShyPandaScaresAndLets_10 implements Scenario {
 	
 	private void init() {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		s = new SlotMachine();
 		t1 = new Tile();
@@ -42,6 +43,8 @@ public class ShyPandaScaresAndLets_10 implements Scenario {
 		t2.Add(p);
 		
 		p.Grab(follower);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

@@ -24,6 +24,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 	
 	private void init() {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		t0 = new Tile();
 		t1 = new Tile();
@@ -55,6 +56,8 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 		t1.Add(o);
 		
 		o.Grab(p);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

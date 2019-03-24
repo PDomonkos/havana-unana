@@ -19,6 +19,7 @@ public class Orangutan_falls_3 implements Scenario{
 	
 	private void init() {
 		Logger l=Logger.get_static_logger();
+		Logger.breakLine();
 		
 		o=new Orangutan();
 		t1=new Tile();
@@ -33,6 +34,8 @@ public class Orangutan_falls_3 implements Scenario{
 		t1.SetNeighbours(new Tile[] {wt});
 		
 		wt.set_count(1);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

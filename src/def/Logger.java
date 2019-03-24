@@ -81,6 +81,7 @@ public class Logger {
 	 */
 	public void Add(Object obj, String name) {
 		names.put(obj, name);
+		System.out.println("> "+name+"()");
 	}
 	
 	// Lekéri a static_logger-t
@@ -97,5 +98,12 @@ public class Logger {
 	public static void clear_static_logger() {
 		static_logger.names.clear();
 		static_logger.activeCalls = 0;
+	}
+	
+	/**
+	 * sortörés
+	 */
+	public static void breakLine() {
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 }

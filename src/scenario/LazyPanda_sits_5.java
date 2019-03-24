@@ -19,6 +19,7 @@ public class LazyPanda_sits_5 implements Scenario{
 
 	private void init() {
 		Logger l=Logger.get_static_logger();
+		Logger.breakLine();
 		
 		p=new LazyPanda();
 		t=new Tile();
@@ -33,6 +34,7 @@ public class LazyPanda_sits_5 implements Scenario{
 		t.SetNeighbours(new Tile[] {a});
 		a.SetNeighbours(new Tile[] {t});
 		
+		Logger.breakLine();
 	}
 	
 	private void run() {

@@ -15,6 +15,7 @@ public class OrangutanPullTroughCupboard_8 implements Scenario {
 	
 	private void init() {
 		Logger l = Logger.get_static_logger();
+		Logger.breakLine();
 		
 		o = new Orangutan();
 		cb1 = new Cupboard();
@@ -47,6 +48,8 @@ public class OrangutanPullTroughCupboard_8 implements Scenario {
 		t2.Add(o);
 		
 		o.Grab(follower);
+		
+		Logger.breakLine();
 	}
 	
 	private void run() {

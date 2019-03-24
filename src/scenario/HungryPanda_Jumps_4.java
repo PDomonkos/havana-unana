@@ -30,6 +30,7 @@ public class HungryPanda_Jumps_4 implements Scenario{
 
 	private void init(boolean break_tile) {
 		Logger l=Logger.get_static_logger();
+		Logger.breakLine();
 		
 		p=new HungryPanda();
 		v=new VendingMachine();
@@ -47,5 +48,6 @@ public class HungryPanda_Jumps_4 implements Scenario{
 		v.SetNeighbours(new Tile[] {wt});
 		wt.SetNeighbours(new Tile[] {v});
 		
+		Logger.breakLine();
 	}
 }
