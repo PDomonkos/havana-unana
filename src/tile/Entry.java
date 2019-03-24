@@ -1,5 +1,6 @@
 package tile;
 import animal.Animal;
+import animal.Orangutan;
 import def.Logger;
 
 /**
@@ -7,8 +8,11 @@ import def.Logger;
  * 
  */
 public class Entry extends Tile {
-///////////
-	//azért legyünk õszinték ez még nem teljes vagy csak én érzem úgy ? :D
+	/**
+	 * Utoljára kijövõ orángután
+	 */
+	Orangutan myO;
+	
 	/**
 	 * Állat hozzáadásakor meghívja rajta az exit függvényt
 	 * 
@@ -22,5 +26,27 @@ public class Entry extends Tile {
 		a.Exit();
 		
 		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
+	}
+	
+	/**
+	 * Ha panda ment át rajta, akkor pontot ad a legutolsó orángutánnak
+	 */
+	public void addPoint() {
+		Logger.get_static_logger().enter(this, "Add", null);
+		
+		Tile.game.addPoint(myO);
+		
+		Logger.get_static_logger().exit(this, "Add", null, "");
+	}
+	
+	/**
+	 * Ha orángután ment át rajta, akkor beállítja azt legutolsó orángutánnak
+	 */
+	public void setOrangutan (Orangutan o) {
+		Logger.get_static_logger().enter(this, "Add", null);
+		
+		myO=o;
+		
+		Logger.get_static_logger().exit(this, "Add", null, "");
 	}
 }

@@ -2,6 +2,7 @@ package scenario;
 
 import animal.Orangutan;
 import animal.Panda;
+import def.Game;
 import def.Logger;
 import tile.Entry;
 import tile.Exit;
@@ -13,6 +14,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 	Entry en;
 	Orangutan o;
 	Panda p;
+	Game g;
 	
 	
 	/*
@@ -30,6 +32,9 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 		en = new Entry();
 		o = new Orangutan();
 		p = new Panda();
+		g = new Game();
+		
+		Tile.setGame(g);
 		
 		l.Add(t0, "t0");
 		l.Add(t1, "t1");
@@ -38,6 +43,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 		l.Add(en, "en");
 		l.Add(o, "o");
 		l.Add(p, "p");
+		l.Add(g, "g");
 		
 		t0.SetNeighbours(new Tile[] {t1});
 		t1.SetNeighbours(new Tile[] {t0, ex});
@@ -53,6 +59,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 	
 	private void run() {
 		ex.Accept(o);
+		ex.Step();
 		o.Move(t2);
 	}
 
