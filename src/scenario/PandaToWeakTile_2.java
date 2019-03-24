@@ -51,7 +51,7 @@ public class PandaToWeakTile_2 implements Scenario {
 	public void execute() {
 		Scanner s = Main.in;
 		System.out.println("Eltörjön a csempe? (I/N)");
-		boolean answ = s.nextLine().equals("I");
+		boolean answ = s.nextLine().toUpperCase().equals("I");
 		init(answ);
 		run();
 	}

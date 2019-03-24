@@ -23,7 +23,7 @@ public class Orangutan_steps_7 implements Scenario{
 		l.Add(follower, "follower");
 		l.Add(t1, "t1");
 		l.Add(t2, "t2");
-		l.Add(t3, "myT");
+		l.Add(t3, "t3");
 		l.Add(o, "o");
 		
 		t1.Add(o);
