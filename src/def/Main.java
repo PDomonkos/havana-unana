@@ -37,8 +37,7 @@ public class Main {
 		
 		// Scenariok betoltese a map-be
 		HashMap<String, Scenario> Scenarios = new HashMap<String, Scenario>();
-		Scenarios.put("1.1", new PandaSteps_1_1());
-		Scenarios.put("1.2", new PandaSteps_1_2());
+		Scenarios.put("1", new PandaSteps_1());
 		Scenarios.put("2", new PandaToWeakTile_2());
 		Scenarios.put("3", new Orangutan_falls_3());
 		Scenarios.put("4", new HungryPanda_Jumps_4());
