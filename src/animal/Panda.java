@@ -57,24 +57,6 @@ public class Panda extends Animal {
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
-	
-	/**
-	 * Panda elengedi a mögötte lévõ panda kezét 
-	 * 
-	 * A mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
-	 */
-	public void Let() {
-		Logger.get_static_logger().enter(this, "Let", null);
-		
-		if (follower != null) {
-			follower.Let();
-			follower.EnableSteps();
-		}
-		
-		follower=null;
-		
-		Logger.get_static_logger().exit(this, "Let", null, "");
-	}
 
 	/**
 	 * Engedi lépni a pandát
@@ -120,18 +102,4 @@ public class Panda extends Animal {
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 	
-	/**
-	 * Panda helyet cserél egy orángutánnal
-	 * 
-	 * @param t orángután csempéje
-	 * @param o orángután
-	 */
-	public void Swap(Tile t, Orangutan o) {
-		Logger.get_static_logger().enter(this, "Swap", null);
-		
-		myTile.Add(o);
-		t.Add(this);
-		
-		Logger.get_static_logger().exit(this, "Swap", null, "");
-	}
 }

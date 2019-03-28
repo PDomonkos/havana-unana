@@ -21,6 +21,13 @@ public class Orangutan extends Animal {
 	private int grabBlock;
 	
 	/**
+	 * Konstruktor
+	 */
+	void Orangutan() {
+		grabBlock=0;
+	}
+	
+	/**
 	 * Adott játék beállítása
 	 * 
 	 * @param g játék
@@ -34,8 +41,11 @@ public class Orangutan extends Animal {
 	/**
 	 * Orángután lép
 	 */
-	public void Step() {
+	//csakazért paraméteres, hogy lehesse nmozgatni
+	public void Step(int dir) {
 		Logger.get_static_logger().enter(this, "Step", null);
+		
+		if(grabBlock!=0) grabBlock--;
 		
 		Tile[] neighbours=myTile.GetNeighbours();	
 		//késõbb megcsináljuk, hogy a választottra lépjen
@@ -65,14 +75,53 @@ public class Orangutan extends Animal {
 	public void CollideWith(Panda p) {
 		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
 		
-		p.Let();
-		p.Swap(myTile, this);
-		
-		p.Grab(this.follower);
-		this.follower=p;
-		p.DisableSteps();
+		if(grabBlock == 0) {
+			p.Let();
+			p.Swap(myTile, this);
+			
+			p.Grab(this.follower);
+			this.follower=p;
+			p.DisableSteps();
+		}
 
 		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
+	}
+	
+	/**
+	 * Orángután ütközik egy másik orángutánnal
+	 * 
+	 * Felszabadítja azt, helyet cserélnek, majd a követõket beállítja
+	 */
+	public void CollideWith(Orangutan o) {
+		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
+		
+		if(follower == null) {
+			this.Grab(o.Steal());
+			o.Swap(myTile, this);
+		}
+
+		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {o}, "");
+	}
+	
+	/**
+	 * Ellopják tõle a követõjét
+	 */
+	public Panda Steal() {
+		Panda ret=follower;
+		follower=null;
+		grabBlock=3;
+		return ret;
+	} 
+	
+	/**
+	 * Egy másik állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
+	 */
+	public void HitBy(Animal a) {
+		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
+		
+		a.CollideWith(this);
+		
+		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
 	
 	/**
@@ -86,6 +135,9 @@ public class Orangutan extends Animal {
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 
+	/**
+	 * Pontot az az orángutánnak
+	 */
 	public void AddPoint() {
 		game.addPoint(this);
 	}

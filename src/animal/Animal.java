@@ -27,6 +27,24 @@ public abstract class Animal implements Steppable {
 		myTile=null;
 		follower=null;
 	}
+		
+	/**
+	 * Állat elengedi a mögötte lévõ panda kezét 
+	 * 
+	 * A mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
+	 */
+	public void Let() {
+		Logger.get_static_logger().enter(this, "Let", null);
+		
+		if (follower != null) {
+			follower.Let();
+			follower.EnableSteps();
+		}
+		
+		follower=null;
+		
+		Logger.get_static_logger().exit(this, "Let", null, "");
+	}
 	
 	/**
 	 * Állat meghal
@@ -82,6 +100,21 @@ public abstract class Animal implements Steppable {
 	}
 	
 	/**
+	 * Állat helyet cserél egy orángutánnal
+	 * 
+	 * @param t orángután csempéje
+	 * @param o orángután
+	 */
+	public void Swap(Tile t, Orangutan o) {
+		Logger.get_static_logger().enter(this, "Swap", null);
+		
+		myTile.Add(o);
+		t.Add(this);
+		
+		Logger.get_static_logger().exit(this, "Swap", null, "");
+	}
+	
+	/**
 	 * Megadott pandát elkezd húzni
 	 * 
 	 * @param p a húzott panda
@@ -94,7 +127,7 @@ public abstract class Animal implements Steppable {
 		
 		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}
-
+	
 	/**
 	 * Állat ütközik egy pandával
 	 * 
@@ -104,6 +137,16 @@ public abstract class Animal implements Steppable {
 	 */
 	public void CollideWith(Panda p) {}
 
+	/**
+	 * Állat ütközik egy orángutánal
+	 * 
+	 * Leszármazottak definiálják
+	 * 
+	 * @param o az orángután
+	 */
+	public void CollideWith(Orangutan o) {}
+
+	
 	/**
 	 * Állatnak nekimenve az jelez, hogy ütköztek vele
 	 */
