@@ -15,6 +15,10 @@ public class Panda extends Animal {
 	 * Meghatározza, hogy a panda léphet e magától
 	 */
 	private boolean canStep;
+	/**
+	 * A pandát húzó állat
+	 */
+	protected Animal leader; 
 	
 	/**
 	 * Konstruktor, a panda alapból léphet
@@ -104,16 +108,6 @@ public class Panda extends Animal {
 		
 		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
-		
-	/**
-	 * Panda nekimenne egy másik pandának
-	 * 
-	 * Nem történik semmi, nem léphet oda
-	 */
-	public void CollideWith(Panda p) {
-		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
-		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
-	}
 	
 	/**
 	 * Panda elhagyja a pályát, pontot ad a megfelelõ orángutánnak
@@ -121,7 +115,7 @@ public class Panda extends Animal {
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
 
-		((Entry)myTile).addPoint();
+		((Entry)myTile).AddPoint();
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}

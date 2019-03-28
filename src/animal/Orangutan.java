@@ -16,6 +16,11 @@ public class Orangutan extends Animal {
 	static Game game;
 	
 	/**
+	 * A panda fogást blokkoló számláló
+	 */
+	private int grabBlock;
+	
+	/**
 	 * Adott játék beállítása
 	 * 
 	 * @param g játék
@@ -40,15 +45,6 @@ public class Orangutan extends Animal {
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
-
-	/**
-	 * Orángutánnak nekimenve nem történik semmi, nem léphetnek rá
-	 */
-	public void HitBy(Animal a) {
-		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
-		
-		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
-	}
 	
 	/**
 	 * Orángután meghal, vége a játéknak
@@ -88,5 +84,9 @@ public class Orangutan extends Animal {
 		((Entry)myTile).setOrangutan(this);
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
+	}
+
+	public void AddPoint() {
+		game.addPoint(this);
 	}
 }

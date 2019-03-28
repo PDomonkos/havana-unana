@@ -11,7 +11,7 @@ public class Entry extends Tile {
 	/**
 	 * Utoljára kijövõ orángután
 	 */
-	Orangutan myO;
+	private Orangutan myO;
 	
 	/**
 	 * Állat hozzáadásakor meghívja rajta az exit függvényt
@@ -31,10 +31,10 @@ public class Entry extends Tile {
 	/**
 	 * Ha panda ment át rajta, akkor pontot ad a legutolsó orángutánnak
 	 */
-	public void addPoint() {
+	public void AddPoint() {
 		Logger.get_static_logger().enter(this, "addPoint", null);
 		
-		Tile.game.addPoint(myO);
+		myO.AddPoint();
 		
 		Logger.get_static_logger().exit(this, "addPoint", null, "");
 	}

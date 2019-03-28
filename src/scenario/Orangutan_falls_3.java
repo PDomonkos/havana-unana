@@ -28,7 +28,7 @@ public class Orangutan_falls_3 implements Scenario{
 		wt=new WeakTile();
 		g=new Game();
 		
-		Tile.setGame(g);
+		//Tile.setGame(g);
 		Orangutan.setGame(g);
 		
 		l.Add(o, "o");

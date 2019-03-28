@@ -36,13 +36,6 @@ public abstract class Animal implements Steppable {
 	public void Die() {}
 	
 	/**
-	 * Állat lép
-	 * 
-	 * Leszármazottak definiálják
-	 */
-	public void Step() {}
-	
-	/**
 	 * Állat reakciója a csilingelésre, alapvetõen semmi
 	 */
 	public void ReactToJingle() {}

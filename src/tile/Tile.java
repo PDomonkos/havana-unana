@@ -9,22 +9,7 @@ import def.Game;
  * 
  */
 public class Tile implements Steppable {
-	/**
-	 * Játékot reprezentáló osztály
-	 */
-	static Game game;
-	
-	/**
-	 * Adott játék beállítása
-	 * 
-	 * @param g játék
-	 */
-	public static void setGame(Game g) {
-
-		game=g;
 		
-	}
-	
 	/**
 	 * Szomszédos csempék tömbje
 	 */

@@ -35,7 +35,7 @@ public class OrangutanPullTroughExit_9 implements Scenario {
 		p = new Panda();
 		g = new Game();
 		
-		Tile.setGame(g);
+		//Tile.setGame(g);
 		
 		l.Add(t0, "t0");
 		l.Add(t1, "t1");
