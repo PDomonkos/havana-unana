@@ -82,6 +82,7 @@ public class Orangutan extends Animal {
 			p.Grab(this.follower);
 			this.follower=p;
 			p.DisableSteps();
+			p.SetLeader(this);
 		}
 
 		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
