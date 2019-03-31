@@ -27,23 +27,12 @@ public abstract class Animal implements Steppable {
 		myTile=null;
 		follower=null;
 	}
-		
+	
 	/**
-	 * Állat elengedi a mögötte lévõ panda kezét 
-	 * 
-	 * A mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
+	 * Null-ra állítja a follovert
 	 */
-	public void Let() {
-		Logger.get_static_logger().enter(this, "Let", null);
-		
-		if (follower != null) {
-			follower.Let();
-			follower.EnableSteps();
-		}
-		
+	public void ResetFollower() {
 		follower=null;
-		
-		Logger.get_static_logger().exit(this, "Let", null, "");
 	}
 	
 	/**
@@ -124,6 +113,7 @@ public abstract class Animal implements Steppable {
 		
 		this.follower = p;
 		p.DisableSteps();
+		p.SetLeader(this);
 		
 		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}

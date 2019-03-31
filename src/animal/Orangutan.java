@@ -95,7 +95,7 @@ public class Orangutan extends Animal {
 	public void CollideWith(Orangutan o) {
 		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
 		
-		if(follower == null) {
+		if(follower == null && grabBlock ==0) {
 			this.Grab(o.Steal());
 			o.Swap(myTile, this);
 		}
@@ -114,6 +114,14 @@ public class Orangutan extends Animal {
 	} 
 	
 	/**
+	 * Önként engedi el a húzott pandát
+	 */
+	public void Release() {
+		if (follower!=null)
+			follower.Let();
+	}
+	
+	/**
 	 * Egy másik állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
 	 */
 	public void HitBy(Animal a) {
@@ -125,12 +133,13 @@ public class Orangutan extends Animal {
 	}
 	
 	/**
-	 * Orángután kijáraton áthaladva beállítja a bejáraton, hogy õ ment át rajta utána
+	 * Orángután kijáraton áthaladva beállítja a bejáraton, hogy õ ment át rajta utána, és nullra állítja a followert
 	 */
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
 
 		((Entry)myTile).setOrangutan(this);
+		follower=null;
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}

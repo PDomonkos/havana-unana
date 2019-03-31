@@ -21,10 +21,18 @@ public class Panda extends Animal {
 	protected Animal leader; 
 	
 	/**
+	 * Beállítja a pandát húzó állatot
+	 */
+	public void SetLeader(Animal a) {
+		leader=a;
+	}
+	
+	/**
 	 * Konstruktor, a panda alapból léphet
 	 */
 	public Panda() {
 		canStep=true;
+		leader=null;
 	}
 	
 	/**
@@ -39,6 +47,28 @@ public class Panda extends Animal {
 		this.Let();
 		
 		Logger.get_static_logger().exit(this, "Die", null, "");
+	}
+	
+	/**
+	 * Állat elengedi a mögötte lévõ panda kezét 
+	 * 
+	 * Az elõtte lévõ panda elengedi, a mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
+	 */
+	public void Let() {
+		Logger.get_static_logger().enter(this, "Let", null);
+		
+		if (leader!=null) {
+			leader.ResetFollower();
+		}
+		
+		leader=null;
+		this.EnableSteps();
+		
+		if (follower != null) {
+			follower.Let();
+		}
+		
+		Logger.get_static_logger().exit(this, "Let", null, "");
 	}
 	
 	/**
@@ -92,12 +122,15 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Panda elhagyja a pályát, pontot ad a megfelelõ orángutánnak
+	 * Panda elhagyja a pályát, pontot ad a megfelelõ orángutánnak, és nullra állítja a referenciáit
 	 */
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
 
 		((Entry)myTile).AddPoint();
+		follower=null;
+		leader=null;
+		myTile.Remove();
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
