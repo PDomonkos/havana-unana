@@ -21,10 +21,16 @@ public class Orangutan extends Animal {
 	private int grabBlock;
 	
 	/**
+	 * A következõ lépés iránya
+	 */
+	private int dir;
+	
+	/**
 	 * Konstruktor
 	 */
-	void Orangutan() {
+	public Orangutan() {
 		grabBlock=0;
+		dir=0;
 	}
 	
 	/**
@@ -41,16 +47,16 @@ public class Orangutan extends Animal {
 	/**
 	 * Orángután lép
 	 */
-	//csakazért paraméteres, hogy lehesse nmozgatni
-	public void Step(int dir) {
+	public void Step() {
 		Logger.get_static_logger().enter(this, "Step", null);
 		
 		if(grabBlock!=0) grabBlock--;
 		
 		Tile[] neighbours=myTile.GetNeighbours();	
-		//késõbb megcsináljuk, hogy a választottra lépjen
-		Tile t2=neighbours[0];
+		Tile t2=neighbours[dir];
 		t2.Accept(this);
+		
+		dir=0;
 		
 		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
@@ -62,7 +68,7 @@ public class Orangutan extends Animal {
 	public void Die() {
 		Logger.get_static_logger().enter(this, "Die", null);
 
-		game.end(this);
+		game.End(this);
 		
 		Logger.get_static_logger().exit(this, "Die", null, "");
 	}	
@@ -139,7 +145,7 @@ public class Orangutan extends Animal {
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
 
-		((Entry)myTile).setOrangutan(this);
+		((Entry)myTile).SetOrangutan(this);
 		follower=null;
 		
 		Logger.get_static_logger().exit(this, "Exit", null, "");
@@ -149,6 +155,21 @@ public class Orangutan extends Animal {
 	 * Pontot az az orángutánnak
 	 */
 	public void AddPoint() {
-		game.addPoint(this);
+		game.AddPoint(this);
+	}
+	
+	//egy set dir a teszt miatt
+	//lehet incdir hivogatni is
+	public void SetDir(int d) {
+		dir=d;
+	}
+	
+	/**
+	 * Irány növelése
+	 */
+	public void IncDir() {
+		dir++;
+		if (dir==myTile.GetNeighbours().length)
+			dir=0;
 	}
 }

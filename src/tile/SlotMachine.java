@@ -15,7 +15,7 @@ public class SlotMachine extends Tile {
 		
 		//random lesz majd
 		for (Tile t : neighbours) {
-			t.getAnimal().ReactToJingle();
+			t.GetAnimal().ReactToJingle();
 		}
 		
 		Logger.get_static_logger().exit(this, "Step", null, "");

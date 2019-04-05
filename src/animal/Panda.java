@@ -44,6 +44,7 @@ public class Panda extends Animal {
 		Logger.get_static_logger().enter(this, "Die", null);
 		
 		myTile.Remove();
+		myTile=null;
 		this.Let();
 		
 		Logger.get_static_logger().exit(this, "Die", null, "");
@@ -127,11 +128,14 @@ public class Panda extends Animal {
 	public void Exit() {
 		Logger.get_static_logger().enter(this, "Exit", null);
 
-		((Entry)myTile).AddPoint();
-		follower=null;
-		leader=null;
-		myTile.Remove();
-		
+		if (leader==null) {
+			((Entry)myTile).AddPoint();
+			follower=null;
+			leader=null;
+			myTile.Remove();
+			myTile=null;
+		}
+				
 		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 	

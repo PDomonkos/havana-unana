@@ -30,9 +30,10 @@ public class Armchair extends Tile {
 	public void Step() {
 		Logger.get_static_logger().enter(this, "Step", null);
 		
+		//véletlenszerû ez is
 		if(myAnimal==null) {
 			for(Tile n: neighbours) {
-				Animal a=n.getAnimal();
+				Animal a=n.GetAnimal();
 				a.TakeASeat(this);		
 			}
 		}else {

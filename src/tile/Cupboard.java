@@ -13,7 +13,7 @@ public class Cupboard extends Tile {
 	/**
 	 * szomszédos szekrények
 	 */
-	Cupboard[] cupboards;
+	private Cupboard[] cupboards;
 	
 	/**
 	 * Beállítja a szomszédos szekrényeit
@@ -41,12 +41,14 @@ public class Cupboard extends Tile {
 		if(myAnimal!=null) myAnimal.HitBy(a);
 		else {
 			Random rand=new Random();
+			//üresség ellenõrzése
 			a.Move(cupboards[rand.nextInt(cupboards.length)]);
 		}
 		
 		//Orángután elkapja a pandát esetben fut le (csak ekkor változik az állat)
 		if(myAnimal!=oldAnimal) {
 			Random rand=new Random();
+			//üresség ellenõrzése itt is
 			a.Move(cupboards[rand.nextInt(cupboards.length)]);
 		}
 		

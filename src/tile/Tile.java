@@ -2,7 +2,6 @@ package tile;
 import animal.Animal;
 import def.Logger;
 import def.Steppable;
-import def.Game;
 
 /**
  * Csempe õsosztály
@@ -18,6 +17,11 @@ public class Tile implements Steppable {
 	 * Csempén lévõ állat
 	 */
 	protected Animal myAnimal;
+	
+	public Tile() {
+		neighbours=null;
+		myAnimal=null;
+	}
 	
 	/**
 	 * Csempe lép
@@ -102,7 +106,7 @@ public class Tile implements Steppable {
 	 * 
 	 * @return csempén lévõ állat
 	 */
-	public Animal getAnimal() {
+	public Animal GetAnimal() {
 		Logger.get_static_logger().enter(this, "getAnimal", null);
 		Logger.get_static_logger().exit(this, "getAnimal", null, "myAnimal");
 		

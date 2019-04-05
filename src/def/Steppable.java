@@ -8,6 +8,6 @@ public interface Steppable {
 	/**
 	 * Lépés
 	 */
-	public default void Step() {
-	}
+	public void Step();
+
 }

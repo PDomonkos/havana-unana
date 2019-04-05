@@ -42,7 +42,7 @@ public class Entry extends Tile {
 	/**
 	 * Ha orángután ment át rajta, akkor beállítja azt legutolsó orángutánnak
 	 */
-	public void setOrangutan (Orangutan o) {
+	public void SetOrangutan (Orangutan o) {
 		Logger.get_static_logger().enter(this, "setOrangutan", null);
 		
 		myO=o;

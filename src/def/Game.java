@@ -1,4 +1,5 @@
 package def;
+import animal.Animal;
 import animal.Orangutan;
 import tile.Tile;
 
@@ -8,14 +9,23 @@ import tile.Tile;
 public class Game {
 
 	/**
-	 * Pontot ad az adott orángutánnak
-	 * 
-	 * @param o orángután
+	 * Csempék
 	 */
-	public void addPoint(Orangutan o) {
-		Logger.get_static_logger().enter(this, "addPoint", new Object[] {o});
-		
-		Logger.get_static_logger().exit(this, "addPoint", new Object[] {o}, "");
+	private Tile[] tiles;
+	/**
+	 * Állatok
+	 */
+	private Animal[] animals;
+	
+	/**
+	 * Pálya generálása
+	 */
+	public void Generate() {
+	}
+	/**
+	 * Pálya elemi között lévõ kapcsolatok beállítása
+	 */
+	public void Set() {
 	}
 	
 	/**
@@ -23,9 +33,20 @@ public class Game {
 	 * 
 	 * @param o vesztes orángután
 	 */
-	public void end(Orangutan o) {
+	public void End(Orangutan o) {
 		Logger.get_static_logger().enter(this, "end", new Object[] {o});
 		
 		Logger.get_static_logger().exit(this, "end", new Object[] {o}, "");
+	}
+	
+	/**
+	 * Pontot ad az adott orángutánnak
+	 * 
+	 * @param o orángután
+	 */
+	public void AddPoint(Orangutan o) {
+		Logger.get_static_logger().enter(this, "addPoint", new Object[] {o});
+		
+		Logger.get_static_logger().exit(this, "addPoint", new Object[] {o}, "");
 	}
 }

@@ -14,9 +14,10 @@ public class VendingMachine extends Tile {
 		Logger.get_static_logger().enter(this, "Step", null);
 
 		//random lesz majd
-		for(Tile n: neighbours) {
-			Animal a=n.getAnimal();
-			a.ReactToBeep();
+		for(Tile t: neighbours) {
+			Animal a=t.GetAnimal();
+			if (a!=null)
+				a.ReactToBeep();
 		}
 		
 		Logger.get_static_logger().exit(this, "Step", null, "");

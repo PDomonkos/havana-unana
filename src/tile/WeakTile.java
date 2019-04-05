@@ -10,13 +10,13 @@ public class WeakTile extends Tile {
 	/**
 	 * csempe élettartama
 	 */
-	public int Count;
+	private int count;
 
 	/**
 	 * Konstruktor, mindig 20 élete van
 	 */
 	public WeakTile(){
-		this.Count = 20; 
+		this.count = 20; 
 	}
 	
 	/**
@@ -25,7 +25,7 @@ public class WeakTile extends Tile {
 	private void DecreaseCount() {
 		Logger.get_static_logger().enter(this, "DecreaseCount", null);
 		
-		Count--;
+		count--;
 		
 		Logger.get_static_logger().exit(this, "DecreaseCount", null, "");
 	}
@@ -43,7 +43,7 @@ public class WeakTile extends Tile {
 		
 		//majd átírjuk die a decreasebe legyen
 		DecreaseCount();
-		if(Count == 0)
+		if(count == 0)
 			a.Die();
 		
 		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
@@ -51,5 +51,5 @@ public class WeakTile extends Tile {
 	
 	// Skeletonhoz
 	// Be kell tudni allitani, hogy mennyi az elete
-	public void set_count(int cnt) { this.Count = cnt; }
+	public void set_count(int cnt) { this.count = cnt; }
 }
