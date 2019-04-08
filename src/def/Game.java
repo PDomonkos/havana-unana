@@ -1,4 +1,7 @@
 package def;
+import java.util.HashMap;
+import java.util.Timer;
+
 import animal.Animal;
 import animal.Orangutan;
 import tile.Tile;
@@ -6,26 +9,32 @@ import tile.Tile;
 /**
  * Játékot reprezentáló osztály
  */
-public class Game {
+public static class Game {
 
 	/**
-	 * Csempék
+	 * Léptethetõ dolgok
 	 */
-	private Tile[] tiles;
+	private Steppable[] steppables;
+
 	/**
-	 * Állatok
+	 * timer
 	 */
-	private Animal[] animals;
+	private Timer timer;
+	
+	//ezt meg kéne oldani hogy hívja updatet
 	
 	/**
-	 * Pálya generálása
+	 * pontok tárolása
+	 */
+	private HashMap<Orangutan, Integer> points;
+	
+	/**
+	 * Pálya generálása, és kapcsolatok beállítása
 	 */
 	public void Generate() {
-	}
-	/**
-	 * Pálya elemi között lévõ kapcsolatok beállítása
-	 */
-	public void Set() {
+		Tile[] tiles;
+		Panda[] pandas;
+		Orangutan[] orangutans;
 	}
 	
 	/**
@@ -48,5 +57,21 @@ public class Game {
 		Logger.get_static_logger().enter(this, "addPoint", new Object[] {o});
 		
 		Logger.get_static_logger().exit(this, "addPoint", new Object[] {o}, "");
+	}
+	
+	/**
+	 * Steppable eltávolítása
+	 * 
+	 * @param s az adott léptethetõ dolog
+	 */
+	public void removeSteppable(Steppable s) {
+		
+	}
+	
+	/**
+	 * Léptethetõ dolgok léptetése
+	 */
+	public void Update() {
+		
 	}
 }

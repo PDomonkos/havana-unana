@@ -13,7 +13,8 @@ public class ShyPanda extends Panda {
 	public void ReactToJingle() {
 		Logger.get_static_logger().enter(this, "ReactToJingle", null);
 		
-		this.Let();
+		if (follower != null)
+			follower.Let();
 		
 		Logger.get_static_logger().exit(this, "ReactToJingle", null,"");
 	}

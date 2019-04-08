@@ -47,6 +47,9 @@ public class Panda extends Animal {
 		myTile=null;
 		this.Let();
 		
+		//láthatóság
+		Game.RemoveSteppable(this);
+		
 		Logger.get_static_logger().exit(this, "Die", null, "");
 	}
 	
@@ -134,6 +137,8 @@ public class Panda extends Animal {
 			leader=null;
 			myTile.Remove();
 			myTile=null;
+			//léthatóség
+			Game.RemoveSteppable(this);
 		}
 				
 		Logger.get_static_logger().exit(this, "Exit", null, "");

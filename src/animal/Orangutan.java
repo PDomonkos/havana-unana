@@ -10,11 +10,7 @@ import tile.Tile;
  * Játékosok által irányított állat 
  */
 public class Orangutan extends Animal {
-	/**
-	 * Játékot reprezentáló osztály
-	 */
-	static Game game;
-	
+
 	/**
 	 * A panda fogást blokkoló számláló
 	 */
@@ -33,16 +29,6 @@ public class Orangutan extends Animal {
 		dir=0;
 	}
 	
-	/**
-	 * Adott játék beállítása
-	 * 
-	 * @param g játék
-	 */
-	public static void setGame(Game g) {
-
-		game=g;
-		
-	}
 		
 	/**
 	 * Orángután lép
@@ -68,7 +54,8 @@ public class Orangutan extends Animal {
 	public void Die() {
 		Logger.get_static_logger().enter(this, "Die", null);
 
-		game.End(this);
+		//láthatóság
+		Game.End(this);
 		
 		Logger.get_static_logger().exit(this, "Die", null, "");
 	}	
@@ -155,7 +142,7 @@ public class Orangutan extends Animal {
 	 * Pontot az az orángutánnak
 	 */
 	public void AddPoint() {
-		game.AddPoint(this);
+		Game.AddPoint(this);
 	}
 	
 	//egy set dir a teszt miatt
