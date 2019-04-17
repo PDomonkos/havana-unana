@@ -4,12 +4,13 @@ import java.util.Timer;
 
 import animal.Animal;
 import animal.Orangutan;
+import animal.Panda;
 import tile.Tile;
 
 /**
- * Játékot reprezentáló osztály
+ * Játékot reprezentáló statikus osztály
  */
-public static class Game {
+public class Game {
 
 	/**
 	 * Léptethetõ dolgok
