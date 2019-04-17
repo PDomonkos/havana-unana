@@ -29,8 +29,7 @@ public class Tile implements Steppable {
 	 * Alapértelmezetten nem csinál semmit, a leszármazottakban lesz haszna
 	 */
 	public void Step() {
-		Logger.get_static_logger().enter(this, "Step", null);
-		Logger.get_static_logger().exit(this, "Step", null, "");
+
 	}
 	
 	/**
@@ -39,8 +38,6 @@ public class Tile implements Steppable {
 	 * @return szomszédos csempék
 	 */
 	public Tile[] GetNeighbours() {
-		Logger.get_static_logger().enter(this, "GetNeighbours", null);
-		Logger.get_static_logger().exit(this, "GetNeighbours", null, "neighbours");
 		return neighbours;
 	}
 	
@@ -50,11 +47,9 @@ public class Tile implements Steppable {
 	 * @param t megadott csempék
 	 */
 	public void SetNeighbours(Tile[] t) {
-		Logger.get_static_logger().enter(this, "SetNeighbours", t);
 		
 		neighbours=t;
 		
-		Logger.get_static_logger().exit(this, "SetNeighbours", t, "");
 	}
 	
 	/**
@@ -64,7 +59,6 @@ public class Tile implements Steppable {
 	 * @return kuki
 	 */
 	public void Accept(Animal a) {
-		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
 		
 		if(myAnimal==null)
 			a.Move(this);
@@ -72,7 +66,6 @@ public class Tile implements Steppable {
 			myAnimal.HitBy(a);
 		}
 
-		Logger.get_static_logger().exit(this, "Accept", new Object[] {a}, "");
 	}
 	
 	/**
@@ -81,12 +74,10 @@ public class Tile implements Steppable {
 	 * @param a állat
 	 */
 	public void Add(Animal a) {
-		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
 		
 		a.SetTile(this);
 		myAnimal=a;
-		
-		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
+
 	}
 	
 	/**
@@ -94,11 +85,9 @@ public class Tile implements Steppable {
 	 * 
 	 */
 	public void Remove() {
-		Logger.get_static_logger().enter(this, "Remove", null);
 		
 		myAnimal=null;
-		
-		Logger.get_static_logger().exit(this, "Remove", null, "");
+
 	}
 	
 	/**
@@ -107,8 +96,6 @@ public class Tile implements Steppable {
 	 * @return csempén lévõ állat
 	 */
 	public Animal GetAnimal() {
-		Logger.get_static_logger().enter(this, "getAnimal", null);
-		Logger.get_static_logger().exit(this, "getAnimal", null, "myAnimal");
 		
 		return myAnimal;
 	}

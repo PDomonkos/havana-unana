@@ -18,12 +18,10 @@ public class Exit extends Tile {
 	 * Mivel nincs szomszédja az exitnek, nem lehet róla lelépni, csak a step által
 	 */
 	public void Step() {
-		Logger.get_static_logger().enter(this, "Step", null);
 		
 		if (myAnimal != null)
 			myAnimal.Move(entry);
 		
-		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
 	/**
@@ -32,10 +30,8 @@ public class Exit extends Tile {
 	 * @param en bejárat
 	 */
 	public void setEntry(Entry en) {
-		Logger.get_static_logger().enter(this, "setEntry", new Object[] {en});
 		
 		entry = en;
-		
-		Logger.get_static_logger().exit(this, "setEntry", new Object[] {en}, "");
+
 	}
 }

@@ -28,7 +28,6 @@ public class Armchair extends Tile {
 	 * Különben csökkenti a számlálót, ha az nulla lett elengedi a benne ülõ állatot
 	 */
 	public void Step() {
-		Logger.get_static_logger().enter(this, "Step", null);
 		
 		//véletlenszerû ez is
 		if(myAnimal==null) {
@@ -45,14 +44,12 @@ public class Armchair extends Tile {
 		}
 		
 		
-		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
 	/**
 	 * Nem lehet rálépni	
 	 */
 	public void Accept(Animal a) {
-		Logger.get_static_logger().enter(this, "Accept", null);
-		Logger.get_static_logger().exit(this, "Accept", null, "");
+
 	}
 }

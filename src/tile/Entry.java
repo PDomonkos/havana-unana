@@ -19,34 +19,28 @@ public class Entry extends Tile {
 	 * @param a érkezõ állat
 	 */
 	public void Add(Animal a) {
-		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
 		
 		a.SetTile(this);
 		myAnimal=a;
 		a.Exit();
 		
-		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
 	}
 	
 	/**
 	 * Ha panda ment át rajta, akkor pontot ad a legutolsó orángutánnak
 	 */
 	public void AddPoint() {
-		Logger.get_static_logger().enter(this, "addPoint", null);
 		
 		myO.AddPoint();
 		
-		Logger.get_static_logger().exit(this, "addPoint", null, "");
 	}
 	
 	/**
 	 * Ha orángután ment át rajta, akkor beállítja azt legutolsó orángutánnak
 	 */
 	public void SetOrangutan (Orangutan o) {
-		Logger.get_static_logger().enter(this, "setOrangutan", null);
 		
 		myO=o;
 		
-		Logger.get_static_logger().exit(this, "setOrangutan", null, "");
 	}
 }

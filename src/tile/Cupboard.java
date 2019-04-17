@@ -19,11 +19,8 @@ public class Cupboard extends Tile {
 	 * Beállítja a szomszédos szekrényeit
 	 */
 	public void SetCupboards(Cupboard[] c) {
-		Logger.get_static_logger().enter(this, "SetCupboards", new Object[] {c});
 		
 		cupboards=c;
-		
-		Logger.get_static_logger().exit(this, "SetCupboards", new Object[] {c},"");
 		
 	}
 	
@@ -34,7 +31,6 @@ public class Cupboard extends Tile {
 	 * ha elkapott egy orángután egy pandát akkor az orángután átrakja
 	 */
 	public void Accept(Animal a) {
-		Logger.get_static_logger().enter(this, "Accept", new Object[] {a});
 		
 		Animal oldAnimal=myAnimal;
 		
@@ -52,8 +48,6 @@ public class Cupboard extends Tile {
 			a.Move(cupboards[rand.nextInt(cupboards.length)]);
 		}
 		
-		
-		Logger.get_static_logger().exit(this, "Accept", new Object[] {a},"");
 	}
 	
 }

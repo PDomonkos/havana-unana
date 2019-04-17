@@ -23,11 +23,9 @@ public class WeakTile extends Tile {
 	 * számláló csökkentése
 	 */
 	private void DecreaseCount() {
-		Logger.get_static_logger().enter(this, "DecreaseCount", null);
 		
 		count--;
-		
-		Logger.get_static_logger().exit(this, "DecreaseCount", null, "");
+
 	}
 	
 	/**
@@ -36,7 +34,6 @@ public class WeakTile extends Tile {
 	 * @param érkezõ állat
 	 */
 	public void Add(Animal a) {
-		Logger.get_static_logger().enter(this, "Add", new Object[] {a});
 		
 		a.SetTile(this);
 		myAnimal=a;
@@ -46,7 +43,6 @@ public class WeakTile extends Tile {
 		if(count == 0)
 			a.Die();
 		
-		Logger.get_static_logger().exit(this, "Add", new Object[] {a}, "");
 	}
 	
 	// Skeletonhoz
