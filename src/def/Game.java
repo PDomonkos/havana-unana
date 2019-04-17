@@ -2,9 +2,9 @@ package def;
 import java.util.HashMap;
 import java.util.Timer;
 
-import animal.Animal;
 import animal.Orangutan;
 import animal.Panda;
+
 import tile.Tile;
 
 /**
