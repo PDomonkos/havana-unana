@@ -15,24 +15,24 @@ public class Game {
 	/**
 	 * Léptethetõ dolgok
 	 */
-	private Steppable[] steppables;
+	static private Steppable[] steppables;
 
 	/**
 	 * timer
 	 */
-	private Timer timer;
+	static private Timer timer;
 	
 	//ezt meg kéne oldani hogy hívja updatet
 	
 	/**
 	 * pontok tárolása
 	 */
-	private HashMap<Orangutan, Integer> points;
+	static private HashMap<Orangutan, Integer> points;
 	
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
 	 */
-	public void Generate() {
+	public static void Generate() {
 		Tile[] tiles;
 		Panda[] pandas;
 		Orangutan[] orangutans;
@@ -43,10 +43,8 @@ public class Game {
 	 * 
 	 * @param o vesztes orángután
 	 */
-	public void End(Orangutan o) {
-		Logger.get_static_logger().enter(this, "end", new Object[] {o});
-		
-		Logger.get_static_logger().exit(this, "end", new Object[] {o}, "");
+	public static void End(Orangutan o) {
+
 	}
 	
 	/**
@@ -54,10 +52,8 @@ public class Game {
 	 * 
 	 * @param o orángután
 	 */
-	public void AddPoint(Orangutan o) {
-		Logger.get_static_logger().enter(this, "addPoint", new Object[] {o});
-		
-		Logger.get_static_logger().exit(this, "addPoint", new Object[] {o}, "");
+	public static void AddPoint(Orangutan o) {
+
 	}
 	
 	/**
@@ -65,14 +61,14 @@ public class Game {
 	 * 
 	 * @param s az adott léptethetõ dolog
 	 */
-	public void removeSteppable(Steppable s) {
+	public static void RemoveSteppable(Steppable s) {
 		
 	}
 	
 	/**
 	 * Léptethetõ dolgok léptetése
 	 */
-	public void Update() {
+	public static void Update() {
 		
 	}
 }

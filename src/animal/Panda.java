@@ -2,8 +2,10 @@ package animal;
 import java.util.Random;
 
 import def.Logger;
+import def.Main;
 import tile.Tile;
 import tile.Entry;
+import def.Game;
 
 /**
  * Panda osztály
