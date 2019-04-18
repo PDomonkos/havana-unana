@@ -1,5 +1,6 @@
 package animal;
 
+import def.Tester;
 import tile.Armchair;
 
 /**
@@ -20,5 +21,12 @@ public class LazyPanda extends Panda {
 		a.Accept(this);
 		this.DisableSteps();
 		
+	}
+	
+	@Override
+	public void ListAttributes() {
+		Tester.WriteOutput(
+				"NEVEM: %s\nTÍPUSOM: LazyPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nLÉPHETEK:%s\nVEZETÕM:%s", 
+				new Object[] {this, myTile, follower, canStep, leader});
 	}
 }

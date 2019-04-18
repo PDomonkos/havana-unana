@@ -1,5 +1,6 @@
 package animal;
 import def.Game;
+import def.Tester;
 import tile.Entry;
 import tile.Tile;
 
@@ -18,7 +19,7 @@ public class Orangutan extends Animal {
 	/**
 	 * A következõ lépés iránya
 	 */
-	private int dir;
+	//private int dir;
 	
 	/**
 	 * Konstruktor
@@ -50,7 +51,6 @@ public class Orangutan extends Animal {
 	 */
 	public void Die() {
 
-		//láthatóság
 		Game.End(this);
 		
 	}	
@@ -132,12 +132,6 @@ public class Orangutan extends Animal {
 		Game.AddPoint(this);
 	}
 	
-	//egy set dir a teszt miatt
-	//lehet incdir hivogatni is
-	public void SetDir(int d) {
-		dir=d;
-	}
-	
 	/**
 	 * Irány növelése
 	 */
@@ -147,8 +141,18 @@ public class Orangutan extends Animal {
 			dir=0;
 	}
 	
-	///list miatt
+//	NEVEM: <ÁLLAT NEVE>
+//	TÍPUSOM: <ÁLLAT TÍPUSA>
+//	CSEMPE, AHOL ÁLLOK: [<CSEMPE NEVE>]
+//	KÖVETÕM: <ÁLLAT NEVE> (null ha nincs)
+//	MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 
+//	<SZÁM> - (csak orángután esetén)
+//	pl. “MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 2”
+//	LÉPHETEK: <IGEN/NEM> - (csak a pandák esetén)
+//	VEZETÕM: <ÁLLAT NEVE> - (csak a pandák esetén) (null ha nincs)	
 	public void ListAttributes() {
-		
-	}
+		Tester.WriteOutput(
+				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: %d", 
+				new Object[] {this, myTile, follower, grabBlock});
+	}	
 }

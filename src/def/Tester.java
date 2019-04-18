@@ -15,7 +15,7 @@ public class Tester {
 	private static Map<String, Object> objects;
 	
 	
-	private boolean isRandom;
+	public static boolean isRandom = true;
 	
 	public static void execute(BufferedReader reader) {
 		String line;
@@ -64,6 +64,7 @@ public class Tester {
 	public static void WriteOutput(String s, Object[] o) {
 		
 	}
+	
 	/*
 	public static <V, K> Map<V, K> invert(Map<K, V> map) {
 	    return map.entrySet()

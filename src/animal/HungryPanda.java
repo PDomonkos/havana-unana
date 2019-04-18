@@ -1,5 +1,6 @@
 package animal;
 
+import def.Tester;
 
 /**
  * Éhes pandát reprezentáló osztály
@@ -17,8 +18,10 @@ public class HungryPanda extends Panda {
 		
 	}
 	
+	@Override
 	public void ListAttributes() {
-		
-		
+		Tester.WriteOutput(
+				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nLÉPHETEK:%s\nVEZETÕM:%s", 
+				new Object[] {this, myTile, follower, canStep, leader});
 	}
 }

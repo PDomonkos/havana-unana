@@ -9,6 +9,8 @@ import tile.Tile;
  *
  */
 public abstract class Animal implements Steppable {
+	//most itt van
+	protected int dir;
 	/**
 	 * Csempe amin az állat áll
 	 */
@@ -84,12 +86,6 @@ public abstract class Animal implements Steppable {
 		
 	}
 	
-	// Teszteleshez
-	// Ugyanugy mukodik mint orangutannal
-	public void SetDir(int d) {
-		
-	}
-	
 	/**
 	 * Állat helyet cserél egy orángutánnal
 	 * 
@@ -148,4 +144,12 @@ public abstract class Animal implements Steppable {
 	 * @param a adott fotel
 	 */
 	public void TakeASeat(Armchair a) {}
+	
+	//egy set dir a teszt miatt
+	//lehet incdir hivogatni is
+	public void SetDir(int d) {
+		dir=d;
+	}
 }
+
+
