@@ -21,8 +21,8 @@ public class Tester {
 				
 				switch (arr[0]) {
 				case "grab":
-					Animal a1 = (Animal)name_object.get(arr[1]);
-					Animal a2 = (Animal)name_object.get(arr[2]);
+					Animal a1 = (Animal)objects.get(arr[1]);
+					Animal a2 = (Animal)objects.get(arr[2]);
 					a1.Grab((Panda)a2);
 					break;
 				case "move":
