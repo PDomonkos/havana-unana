@@ -154,7 +154,7 @@ public class Orangutan extends Animal {
 	
 	public void ListAttributes() {
 		Tester.WriteOutput(
-				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: %d", 
-				new Object[] {this, myTile, follower, grabBlock});
+				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT:" + grabBlock, 
+				new Object[] {this, myTile, follower});
 	}	
 }
