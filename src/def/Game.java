@@ -119,8 +119,10 @@ public class Game {
 				while(separate2.hasMoreTokens()) {
 					neighbours.add((Cupboard)things.get(separate2.nextToken()));
 				}
-				actual.SetCupboards((Cupboard[])neighbours.toArray());
 				
+				Cupboard[] cb_tmp = new Cupboard[neighbours.size()];
+				System.arraycopy(neighbours.toArray(), 0, cb_tmp, 0, neighbours.size());
+				actual.SetNeighbours(cb_tmp);				
 			}
 			//negyedik üres sorig entry exithez rendelése
 			while(!((line=inputBR.readLine()).equals("*"))) {
