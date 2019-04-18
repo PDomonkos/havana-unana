@@ -2,6 +2,7 @@ package animal;
 import java.util.Random;
 
 import def.Main;
+import def.Tester;
 import tile.Tile;
 import tile.Entry;
 import def.Game;
@@ -15,7 +16,7 @@ public class Panda extends Animal {
 	/**
 	 * Meghatározza, hogy a panda léphet e magától
 	 */
-	private boolean canStep;
+	protected boolean canStep;
 	/**
 	 * A pandát húzó állat
 	 */
@@ -130,10 +131,4 @@ public class Panda extends Animal {
 		}
 				
 	}
-	
-	///list miatt
-	public void ListAttributes() {
-		//
-	}
-	
 }

@@ -60,6 +60,7 @@ public class Tester {
 	public static void WriteOutput(String s, Object[] o) {
 		
 	}
+	
 	/*
 	public static <V, K> Map<V, K> invert(Map<K, V> map) {
 	    return map.entrySet()
