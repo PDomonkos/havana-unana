@@ -18,7 +18,7 @@ public class Orangutan extends Animal {
 	/**
 	 * A következõ lépés iránya
 	 */
-	private int dir;
+	//private int dir;
 	
 	/**
 	 * Konstruktor
@@ -50,7 +50,6 @@ public class Orangutan extends Animal {
 	 */
 	public void Die() {
 
-		//láthatóság
 		Game.End(this);
 		
 	}	
@@ -130,12 +129,6 @@ public class Orangutan extends Animal {
 	 */
 	public void AddPoint() {
 		Game.AddPoint(this);
-	}
-	
-	//egy set dir a teszt miatt
-	//lehet incdir hivogatni is
-	public void SetDir(int d) {
-		dir=d;
 	}
 	
 	/**
