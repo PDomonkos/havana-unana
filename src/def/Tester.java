@@ -11,7 +11,12 @@ import animal.Panda;
 import tile.Tile;
 
 public class Tester {
+	
 	private static Map<String, Object> objects;
+	
+	
+	private boolean isRandom;
+	
 	public static void execute(BufferedReader reader) {
 		String line;
 		try {
