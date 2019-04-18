@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Tester {
-	private static Map<Object, String> objects = new HashMap<Object, String>();
 	
 	public static void execute(BufferedReader reader) {
 		String line;
