@@ -27,9 +27,11 @@ public class HungryPanda extends Panda {
 		String base = new String("NEVEM: %s\n" + "TÍPUSOM: HungryPanda\n" + "CSEMPE, AHOL ÁLLOK: %s\n");
 		List<Object> obj = new ArrayList<Object>();
 		obj.add(this);
+		obj.add(myTile);
 
 		if (follower == null)
 			base += new String("KÖVETÕM: null\n");
+		
 		else {
 			base += new String("KÖVETÕM: %s\n");
 			obj.add(follower);
