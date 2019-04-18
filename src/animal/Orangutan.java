@@ -37,6 +37,8 @@ public class Orangutan extends Animal {
 	 * Orángután lép
 	 */
 	public void Step() {
+		//sikertelen lépés miatt csak
+		Tile t=myTile;
 		
 		if(grabBlock!=0) grabBlock--;
 		
@@ -46,6 +48,10 @@ public class Orangutan extends Animal {
 		
 		dir=0;
 		
+		if(t != myTile)
+			Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
+		else
+			Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
 	}
 	
 	
@@ -53,7 +59,9 @@ public class Orangutan extends Animal {
 	 * Orángután meghal, vége a játéknak
 	 */
 	public void Die() {
-
+		
+		Tester.WriteOutput("MEGHALT %s ITT: %s", new Object[] {this,myTile});
+		
 		Game.End(this);
 		
 	}	
@@ -126,6 +134,8 @@ public class Orangutan extends Animal {
 		((Entry)myTile).SetOrangutan(this);
 		follower=null;
 		
+		Tester.WriteOutput("%s KIMENT", new Object[] {this});
+		
 	}
 
 	/**
@@ -133,6 +143,8 @@ public class Orangutan extends Animal {
 	 */
 	public void AddPoint() {
 		Game.AddPoint(this);
+		
+		Tester.WriteOutput("%s PONTOT KAPOTT", new Object[] {this});
 	}
 	
 	/**
