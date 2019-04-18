@@ -17,10 +17,13 @@ import tile.Tile;
 public class Tester {
 	
 	private static Map<String, Object> objects;	
+	private static StringBuilder strb_out = new StringBuilder();
 	
 	public static boolean isRandom = false;
+	public static boolean write = true;
 	
 	public static boolean execute(BufferedReader test_reader, BufferedReader expected_reader, boolean write_out) {
+		write = write_out;
 		String line;
 		try {
 			line = test_reader.readLine();
@@ -69,10 +72,29 @@ public class Tester {
 			e.printStackTrace();
 		}
 		
+		if (expected_reader != null) {
+			StringBuilder strb_exp = new StringBuilder();
+			String l;
+			try {
+				l = expected_reader.readLine();
+				while (l != null) {
+					strb_exp.append(l);
+					
+					l = expected_reader.readLine();
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return strb_out.toString().equals(strb_exp.toString());
+		}
+		
 		return true;
 	}
 	
 	public static void WriteOutput(String s, Object[] o) {
+		if (!write) return;
 		if (o == null) {
 			System.out.println(s);
 		} else {
@@ -88,6 +110,7 @@ public class Tester {
 			StringBuilder sb=new StringBuilder();
 			Formatter fr=new Formatter(sb);
 			fr.format(s, stringParams.toArray());
+			strb_out.append(sb.toString());
 			System.out.println(sb.toString());
 			fr.close();
 		}
