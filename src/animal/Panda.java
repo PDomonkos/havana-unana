@@ -70,6 +70,8 @@ public class Panda extends Animal {
 		
 		if (follower != null) {
 			follower.Let();
+			
+			Tester.WriteOutput("%s ELENGEDTE ÕT: %s", new Object[] {this,follower});
 		}
 		
 	}

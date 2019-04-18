@@ -2,6 +2,7 @@ package tile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import animal.Animal;
 import animal.Panda;
@@ -31,11 +32,24 @@ public class Armchair extends Tile {
 	 */
 	public void Step() {
 		
-		//véletlenszerû ez is
 		if(myAnimal==null) {
-			for(Tile n: neighbours) {
-				Animal a=n.GetAnimal();
-				a.TakeASeat(this);		
+			if (!Tester.isRandom) {
+				for(Tile n: neighbours) {
+					Animal a=n.GetAnimal();
+					if (a!= null)
+						a.TakeASeat(this);		
+				}
+			}
+			else {
+				Random rand = new Random();
+				int r=rand.nextInt( 10 );
+				if(r>6) {
+					for(Tile n: neighbours) {
+						Animal a=n.GetAnimal();
+						if (a!= null)
+							a.TakeASeat(this);		
+					}
+				}
 			}
 		}else {
 			count--;

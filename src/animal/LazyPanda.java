@@ -24,6 +24,7 @@ public class LazyPanda extends Panda {
 		a.Accept(this);
 		this.DisableSteps();
 		
+		Tester.WriteOutput("%s LEÜLT ITT: %s", new Object[] {this,a});
 	}
 	
 	@Override

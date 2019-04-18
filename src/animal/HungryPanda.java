@@ -19,6 +19,7 @@ public class HungryPanda extends Panda {
 		
 		myTile.Add(this);
 		
+		Tester.WriteOutput("UGROTT EGYETT", new Object[] {this});
 	}
 	
 	@Override

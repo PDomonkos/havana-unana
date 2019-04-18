@@ -1,6 +1,7 @@
 package tile;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import animal.Animal;
 import def.Tester;
@@ -14,13 +15,28 @@ public class VendingMachine extends Tile {
 	 */
 	public void Step() {
 
-		//random lesz majd
-		for(Tile t: neighbours) {
-			Animal a=t.GetAnimal();
-			if (a!=null)
-				a.ReactToBeep();
+		if (!Tester.isRandom) {
+			for (Tile t : neighbours) {
+				Animal a=t.GetAnimal();
+				if (a != null)
+					a.ReactToBeep();
+			}
+			Tester.WriteOutput("SÍPOLÁS VOLT ITT: ", new Object[] {this});
+		}
+		else{
+			Random rand = new Random();
+			int r=rand.nextInt( 10 );
+			if(r>6) {
+				for (Tile t : neighbours) {
+					Animal a=t.GetAnimal();
+					if (a != null)
+						a.ReactToBeep();
+				}
+				Tester.WriteOutput("SÍPOLÁS VOLT ITT: ", new Object[] {this});
+			}
 		}
 		
+
 	}
 	
 	/**
