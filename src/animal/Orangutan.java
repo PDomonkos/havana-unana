@@ -149,9 +149,7 @@ public class Orangutan extends Animal {
 //	<SZÁM> - (csak orángután esetén)
 //	pl. “MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 2”
 //	LÉPHETEK: <IGEN/NEM> - (csak a pandák esetén)
-//	VEZETÕM: <ÁLLAT NEVE> - (csak a pandák esetén) (null ha nincs)
-
-	
+//	VEZETÕM: <ÁLLAT NEVE> - (csak a pandák esetén) (null ha nincs)	
 	public void ListAttributes() {
 		Tester.WriteOutput(
 				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: %d", 

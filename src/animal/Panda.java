@@ -140,4 +140,8 @@ public class Panda extends Animal {
 		}
 				
 	}
+	
+	public void ListAttributes() {
+
+	}	
 }
