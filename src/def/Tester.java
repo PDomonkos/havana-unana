@@ -62,7 +62,7 @@ public class Tester {
 					objects = Game.GetObjects();
 					break;
 				case "setRandom":
-					isRandom = true;
+					isRandom = arr[1].equals("ON");
 					break;
 				}
 				
