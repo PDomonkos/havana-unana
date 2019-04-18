@@ -14,7 +14,7 @@ public class Tester {
 	private static Map<String, Object> objects;
 	
 	
-	private boolean isRandom;
+	public static boolean isRandom = true;
 	
 	public static void execute(BufferedReader reader) {
 		String line;

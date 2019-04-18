@@ -6,6 +6,7 @@ import def.Tester;
 import tile.Tile;
 import tile.Entry;
 import def.Game;
+import def.Tester;
 
 /**
  * Panda osztály
@@ -77,13 +78,21 @@ public class Panda extends Animal {
 	 * Panda véletlenszerûen lép egy szomszédos mezõre, ha léphet
 	 */
 	public void Step() {
-		
-		if (canStep){
-			Tile[] neighbours=myTile.GetNeighbours();
-			Random rand = new Random();
-			Tile t2=neighbours[rand.nextInt( neighbours.length )];
-			t2.Accept(this);
-		}	
+		if(canStep)
+		{
+			if (Tester.isRandom){
+				Tile[] neighbours=myTile.GetNeighbours();
+				Random rand = new Random();
+				Tile t2=neighbours[rand.nextInt( neighbours.length )];
+				t2.Accept(this);
+			}	
+			else if (!Tester.isRandom) {
+				Tile[] neighbours=myTile.GetNeighbours();	
+				Tile t2=neighbours[dir];
+				t2.Accept(this);			
+				dir=0;
+			}
+		}
 		
 	}
 	
@@ -126,7 +135,7 @@ public class Panda extends Animal {
 			leader=null;
 			myTile.Remove();
 			myTile=null;
-			//léthatóség
+
 			Game.RemoveSteppable(this);
 		}
 				
