@@ -10,4 +10,5 @@ public interface Steppable {
 	 */
 	public void Step();
 
+	public void ListAttributes();
 }

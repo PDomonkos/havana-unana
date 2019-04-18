@@ -146,4 +146,9 @@ public class Orangutan extends Animal {
 		if (dir==myTile.GetNeighbours().length)
 			dir=0;
 	}
+	
+	///list miatt
+	public void ListAttributes() {
+		
+	}
 }

@@ -1,5 +1,6 @@
 package animal;
 import def.Steppable;
+import def.Tester;
 import tile.Armchair;
 import tile.Tile;
 
@@ -107,6 +108,7 @@ public abstract class Animal implements Steppable {
 		p.DisableSteps();
 		p.SetLeader(this);
 		
+		Tester.WriteOutput("% MEGFOGTA ÕT: %", new Object[] {this,p});
 	}
 	
 	/**

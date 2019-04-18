@@ -131,4 +131,9 @@ public class Panda extends Animal {
 				
 	}
 	
+	///list miatt
+	public void ListAttributes() {
+		
+	}
+	
 }

@@ -106,4 +106,9 @@ public class Tile implements Steppable {
 		Tester.WriteOutput("SIKERTELEN LÉTREHOZÁS", null);
 		
 	}
+	
+	///list miatt
+	public void ListAttributes() {
+		
+	}
 }
