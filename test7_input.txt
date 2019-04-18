@@ -1,0 +1,8 @@
+load maps/test_map7.txt
+setRandom OFF
+move o1 0
+stepAll
+listAttributes o1
+listAttributes p1
+listAttributes t1
+listAttributes t2

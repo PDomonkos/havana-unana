@@ -170,8 +170,8 @@ public class Game {
 		
 		steppables = new Steppable[orangutans.size() + pandas.size() + tiles.size()];
 		System.arraycopy(orangutans.toArray(), 0, steppables, 0, orangutans.size());
-		System.arraycopy(pandas.toArray(), 0, steppables, 0, pandas.size());
-		System.arraycopy(tiles.toArray(), 0, steppables, 0, tiles.size());
+		System.arraycopy(pandas.toArray(), 0, steppables, orangutans.size(), pandas.size());
+		System.arraycopy(tiles.toArray(), 0, steppables, orangutans.size() + pandas.size(), tiles.size());
 		
 		if(successfullLoad) Tester.WriteOutput("SIKERES BETÖLTÉS", null);
 		else Tester.WriteOutput("SIKERTELEN BETÖLTÉS", null);

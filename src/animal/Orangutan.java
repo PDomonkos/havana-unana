@@ -77,7 +77,8 @@ public class Orangutan extends Animal {
 			p.Let();
 			p.Swap(myTile, this);
 			
-			p.Grab(this.follower);
+			if (this.follower != null)
+				p.Grab(this.follower);
 			this.follower=p;
 			p.DisableSteps();
 			p.SetLeader(this);
