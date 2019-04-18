@@ -45,13 +45,12 @@ public class WeakTile extends Tile {
 		
 	}
 	
-	// Skeletonhoz
 	// Be kell tudni allitani, hogy mennyi az elete
 	public void set_count(int cnt) { 
 		
 		this.count = cnt; 
 		
-		Tester.WriteOutput("A % TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: %", new Object[] {this, count});
+		Tester.WriteOutput("A % TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: "+count, new Object[] {this});
 		
 	}
 }

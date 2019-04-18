@@ -1,6 +1,7 @@
 package tile;
 import animal.Animal;
 import def.Steppable;
+import def.Tester;
 
 /**
  * Csempe õsosztály
@@ -97,5 +98,12 @@ public class Tile implements Steppable {
 	public Animal GetAnimal() {
 		
 		return myAnimal;
+	}
+	
+	// Be kell tudni allitani, hogy mennyi az elete
+	public void set_count(int cnt) { 
+
+		Tester.WriteOutput("SIKERTELEN LÉTREHOZÁS", null);
+		
 	}
 }
