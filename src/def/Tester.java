@@ -6,7 +6,7 @@ import java.util.Map;
 
 import animal.Animal;
 import animal.Panda;
-import tile.WeakTile;
+import tile.Tile;
 
 public class Tester {
 	
@@ -46,9 +46,8 @@ public class Tester {
 					WriteOutput("%s %s MEZÕN ÁLL", new Object[] {an, an.getTile()});
 					break;
 				case "setWeakTile":
-					WeakTile wt = (WeakTile)objects.get(arr[1]);
-					int cnt = Integer.parseInt(arr[2]);
-					wt.set_count(cnt);
+					Tile current = (Tile)objects.get(arr[1]);
+					current.set_count(Integer.parseInt(arr[2]));
 					break;
 				case "load":
 					Game.Generate(arr[1]);
