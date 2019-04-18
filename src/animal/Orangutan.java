@@ -1,4 +1,7 @@
 package animal;
+import java.util.ArrayList;
+import java.util.List;
+
 import def.Game;
 import def.Tester;
 import tile.Entry;
@@ -151,8 +154,26 @@ public class Orangutan extends Animal {
 //	LÉPHETEK: <IGEN/NEM> - (csak a pandák esetén)
 //	VEZETÕM: <ÁLLAT NEVE> - (csak a pandák esetén) (null ha nincs)	
 	public void ListAttributes() {
-		Tester.WriteOutput(
+		/*Tester.WriteOutput(
 				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT:" + grabBlock, 
-				new Object[] {this, myTile, follower});
+				new Object[] {this, myTile, follower});*/
+
+			String base = new String("NEVEM: %s\n" + "TÍPUSOM: Orangutan\n" + "CSEMPE, AHOL ÁLLOK: %s\n");
+			List<Object> obj = new ArrayList<Object>();
+			obj.add(this);
+			obj.add(myTile);
+
+			if (follower == null)
+				base += new String("KÖVETÕM: null\n");
+			else {
+				base += new String("KÖVETÕM: %s\n");
+				obj.add(follower);
+			}
+			
+			base+= new String("MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: " + grabBlock);
+
+			Object[] objArr = new Object[obj.size()];
+			objArr = obj.toArray();
+			Tester.WriteOutput(base, objArr);
 	}	
 }

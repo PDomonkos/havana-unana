@@ -22,18 +22,14 @@ public class ShyPanda extends Panda {
 
 	@Override
 	public void ListAttributes() {
-		/*
-		 * Tester.WriteOutput(
-		 * "NEVEM: %s\nTÍPUSOM: ShyPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nLÉPHETEK:%s\nVEZETÕM:%s"
-		 * , new Object[] {this, myTile, follower, canStep, leader});
-		 */
-
 		String base = new String("NEVEM: %s\n" + "TÍPUSOM: ShyPanda\n" + "CSEMPE, AHOL ÁLLOK: %s\n");
 		List<Object> obj = new ArrayList<Object>();
 		obj.add(this);
+		obj.add(myTile);
 
 		if (follower == null)
 			base += new String("KÖVETÕM: null\n");
+		
 		else {
 			base += new String("KÖVETÕM: %s\n");
 			obj.add(follower);
