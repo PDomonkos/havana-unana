@@ -16,8 +16,6 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		// static_logger inicializálása
-		Logger.init_static_logger();
 				
 		// Scenario kivalasztasa es futtatasa
 		

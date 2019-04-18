@@ -1,7 +1,6 @@
 package tile;
 import animal.Animal;
 import animal.Orangutan;
-import def.Logger;
 
 /**
  * Bejáratot reprezentáló osztály

@@ -3,7 +3,6 @@ package tile;
 import java.util.Random;
 
 import animal.Animal;
-import def.Logger;
 
 /**
  * Szekrényt reprezentáló osztály

@@ -1,7 +1,5 @@
 package tile;
 import animal.Animal;
-import def.Logger;
-
 /**
  * Csokiautomatát reprezentáló osztály
  *

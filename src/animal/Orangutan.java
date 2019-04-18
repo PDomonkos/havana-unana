@@ -1,6 +1,5 @@
 package animal;
 import def.Game;
-import def.Logger;
 import tile.Entry;
 import tile.Tile;
 
@@ -34,7 +33,6 @@ public class Orangutan extends Animal {
 	 * Orángután lép
 	 */
 	public void Step() {
-		Logger.get_static_logger().enter(this, "Step", null);
 		
 		if(grabBlock!=0) grabBlock--;
 		
@@ -44,7 +42,6 @@ public class Orangutan extends Animal {
 		
 		dir=0;
 		
-		Logger.get_static_logger().exit(this, "Step", null, "");
 	}
 	
 	
@@ -52,12 +49,10 @@ public class Orangutan extends Animal {
 	 * Orángután meghal, vége a játéknak
 	 */
 	public void Die() {
-		Logger.get_static_logger().enter(this, "Die", null);
 
 		//láthatóság
 		Game.End(this);
 		
-		Logger.get_static_logger().exit(this, "Die", null, "");
 	}	
 	
 	/**
@@ -66,7 +61,6 @@ public class Orangutan extends Animal {
 	 * Felszabadítja azt, helyet cserélnek, majd a követõket beállítja
 	 */
 	public void CollideWith(Panda p) {
-		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {p});
 		
 		if(grabBlock == 0) {
 			p.Let();
@@ -78,7 +72,6 @@ public class Orangutan extends Animal {
 			p.SetLeader(this);
 		}
 
-		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {p}, "");
 	}
 	
 	/**
@@ -87,14 +80,12 @@ public class Orangutan extends Animal {
 	 * Felszabadítja azt, helyet cserélnek, majd a követõket beállítja
 	 */
 	public void CollideWith(Orangutan o) {
-		Logger.get_static_logger().enter(this, "CollideWith", new Object[] {o});
 		
 		if(follower == null && grabBlock ==0) {
 			this.Grab(o.Steal());
 			o.Swap(myTile, this);
 		}
 
-		Logger.get_static_logger().exit(this, "CollideWith", new Object[] {o}, "");
 	}
 	
 	/**
@@ -119,23 +110,19 @@ public class Orangutan extends Animal {
 	 * Egy másik állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
 	 */
 	public void HitBy(Animal a) {
-		Logger.get_static_logger().enter(this, "HitBy", new Object[] {a});
 		
 		a.CollideWith(this);
 		
-		Logger.get_static_logger().exit(this, "HitBy", new Object[] {a}, "");
 	}
 	
 	/**
 	 * Orángután kijáraton áthaladva beállítja a bejáraton, hogy õ ment át rajta utána, és nullra állítja a followert
 	 */
 	public void Exit() {
-		Logger.get_static_logger().enter(this, "Exit", null);
 
 		((Entry)myTile).SetOrangutan(this);
 		follower=null;
 		
-		Logger.get_static_logger().exit(this, "Exit", null, "");
 	}
 
 	/**

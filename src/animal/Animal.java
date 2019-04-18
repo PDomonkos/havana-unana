@@ -2,7 +2,6 @@ package animal;
 import def.Steppable;
 import tile.Armchair;
 import tile.Tile;
-import def.Logger;
 
 /**
  * Állatokat reprezentáló absztakt, léptethetõ õsosztály
@@ -65,11 +64,9 @@ public abstract class Animal implements Steppable {
 	 * @param t megadott csempe
 	 */
 	public void SetTile(Tile t) {
-		Logger.get_static_logger().enter(this, "SetTile", new Object[] {t});
 		
 		myTile=t;
 		
-		Logger.get_static_logger().exit(this, "SetTile", new Object[] {t}, "");
 	}
 	
 	/**
@@ -78,14 +75,12 @@ public abstract class Animal implements Steppable {
 	 * @param t a csempe amire lép
 	 */
 	public void Move(Tile t) {
-		Logger.get_static_logger().enter(this, "Move", new Object[] {t});
 		
 		myTile.Remove();
 		if (follower != null)
 			follower.Move(myTile); 
 		t.Add(this);
 		
-		Logger.get_static_logger().exit(this, "Move", new Object[] {t}, "");
 	}
 	
 	/**
@@ -95,12 +90,10 @@ public abstract class Animal implements Steppable {
 	 * @param o orángután
 	 */
 	public void Swap(Tile t, Orangutan o) {
-		Logger.get_static_logger().enter(this, "Swap", null);
 		
 		myTile.Add(o);
 		t.Add(this);
 		
-		Logger.get_static_logger().exit(this, "Swap", null, "");
 	}
 	
 	/**
@@ -109,13 +102,11 @@ public abstract class Animal implements Steppable {
 	 * @param p a húzott panda
 	 */
 	public void Grab(Panda p) {
-		Logger.get_static_logger().enter(this, "Grab", new Object[] {p});
 		
 		this.follower = p;
 		p.DisableSteps();
 		p.SetLeader(this);
 		
-		Logger.get_static_logger().exit(this, "Grab", new Object[] {p}, "");
 	}
 	
 	/**

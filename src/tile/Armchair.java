@@ -2,8 +2,6 @@ package tile;
 
 import animal.Animal;
 import animal.Panda;
-import def.Logger;
-
 /**
  * Fotelt reprezentáló osztály
  *

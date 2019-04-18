@@ -1,5 +1,4 @@
 package tile;
-import def.Logger;
 
 /**
  * Kijáratot reprezentáló osztály
