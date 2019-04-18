@@ -72,8 +72,10 @@ public class Tester {
 		
 		HashMap<Object,String> invertedObjects=invert(objects);
 		
-		for(int  i = 0; i < o.length;i++) {
-			stringParams.add(invertedObjects.get(o[i]));
+		if(o!=null) {
+			for(int  i = 0; i < o.length;i++) {
+				stringParams.add(invertedObjects.get(o[i]));
+			}
 		}
 		
 		StringBuilder sb=new StringBuilder();
