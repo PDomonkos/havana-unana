@@ -1,6 +1,5 @@
 package def;
 import java.util.Scanner;
-//
 
 /**
  * Fõ osztály
