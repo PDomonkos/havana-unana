@@ -18,7 +18,7 @@ public class Tester {
 	private static Map<String, Object> objects;
 	
 	
-	public static boolean isRandom = true;
+	public static boolean isRandom = false;
 	
 	public static void execute(BufferedReader reader) {
 		String line;
@@ -59,8 +59,11 @@ public class Tester {
 					objects = Game.GetObjects();
 					break;
 				case "setRandom":
+					isRandom = true;
 					break;
 				}
+				
+				line = reader.readLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

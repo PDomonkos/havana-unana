@@ -1,4 +1,6 @@
 package def;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 //
 /**
@@ -13,15 +15,7 @@ public class Main {
 	 * @param args parancssori argumentumok
 	 */
 	public static void main(String[] args) {
-		
-		
-				
-		// Scenario kivalasztasa es futtatasa
-		
-		in = new Scanner(System.in);
-		String input="";
-
-			
-		in.close();
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		Tester.execute(in);
 	}
 }
