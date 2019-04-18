@@ -27,10 +27,16 @@ public class Tester {
 					a1.Grab((Panda)a2);
 					break;
 				case "move":
+					Animal a = (Animal)objects.get(arr[1]);
+					int idx = Integer.parseInt(arr[2]);
+					a.SetDir(idx);
 					break;
 				case "stepAll":
+					Game.Update();
 					break;
 				case "listAttributes":
+					Steppable s = (Steppable)objects.get(arr[1]);
+					s.ListAttributes();
 					break;
 				case "setWeakTile":
 					Tile current = (Tile)objects.get(arr[1]);

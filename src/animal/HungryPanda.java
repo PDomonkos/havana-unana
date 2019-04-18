@@ -16,4 +16,9 @@ public class HungryPanda extends Panda {
 		myTile.Add(this);
 		
 	}
+	
+	public void ListAttributes() {
+		
+		
+	}
 }
