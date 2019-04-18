@@ -67,9 +67,9 @@ public class Cupboard extends Tile {
 		}
 		
 		if(myAnimal==null) 	
-			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null\n");
+			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null");
 		else {
-			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: %s\n");
+			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: %s");
 			obj.add(myAnimal);
 		}
 		

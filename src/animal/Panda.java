@@ -1,4 +1,6 @@
 package animal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import def.Main;
@@ -158,6 +160,33 @@ public class Panda extends Animal {
 	}
 	
 	public void ListAttributes() {
+		String base = new String("NEVEM: %s\n" + "TÍPUSOM: Panda\n" + "CSEMPE, AHOL ÁLLOK: [%s]\n");
+		List<Object> obj = new ArrayList<Object>();
+		obj.add(this);
+		obj.add(myTile);
 
+		if (follower == null)
+			base += new String("KÖVETÕM: null\n");
+		
+		else {
+			base += new String("KÖVETÕM: %s\n");
+			obj.add(follower);
+		}
+		
+		if(canStep)
+			base +=new String("LÉPHETEK: true\n");
+		else
+			base +=new String("LÉPHETEK: false\n");
+		
+		if (leader == null)
+			base += new String("VEZETÕM: null");
+		else {
+			base += new String("VEZETÕM: %s");
+			obj.add(leader);
+		}
+
+		Object[] objArr = new Object[obj.size()];
+		objArr = obj.toArray();
+		Tester.WriteOutput(base, objArr);
 	}	
 }

@@ -171,7 +171,7 @@ public class Orangutan extends Animal {
 				"NEVEM: %s\nTÍPUSOM: HungryPanda\nCSEMPE, AHOL ÁLLOK: %s\nKÖVETÕM:%s\nMÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT:" + grabBlock, 
 				new Object[] {this, myTile, follower});*/
 
-			String base = new String("NEVEM: %s\n" + "TÍPUSOM: Orangutan\n" + "CSEMPE, AHOL ÁLLOK: %s\n");
+			String base = new String("NEVEM: %s\n" + "TÍPUSOM: Orangutan\n" + "CSEMPE, AHOL ÁLLOK: [%s]\n");
 			List<Object> obj = new ArrayList<Object>();
 			obj.add(this);
 			obj.add(myTile);

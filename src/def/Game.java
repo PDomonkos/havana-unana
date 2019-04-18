@@ -160,7 +160,7 @@ public class Game {
 					String tileName=separate1.nextToken();
 					Tile tile=(Tile)things.get(tileName);
 					tile.Add(a);
-					Tester.WriteOutput(type + " " + name + " LÉTREHOZVA ITT: " + tileName, null);
+					Tester.WriteOutput(type + " " + name + " LÉTREHOZVA ITT: [" + tileName + "]", null);
 				}
 				
 			}

@@ -60,7 +60,7 @@ public class SlotMachine extends Tile {
 				base+= i+ " - %s, ";
 		}
 		
-		base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null\n");
+		base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null");
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();

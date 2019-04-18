@@ -24,7 +24,7 @@ public class HungryPanda extends Panda {
 	
 	@Override
 	public void ListAttributes() {
-		String base = new String("NEVEM: %s\n" + "TÍPUSOM: HungryPanda\n" + "CSEMPE, AHOL ÁLLOK: %s\n");
+		String base = new String("NEVEM: %s\n" + "TÍPUSOM: HungryPanda\n" + "CSEMPE, AHOL ÁLLOK: [%s]\n");
 		List<Object> obj = new ArrayList<Object>();
 		obj.add(this);
 		obj.add(myTile);
@@ -43,9 +43,9 @@ public class HungryPanda extends Panda {
 			base +=new String("LÉPHETEK: false\n");
 		
 		if (leader == null)
-			base += new String("VEZETÕM: null\n");
+			base += new String("VEZETÕM: null");
 		else {
-			base += new String("VEZETÕM: %s\n");
+			base += new String("VEZETÕM: %s");
 			obj.add(leader);
 		}
 

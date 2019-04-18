@@ -81,7 +81,7 @@ public class WeakTile extends Tile {
 		objArr = obj.toArray();
 		Tester.WriteOutput(base, objArr);
 
-		base += new String("TÖRÉSIG MÉG ENNYI VAN HÁTRA: " + count + "\n");
+		base += new String("TÖRÉSIG MÉG ENNYI VAN HÁTRA: " + count);
 		Tester.WriteOutput(base, objArr);
 	}
 }
