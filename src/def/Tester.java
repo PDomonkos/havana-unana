@@ -94,7 +94,6 @@ public class Tester {
 	}
 	
 	public static void WriteOutput(String s, Object[] o) {
-		if (!write) return;
 		if (o == null) {
 			System.out.println(s);
 		} else {
@@ -111,7 +110,7 @@ public class Tester {
 			Formatter fr=new Formatter(sb);
 			fr.format(s, stringParams.toArray());
 			strb_out.append(sb.toString());
-			System.out.println(sb.toString());
+			if (write) System.out.println(sb.toString());
 			fr.close();
 		}
 	}
