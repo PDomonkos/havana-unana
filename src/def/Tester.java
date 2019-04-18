@@ -31,8 +31,11 @@ public class Tester {
 					a.SetDir(idx);
 					break;
 				case "stepAll":
+					Game.Update();
 					break;
 				case "listAttributes":
+					Steppable s = (Steppable)objects.get(arr[1]);
+					s.ListAttributes();
 					break;
 				case "setWeakTile":
 					break;
