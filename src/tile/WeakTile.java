@@ -50,7 +50,7 @@ public class WeakTile extends Tile {
 		
 		this.count = cnt; 
 		
-		Tester.WriteOutput("A % TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: "+count, new Object[] {this});
+		Tester.WriteOutput("A %s TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: "+count, new Object[] {this});
 		
 	}
 }

@@ -114,7 +114,7 @@ public abstract class Animal implements Steppable {
 		p.DisableSteps();
 		p.SetLeader(this);
 		
-		Tester.WriteOutput("% MEGFOGTA ÕT: %", new Object[] {this,p});
+		Tester.WriteOutput("%s MEGFOGTA ÕT: %s", new Object[] {this,p});
 	}
 	
 	/**
