@@ -1,5 +1,6 @@
 package def;
 import java.util.Scanner;
+//
 
 /**
  * Fõ osztály
@@ -7,7 +8,6 @@ import java.util.Scanner;
  */
 public class Main {
 	public static Scanner in;
-	
 	/**
 	 * Menü listázása, választott szcenárió futtatása
 	 * 
