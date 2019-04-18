@@ -3,8 +3,6 @@ package def;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
 import animal.Animal;
 import animal.Panda;
@@ -43,10 +41,13 @@ public class Tester {
 					Steppable s = (Steppable)objects.get(arr[1]);
 					s.ListAttributes();
 					break;
+				case "getPosition":
+					Animal an = (Animal)objects.get(arr[1]);
+					WriteOutput("%s %s MEZÕN ÁLL", new Object[] {an, an.getTile()});
+					break;
 				case "setWeakTile":
 					Tile current = (Tile)objects.get(arr[1]);
 					current.set_count(Integer.parseInt(arr[2]));
-					
 					break;
 				case "load":
 					Game.Generate(arr[1]);

@@ -150,6 +150,10 @@ public abstract class Animal implements Steppable {
 	public void SetDir(int d) {
 		dir=d;
 	}
+	
+	public Tile getTile() {
+		return myTile;
+	}
 }
 
 
