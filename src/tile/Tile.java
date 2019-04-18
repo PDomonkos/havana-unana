@@ -125,7 +125,13 @@ public class Tile implements Steppable {
 				base+= i+ " - %s, ";
 		}
 		
-		base+= new String("A RAJTAM ÁLLÓ ÁLLAT: %s\n");
+		if(myAnimal==null) 	
+			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null\n");
+		else {
+			base+= new String("A RAJTAM ÁLLÓ ÁLLAT: %s\n");
+			obj.add(myAnimal);
+		}
+		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
 		Tester.WriteOutput(base, objArr);
