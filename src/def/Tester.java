@@ -68,6 +68,8 @@ public class Tester {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		return true;
 	}
 	
 	public static void WriteOutput(String s, Object[] o) {
