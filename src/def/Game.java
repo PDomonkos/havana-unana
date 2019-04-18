@@ -1,10 +1,9 @@
 package def;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.Timer;
 
@@ -55,6 +54,11 @@ public class Game {
 	public static void Generate(String inputFileName) {
 		//azonosítás név alapján
 		HashMap<String, Object> things=new HashMap<String, Object>();
+		
+		List<Tile> tiles = new ArrayList<Tile>();
+		List<Panda> pandas = new ArrayList<Panda>();
+		List<Orangutan> orangutans = new ArrayList<Orangutan>();
+		
 		//sikeresség vizsgálat
 		boolean successfullLoad=true;
 		try {
@@ -64,9 +68,8 @@ public class Game {
 			String line;
 			
 			//elso üres sorig létrehoz
-			while((line=inputBR.readLine())!="") {
+			while(!(line=inputBR.readLine()).equals("*")) {
 				StringTokenizer separate=new StringTokenizer(line," ");
-				
 				//neve
 				String name=separate.nextToken();
 				
@@ -82,9 +85,11 @@ public class Game {
 					case "ex":  things.put(name, new Exit()); break;
 					default: successfullLoad=false; break;
 				}
+				
+				tiles.add((Tile)things.get(name));
 			}
 			//második üres sorig szomszédokat állít
-			while((line=inputBR.readLine())!="") {
+			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
 				StringTokenizer separate1=new StringTokenizer(line,": ");
 				//tile akinek a szomszédait állítjuk
@@ -96,10 +101,12 @@ public class Game {
 				while(separate2.hasMoreTokens()) {
 					neighbours.add((Tile)things.get(separate2.nextToken()));
 				}
-				actual.SetNeighbours((Tile[])neighbours.toArray());
+				Tile[] tiles_tmp = new Tile[neighbours.size()];
+				System.arraycopy(neighbours.toArray(), 0, tiles_tmp, 0, neighbours.size());
+				actual.SetNeighbours(tiles_tmp);
 			}
 			//harmadik üres sorig szekrények kapcsolatai
-			while((line=inputBR.readLine())!="") {
+			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
 				StringTokenizer separate1=new StringTokenizer(line,": ");
 				Cupboard actual=(Cupboard) things.get(separate1.nextToken());
@@ -113,17 +120,17 @@ public class Game {
 				actual.SetCupboards((Cupboard[])neighbours.toArray());
 			}
 			//negyedik üres sorig entry exithez rendelése
-			while((line=inputBR.readLine())!="") {
+			while(!((line=inputBR.readLine()).equals("*"))) {
 				//: leválasztása
 				StringTokenizer separate1=new StringTokenizer(line,": ");
 				Exit actual=(Exit) things.get(separate1.nextToken());
 				actual.setEntry((Entry)things.get(separate1.nextToken()));
 			}
 			//végéig állatok létrehozása
-			while((line=inputBR.readLine())!=null) {
+			while((line=inputBR.readLine()) != null && !line.equals("*")) {
 				StringTokenizer separate1=new StringTokenizer(line," ");
 				//csak create parancsok betöltése
-				if(separate1.nextToken()!="create")continue;
+				if (!separate1.nextToken().equals("create")) continue;
 				
 				Animal a = null;
 				String type=separate1.nextToken();
@@ -135,6 +142,13 @@ public class Game {
 					case "LazyPanda": a= new LazyPanda();  break;
 					default: successfullLoad=false;
 				}
+				
+				if (type.equals("Orangutan")) { 
+					orangutans.add((Orangutan)a);
+					points.put((Orangutan)a, 0);
+				}
+				else pandas.add((Panda)a);
+				
 				if(a!=null) {
 					String name=separate1.nextToken(); 
 					things.put(name,a);
@@ -150,6 +164,12 @@ public class Game {
 			successfullLoad=false;
 		}
 		testThings=things;
+		
+		steppables = new Steppable[orangutans.size() + pandas.size() + tiles.size()];
+		System.arraycopy(orangutans.toArray(), 0, steppables, 0, orangutans.size());
+		System.arraycopy(pandas.toArray(), 0, steppables, 0, pandas.size());
+		System.arraycopy(tiles.toArray(), 0, steppables, 0, tiles.size());
+		
 		if(successfullLoad) Tester.WriteOutput("SIKERES BETÖLTÉS", null);
 		else Tester.WriteOutput("SIKERTELEN BETÖLTÉS", null);
 	}
