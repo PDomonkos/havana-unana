@@ -49,6 +49,10 @@ public class Tester {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void WriteOutput(String s, Object[] o) {
+		
+	}
 }
 
 
