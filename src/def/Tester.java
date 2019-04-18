@@ -37,8 +37,10 @@ public class Tester {
 				case "listAttributes":
 					break;
 				case "setWeakTile":
+					
 					break;
 				case "load":
+					Game.Generate(arr[1]);
 					break;
 				case "setRandom":
 					break;
@@ -56,7 +58,7 @@ public class Tester {
 
 
 
-//
+
 ///**
 // * Objektumokat névvel azonosító hashmap
 // */
