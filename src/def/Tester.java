@@ -1,9 +1,54 @@
 package def;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Tester {
-
+	private static Map<Object, String> objects = new HashMap<Object, String>();
+	
+	public static void execute(BufferedReader reader) {
+		String line;
+		try {
+			line = reader.readLine();
+			
+			while (line != null) {
+				String[] arr = line.split(" ");
+				
+				switch (arr[0]) {
+				case "grab":
+					break;
+				case "move":
+					break;
+				case "create":
+					switch (arr[1]) {
+					case "Orangutan":
+						break;
+					case "LazyPanda":
+						break;
+					case "ShyPanda":
+						break;
+					case "HungryPanda":
+						break;
+					}
+					break;
+				case "stepAll":
+					break;
+				case "listAttributes":
+					break;
+				case "setWeakTile":
+					break;
+				case "load":
+					break;
+				case "setRandom":
+					break;
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 
