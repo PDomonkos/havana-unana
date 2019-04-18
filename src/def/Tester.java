@@ -2,7 +2,12 @@ package def;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Formatter;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import animal.Animal;
 import animal.Panda;
@@ -63,15 +68,27 @@ public class Tester {
 	}
 	
 	public static void WriteOutput(String s, Object[] o) {
+		ArrayList<String> stringParams=new ArrayList<String>();
 		
+		HashMap<Object,String> invertedObjects=invert(objects);
+		
+		for(int  i = 0; i < o.length;i++) {
+			stringParams.add(invertedObjects.get(o[i]));
+		}
+		
+		StringBuilder sb=new StringBuilder();
+		Formatter fr=new Formatter(sb);
+		fr.format(s, stringParams.toArray());
+		System.out.println(sb.toString());
+		fr.close();
 	}
 	
-	/*
-	public static <V, K> Map<V, K> invert(Map<K, V> map) {
-	    return map.entrySet()
+	
+	public static <V, K> HashMap<V, K> invert(Map<K, V> map) {
+	    return (HashMap<V, K>) map.entrySet()
 	              .stream()
 	              .collect(Collectors.toMap(Entry::getValue, Entry::getKey));
-	}**/
+	}
 }
 
 
