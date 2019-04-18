@@ -83,6 +83,12 @@ public abstract class Animal implements Steppable {
 		
 	}
 	
+	// Teszteleshez
+	// Ugyanugy mukodik mint orangutannal
+	public void SetDir(int d) {
+		
+	}
+	
 	/**
 	 * Állat helyet cserél egy orángutánnal
 	 * 
