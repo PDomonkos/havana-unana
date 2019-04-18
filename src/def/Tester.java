@@ -108,7 +108,7 @@ public class Tester {
 			
 			StringBuilder sb=new StringBuilder();
 			Formatter fr=new Formatter(sb);
-			fr.format(s, stringParams.toArray());
+			fr.format(s + "\n", stringParams.toArray());
 			strb_out.append(sb.toString());
 			if (write) System.out.println(sb.toString());
 			fr.close();
