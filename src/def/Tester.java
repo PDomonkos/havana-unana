@@ -1,6 +1,7 @@
 package def;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -15,15 +16,14 @@ import tile.Tile;
 
 public class Tester {
 	
-	private static Map<String, Object> objects;
-	
+	private static Map<String, Object> objects;	
 	
 	public static boolean isRandom = false;
 	
-	public static void execute(BufferedReader reader) {
+	public static boolean execute(BufferedReader test_reader, BufferedReader expected_reader, boolean write_out) {
 		String line;
 		try {
-			line = reader.readLine();
+			line = test_reader.readLine();
 			
 			while (line != null) {
 				String[] arr = line.split(" ");
@@ -63,7 +63,7 @@ public class Tester {
 					break;
 				}
 				
-				line = reader.readLine();
+				line = test_reader.readLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

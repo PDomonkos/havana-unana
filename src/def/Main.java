@@ -16,6 +16,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		Tester.execute(in);
+		Tester.execute(in, null, true);
 	}
 }
