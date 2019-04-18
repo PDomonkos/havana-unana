@@ -138,13 +138,14 @@ public class Game {
 				if(a!=null) {
 					String name=separate1.nextToken(); 
 					things.put(name,a);
-					String tile=separate1.nextToken();
-					a.SetTile((Tile)things.get(tile));
-					Tester.WriteOutput(type + " " + name + " LÉTREHOZVA ITT: " + tile, null);
+					String tileName=separate1.nextToken();
+					Tile tile=(Tile)things.get(tileName);
+					tile.Add(a);
+					Tester.WriteOutput(type + " " + name + " LÉTREHOZVA ITT: " + tileName, null);
 				}
 				
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			successfullLoad=false;
 		}
