@@ -14,6 +14,7 @@ public class Main {
 	 * @param args parancssori argumentumok
 	 */
 	public static void main(String[] args) {
+		in= new Scanner(System.in);
 		try {
 			System.out.println("1.: Egy teszteset futtatása");
 			System.out.println("2.: Összes teszteset futtatása");

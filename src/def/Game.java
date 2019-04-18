@@ -55,6 +55,8 @@ public class Game {
 		//azonosítás név alapján
 		HashMap<String, Object> things=new HashMap<String, Object>();
 		
+		points = new HashMap<Orangutan, Integer>();
+		
 		List<Tile> tiles = new ArrayList<Tile>();
 		List<Panda> pandas = new ArrayList<Panda>();
 		List<Orangutan> orangutans = new ArrayList<Orangutan>();
@@ -118,6 +120,7 @@ public class Game {
 					neighbours.add((Cupboard)things.get(separate2.nextToken()));
 				}
 				actual.SetCupboards((Cupboard[])neighbours.toArray());
+				
 			}
 			//negyedik üres sorig entry exithez rendelése
 			while(!((line=inputBR.readLine()).equals("*"))) {
@@ -136,7 +139,7 @@ public class Game {
 				String type=separate1.nextToken();
 				switch(type) {
 					case "Panda": a= new Panda(); break;
-					case "Orangutan": a= new Orangutan();  break;
+					case "Orangutan": a= new Orangutan();break;
 					case "ShyPanda":  a= new ShyPanda();break;
 					case "HungryPanda": a= new HungryPanda(); break;
 					case "LazyPanda": a= new LazyPanda();  break;
@@ -205,7 +208,9 @@ public class Game {
 	 * Léptethetõ dolgok léptetése
 	 */
 	public static void Update() {
-		
+		for (Steppable s: steppables) {
+			s.Step();
+		}
 	}
 	
 	public static HashMap<String, Object> GetObjects() {
