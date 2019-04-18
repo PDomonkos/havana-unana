@@ -45,12 +45,14 @@ public class Panda extends Animal {
 	 */
 	public void Die() {
 		
+		Tester.WriteOutput("MEGHALT %s ITT: %s", new Object[] {this,myTile});
+		
 		myTile.Remove();
 		myTile=null;
 		this.Let();
 		
 		//láthatóság
-		Game.RemoveSteppable(this);
+		Game.RemoveSteppable(this);	
 		
 	}
 	
@@ -80,8 +82,12 @@ public class Panda extends Animal {
 	 * Panda véletlenszerûen lép egy szomszédos mezõre, ha léphet
 	 */
 	public void Step() {
+			
 		if(canStep)
 		{
+			//sikertelen lépés miatt csak
+			Tile t=myTile;
+			
 			if (Tester.isRandom){
 				Tile[] neighbours=myTile.GetNeighbours();
 				Random rand = new Random();
@@ -94,6 +100,11 @@ public class Panda extends Animal {
 				t2.Accept(this);			
 				dir=0;
 			}
+			
+			if(t != myTile)
+				Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
+			else
+				Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
 		}
 		
 	}
@@ -139,7 +150,10 @@ public class Panda extends Animal {
 			myTile=null;
 
 			Game.RemoveSteppable(this);
+				
 		}
+		
+		Tester.WriteOutput("%s KIMENT", new Object[] {this});
 				
 	}
 	
