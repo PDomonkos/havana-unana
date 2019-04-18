@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Timer;
@@ -41,14 +42,15 @@ public class Game {
 	static private HashMap<Orangutan, Integer> points;
 	
 	/**
-	 * Csak a protohoz, a csempék átadása a testernek
+	 * Csak a protohoz, a dolgok átadása a testernek
 	 */
-	private static HashMap<Object, String> things;
+	private static HashMap<String, Object> testThings;
 	
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
 	 */
 	public static void Generate(String inputFileName) {
+		HashMap<Object, String> things=new HashMap<Object, String>();
 		try {
 			FileReader inputFR = new FileReader(inputFileName);
 		
@@ -77,10 +79,9 @@ public class Game {
 				String name=separate1.nextToken();
 				//, leválasztása
 				StringTokenizer separate2=new StringTokenizer(line,", ");
-				Tile[] neighbours;
+				ArrayList<Tile> neighbours=new ArrayList<Tile>();
 				String neighbour;
 				while(separate2.hasMoreTokens()) {
-					
 				}
 			}
 		} catch (IOException e) {
@@ -124,7 +125,7 @@ public class Game {
 		
 	}
 	
-	public HashMap<Object, String> GetObjects() {
-		return things;
+	public static HashMap<String, Object> GetObjects() {
+		return testThings;
 	}
 }
