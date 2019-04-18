@@ -2,11 +2,15 @@ package def;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+import animal.Animal;
+import animal.Panda;
 
 public class Tester {
-	
+	private static Map<String, Object> objects;
 	public static void execute(BufferedReader reader) {
 		String line;
 		try {
@@ -17,20 +21,11 @@ public class Tester {
 				
 				switch (arr[0]) {
 				case "grab":
+					Animal a1 = (Animal)name_object.get(arr[1]);
+					Animal a2 = (Animal)name_object.get(arr[2]);
+					a1.Grab((Panda)a2);
 					break;
 				case "move":
-					break;
-				case "create":
-					switch (arr[1]) {
-					case "Orangutan":
-						break;
-					case "LazyPanda":
-						break;
-					case "ShyPanda":
-						break;
-					case "HungryPanda":
-						break;
-					}
 					break;
 				case "stepAll":
 					break;
@@ -39,6 +34,8 @@ public class Tester {
 				case "setWeakTile":
 					break;
 				case "load":
+					Game.Generate(arr[1]);
+					objects = Game.GetObjects();
 					break;
 				case "setRandom":
 					break;
@@ -52,6 +49,12 @@ public class Tester {
 	public static void WriteOutput(String s, Object[] o) {
 		
 	}
+	/*
+	public static <V, K> Map<V, K> invert(Map<K, V> map) {
+	    return map.entrySet()
+	              .stream()
+	              .collect(Collectors.toMap(Entry::getValue, Entry::getKey));
+	}**/
 }
 
 

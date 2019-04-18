@@ -125,7 +125,7 @@ public class Game {
 		
 	}
 	
-	public HashMap<String, Object> GetObjects() {
+	public static HashMap<String, Object> GetObjects() {
 		return testThings;
 	}
 }
