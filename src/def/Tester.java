@@ -87,18 +87,17 @@ public class Tester {
 				e.printStackTrace();
 			}
 			
-			String s1 = strb_out.toString().replaceAll("\n", "").trim();
-			String s2 = strb_exp.toString().replaceAll("\n", "").trim();
+			String s1 = strb_out.toString().replaceAll("\n", "").trim().toUpperCase();
+			String s2 = strb_exp.toString().replaceAll("\n", "").trim().toUpperCase();
 			
-			System.out.println("-----------");
-			System.out.println(s1 + "\n" + s2);
+			s2 = s2.substring(1, s2.length());
 			
 			return s1.equals(s2);
+			
 		}
 		
 		return true;
-	}
-	
+	}	
 	
 	public static void WriteOutput(String s, Object[] o) {
 		if (o == null) {
