@@ -87,11 +87,18 @@ public class Tester {
 				e.printStackTrace();
 			}
 			
-			return strb_out.toString().equals(strb_exp.toString());
+			String s1 = strb_out.toString().replaceAll("\n", "").trim();
+			String s2 = strb_exp.toString().replaceAll("\n", "").trim();
+			
+			System.out.println("-----------");
+			System.out.println(s1 + "\n" + s2);
+			
+			return s1.equals(s2);
 		}
 		
 		return true;
 	}
+	
 	
 	public static void WriteOutput(String s, Object[] o) {
 		if (o == null) {
