@@ -43,9 +43,9 @@ public class LazyPanda extends Panda {
 		}
 		
 		if(canStep)
-			base +=new String("LÉPHETEK: true\n");
+			base +=new String("LÉPHETEK: IGEN\n");
 		else
-			base +=new String("LÉPHETEK: false\n");
+			base +=new String("LÉPHETEK: NEM\n");
 		
 		if (leader == null)
 			base += new String("VEZETÕM: null");
