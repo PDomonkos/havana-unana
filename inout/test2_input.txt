@@ -1,0 +1,2 @@
+load maps/test_map2.txt
+listAttributes o1

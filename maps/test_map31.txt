@@ -1,0 +1,15 @@
+t1 nt
+e1 ex
+e2 en
+t2 nt
+*
+t1: e1
+e1: t1
+e2: t2
+t2: e2
+*
+*
+e1: e2
+*
+create Orangutan o1 t1
+*

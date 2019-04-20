@@ -1,0 +1,11 @@
+LazyPanda p1 LÉTREHOZVA ITT: t1
+
+SIKERES BETÖLTÉS
+
+p1 LEÜLT ITT: t5
+
+NEVEM: t5
+TÍPUSOM: Armchair
+SZOMSZÉDAIM: 0 - t4 , 1 - t3 , 2 - t2 , 3 - t1
+A RAJTAM ÁLLÓ ÁLLAT: p1
+MÉG ENNYI KÖRIG PIHENSZ: 2

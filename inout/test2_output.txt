@@ -1,0 +1,9 @@
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
+
+SIKERES BETÖLTÉS
+
+NEVEM: o1
+TÍPUSOM: Orangutan
+CSEMPE, AHOL ÁLLOK: [t1]
+KÖVETŐM: null
+MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 0

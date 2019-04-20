@@ -1,0 +1,4 @@
+load maps/test_map25.txt
+setRandom OFF
+stepAll
+listAttributes t5

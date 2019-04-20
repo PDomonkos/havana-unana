@@ -1,0 +1,10 @@
+t1 nt
+t2 ac
+*
+t1: t2
+t2: t1
+*
+*
+*
+create LazyPanda p t1
+*

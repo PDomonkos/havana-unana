@@ -26,9 +26,9 @@ public class Main {
 				System.out.println("Adja meg a teszteset számát (1-33)!");
 				int n= Integer.parseInt(in.nextLine());
 				if(0<n && n<34) {
-					FileReader fr1 = new FileReader("test"+n+"_input.txt");
+					FileReader fr1 = new FileReader("inout/test"+n+"_input.txt");
 					BufferedReader br1 = new BufferedReader(fr1);
-					FileReader fr2 = new FileReader("test"+n+"_output.txt");
+					FileReader fr2 = new FileReader("inout/test"+n+"_output.txt");
 					BufferedReader br2 = new BufferedReader(fr2);
 					boolean success = Tester.execute(br1,br2,true);
 					if (success) System.out.println("Sikeres!");

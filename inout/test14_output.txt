@@ -1,0 +1,33 @@
+Panda p1 LÉTREHOZVA ITT: [t1]
+
+SIKERES BETÖLTÉS
+
+SIKERES LÉPÉS p1
+
+SIKERES LÉPÉS p1
+
+NEVEM: p1
+TÍPUSOM: Panda
+CSEMPE, AHOL ÁLLOK: [t4]
+VEZETŐM: o1
+KÖVETŐM: null
+
+NEVEM: t1
+TÍPUSOM: Tile
+SZOMSZÉDAIM: 0 - t2
+A RAJTAM ÁLLÓ ÁLLAT: null
+
+NEVEM: t2
+TÍPUSOM: Cupboard
+SZOMSZÉDAIM: 0 - t1
+A RAJTAM ÁLLÓ ÁLLAT: null
+
+NEVEM: t3
+TÍPUSOM: Cupboard
+SZOMSZÉDAIM: 0 - t4
+A RAJTAM ÁLLÓ ÁLLAT: null
+
+NEVEM: t4
+TÍPUSOM: Cupboard
+SZOMSZÉDAIM: 0 - t3
+A RAJTAM ÁLLÓ ÁLLAT: p1

@@ -1,0 +1,10 @@
+load maps/test_map27.txt
+setRandom OFF
+grab o1 p1
+grab p1 p2
+grab p2 p3
+stepAll
+listAttributes p1
+listAttributes p2
+listAttributes p3
+listAttributes t5

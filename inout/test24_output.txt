@@ -1,0 +1,27 @@
+Orangutan o1 LÉTREHOZVA ITT: [t1]
+
+Panda p1 LÉTREHOZVA ITT: [t2]
+
+Panda p2 LÉTREHOZVA ITT: [t3]
+
+SIKERES BETÖLTÉS
+
+o1 MEGFOGTA ŐT: p1
+
+p1 MEGFOGTA ŐT: p2
+
+SÍPOLÁS VOLT ITT: t5
+
+NEVEM: p1
+TÍPUSOM: Panda
+CSEMPE, AHOL ÁLLOK: [t2]
+KÖVETŐM: p2
+LÉPHETEK: NEM
+VEZETŐM: o1
+
+NEVEM: p2
+TÍPUSOM: Panda
+CSEMPE, AHOL ÁLLOK: [t3]
+KÖVETŐM: null
+LÉPHETEK: NEM
+VEZETŐM: p1

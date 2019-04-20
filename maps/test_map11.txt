@@ -1,0 +1,17 @@
+t1 nt
+t2 nt
+t3 nt
+t4 nt
+*
+t1: t2, t4
+t2: t3, t1
+t3: t2
+t4: t1
+*
+*
+*
+create Orangutan o1 t1
+create Panda p1 t2
+create Panda p2 t3
+create Panda p3 t4
+*
