@@ -97,7 +97,7 @@ public abstract class Animal implements Steppable {
 		myTile.Add(o);
 		t.Add(this);
 		
-		Tester.WriteOutput("%s HELYET CSERÉLT VELE: %s", new Object[] {this,o});
+		Tester.WriteOutput("%s HELYET CSERÉLT VELE: %s", new Object[] {o,this});
 	}
 	
 	/**
