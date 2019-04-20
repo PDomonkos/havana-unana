@@ -103,7 +103,7 @@ public class Panda extends Animal {
 				dir=0;
 			}
 			
-			if(t != myTile)
+			if(t == myTile)
 				Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
 			else
 				Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
