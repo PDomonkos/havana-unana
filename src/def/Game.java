@@ -93,7 +93,7 @@ public class Game {
 			//második üres sorig szomszédokat állít
 			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
-				StringTokenizer separate1=new StringTokenizer(line,": ");
+				StringTokenizer separate1=new StringTokenizer(line,":");
 				//tile akinek a szomszédait állítjuk
 				Tile actual=(Tile) things.get(separate1.nextToken());
 				//, leválasztása
