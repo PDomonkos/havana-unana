@@ -107,6 +107,7 @@ public abstract class Animal implements Steppable {
 	 */
 	public void Grab(Panda p) {
 		
+		if(p==null) return;
 		this.follower = p;
 		p.DisableSteps();
 		p.SetLeader(this);
