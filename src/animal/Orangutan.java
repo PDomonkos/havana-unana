@@ -83,6 +83,9 @@ public class Orangutan extends Animal {
 			if (this.follower != null)
 				p.Grab(this.follower);
 			this.follower=p;
+			
+			Tester.WriteOutput("%s MEGFOGTA ÕT: %s", new Object[] {this,p});
+			
 			p.DisableSteps();
 			p.SetLeader(this);
 		}
