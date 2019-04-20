@@ -1,4 +1,4 @@
-Panda p1 LÉTREHOZVA ITT: [t1]
+﻿Panda p1 LÉTREHOZVA ITT: [t1]
 
 Panda p2 LÉTREHOZVA ITT: [t2]
 
