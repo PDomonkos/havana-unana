@@ -90,7 +90,7 @@ public class Tester {
 			String s1 = strb_out.toString().replaceAll("\n", "").replaceAll(" ", "").trim().toUpperCase();
 			String s2 = strb_exp.toString().replaceAll("\n", "").replaceAll(" ", "").trim().toUpperCase();
 			
-			s2 = s2.substring(1, s2.length());
+			s2 = s2.substring(0, s2.length());
 			
 			System.out.println(s1 + "\n" + s2);
 			
