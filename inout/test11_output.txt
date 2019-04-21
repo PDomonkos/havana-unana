@@ -1,4 +1,4 @@
-Orangutan o1 LÉTREHOZVA ITT: [t1]
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
 Panda p1 LÉTREHOZVA ITT: [t2]
 
@@ -10,11 +10,11 @@ SIKERES BETÖLTÉS
 
 o1 MEGFOGTA ŐT: p1
 
-o1 MEGFOGTA ŐT: p2
+p1 MEGFOGTA ŐT: p2
 
 o1 HELYET CSERÉLT VELE: p3
 
-p3 MEGFOGTA ŐT: p2
+p3 MEGFOGTA ŐT: p1
 
 o1 MEGFOGTA ŐT: p3
 
@@ -23,7 +23,7 @@ SIKERES LÉPÉS o1
 NEVEM: o1
 TÍPUSOM: Orangutan
 CSEMPE, AHOL ÁLLOK: [t4]
-KÖVETŐM: p1
+KÖVETŐM: p3
 MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 0
 
 NEVEM: p1
