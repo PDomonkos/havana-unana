@@ -43,12 +43,12 @@ public class Orangutan extends Animal {
 		if(grabBlock!=0) grabBlock--;
 		
 		Tile[] neighbours=myTile.GetNeighbours();	
-		Tile t2=neighbours[dir];
+		Tile t2=neighbours[dir % neighbours.length];
 		t2.Accept(this);
 		
 		dir=0;
 		
-		if(t == myTile)
+		if(t != myTile)
 			Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
 		else
 			Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});

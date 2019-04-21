@@ -51,7 +51,7 @@ public class Tester {
 					break;
 				case "getPosition":
 					Animal an = (Animal)objects.get(arr[1]);
-					WriteOutput("%s %s MEZ’N ¡LL", new Object[] {an, an.getTile()});
+					WriteOutput("%s %s MEZ√ïN √ÅLL", new Object[] {an, an.getTile()});
 					break;
 				case "setWeakTile":
 					Tile current = (Tile)objects.get(arr[1]);
@@ -87,15 +87,24 @@ public class Tester {
 				e.printStackTrace();
 			}
 			
-			return strb_out.toString().equals(strb_exp.toString());
+			String s1 = strb_out.toString().replaceAll("\n", "").replaceAll(" ", "").trim().toUpperCase();
+			String s2 = strb_exp.toString().replaceAll("\n", "").replaceAll(" ", "").trim().toUpperCase();
+			
+			s2 = s2.substring(1, s2.length());
+			
+			System.out.println(s1 + "\n" + s2);
+			
+			return s1.equals(s2);
+			
 		}
 		
 		return true;
-	}
+	}	
 	
 	public static void WriteOutput(String s, Object[] o) {
 		if (o == null) {
 			System.out.println(s);
+			strb_out.append(s);
 		} else {
 			ArrayList<String> stringParams=new ArrayList<String>();
 			
