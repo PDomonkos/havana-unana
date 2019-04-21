@@ -1,10 +1,10 @@
 Orangutan o1 LÉTREHOZVA ITT: [t1]
 
-Orangutan o2 LÉTREHOZVA ITT: [t2]
+Panda p1 LÉTREHOZVA ITT: [t2]
 
-Panda p1 LÉTREHOZVA ITT: [t3]
+Panda p2 LÉTREHOZVA ITT: [t3]
 
-Panda p2 LÉTREHOZVA ITT: [t4]
+Panda p3 LÉTREHOZVA ITT: [t4]
 
 SIKERES BETÖLTÉS
 
@@ -45,7 +45,7 @@ TÍPUSOM: Panda
 CSEMPE, AHOL ÁLLOK: [t1]
 KÖVETŐM: p1
 LÉPHETEK: NEM
-VEZETŐM: o2
+VEZETŐM: o1
 
 NEVEM: t1
 TÍPUSOM: Tile
