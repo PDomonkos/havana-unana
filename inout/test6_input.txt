@@ -1,0 +1,7 @@
+load maps/test_map6.txt
+move o1 0
+stepAll
+getPosition o1
+getPosition o2
+listAttributes t1
+listAttributes t2

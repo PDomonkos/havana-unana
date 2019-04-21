@@ -1,0 +1,13 @@
+Orangutan o1 LÉTREHOZVA ITT: t1
+
+Orangutan o2 LÉTREHOZVA ITT: t0
+
+Panda p1 LÉTREHOZVA ITT: t2
+
+SIKERES BETÖLTÉS
+
+o1 MEGFOGTA ŐT: p
+
+o1 HELYET CSERÉLT VELE o2
+
+SIKERES LÉPÉS o1

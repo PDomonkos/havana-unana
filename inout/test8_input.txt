@@ -1,0 +1,8 @@
+load maps/test_map8.txt
+setRandom OFF
+move p1 0
+stepAll
+listAttributes p1
+listAttributes p2
+listAttributes t1
+listAttributes t2

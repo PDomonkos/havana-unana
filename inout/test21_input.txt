@@ -1,0 +1,6 @@
+load maps/test_map21.txt
+setRandom OFF
+setWeakTile t1 1
+stepAll
+listAttributes t1
+

@@ -1,0 +1,7 @@
+t1 nt
+*
+*
+*
+*
+create Panda p1 t1
+*

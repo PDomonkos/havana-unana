@@ -1,0 +1,16 @@
+t1 nt
+t2 nt
+t3 nt
+t4 nt
+t5 ac
+*
+t1: t4, t5, t2
+t2: t1, t5, t3
+t3: t4, t2, t5
+t4: t3, t5, t1
+t5: t4, t3, t2, t1
+*
+*
+*
+create LazyPanda p1 t1
+*

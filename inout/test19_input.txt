@@ -1,0 +1,8 @@
+load maps/test_map19.txt
+setWeakTile t2 2
+grab o p
+move o 1
+stepAll
+move o 1
+stepAll
+listAttributes o

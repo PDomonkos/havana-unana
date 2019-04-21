@@ -27,6 +27,7 @@ public class Tester {
 		String line;
 		try {
 			line = test_reader.readLine();
+			strb_out = new StringBuilder();
 			
 			while (line != null) {
 				String[] arr = line.split(" ");

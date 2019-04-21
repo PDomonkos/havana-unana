@@ -1,0 +1,5 @@
+load maps/test_map33.txt
+setRandom OFF
+grab o1 p
+move o2 0
+stepAll

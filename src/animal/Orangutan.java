@@ -29,7 +29,7 @@ public class Orangutan extends Animal {
 	 */
 	public Orangutan() {
 		grabBlock=0;
-		dir=0;
+		dir=-1;
 	}
 	
 		
@@ -37,6 +37,8 @@ public class Orangutan extends Animal {
 	 * Orángután lép
 	 */
 	public void Step() {
+		//nem akart lépni
+		if(dir==-1) return;
 		//sikertelen lépés miatt csak
 		Tile t=myTile;
 		
@@ -48,10 +50,11 @@ public class Orangutan extends Animal {
 		
 		dir=0;
 		
-		if(t != myTile)
+		if(t == myTile)
 			Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
 		else
 			Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
+		dir=-1;
 	}
 	
 	
@@ -80,6 +83,9 @@ public class Orangutan extends Animal {
 			if (this.follower != null)
 				p.Grab(this.follower);
 			this.follower=p;
+			
+			Tester.WriteOutput("%s MEGFOGTA ÕT: %s", new Object[] {this,p});
+			
 			p.DisableSteps();
 			p.SetLeader(this);
 		}

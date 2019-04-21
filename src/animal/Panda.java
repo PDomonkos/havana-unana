@@ -38,6 +38,7 @@ public class Panda extends Animal {
 	public Panda() {
 		canStep=true;
 		leader=null;
+		dir=-1;
 	}
 	
 	/**
@@ -84,7 +85,6 @@ public class Panda extends Animal {
 	 * Panda véletlenszerûen lép egy szomszédos mezõre, ha léphet
 	 */
 	public void Step() {
-			
 		if(canStep)
 		{
 			//sikertelen lépés miatt csak
@@ -95,19 +95,20 @@ public class Panda extends Animal {
 				Random rand = new Random();
 				Tile t2=neighbours[rand.nextInt( neighbours.length )];
 				t2.Accept(this);
-			}	
+			}
+			if(dir==-1) return;
 			else if (!Tester.isRandom) {
 				Tile[] neighbours=myTile.GetNeighbours();	
 				Tile t2=neighbours[dir];
 				t2.Accept(this);			
 				dir=0;
 			}
-			
-			if(t != myTile)
+			if(t == myTile)
 				Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
 			else
 				Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
 		}
+		dir=-1;
 		
 	}
 	

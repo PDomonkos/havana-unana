@@ -1,0 +1,11 @@
+t1 nt
+t2 nt
+*
+t1: t2
+t2: t1
+*
+*
+*
+create Panda p1 t1
+create Panda p2 t2
+*

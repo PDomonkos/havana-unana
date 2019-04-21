@@ -1,0 +1,11 @@
+load maps/test_map32.txt
+setRandom OFF
+grab o1 p1
+grab p1 p2
+move o1 0
+stepAll
+move o1 0
+stepAll
+listAttributes o1
+listAttributes p1
+listAttributes p2

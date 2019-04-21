@@ -1,0 +1,14 @@
+load maps/test_map13.txt
+grab o1 p1
+setRandom OFF
+move o1 1
+stepAll
+move o1 0
+stepAll
+listAttributes o1
+listAttributes p1
+listAttributes t1
+listAttributes t2
+listAttributes t3
+listAttributes t4
+listAttributes t5
