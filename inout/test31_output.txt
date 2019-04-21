@@ -1,4 +1,4 @@
-Orangutan o1 LÉTREHOZVA ITT: t1
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 

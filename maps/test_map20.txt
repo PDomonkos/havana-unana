@@ -1,10 +1,10 @@
 t1 wt
-t2 sm
+t2 vm
 *
 t1: t2
 t2: t1
 *
 *
 *
-create ShyPanda p1 t1
+create HungryPanda p1 t1
 *

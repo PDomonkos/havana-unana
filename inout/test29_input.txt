@@ -1,4 +1,4 @@
-load maps/test_map29 .txt
+load maps/test_map29.txt
 setRandom OFF
 stepAll
 setRandom ON

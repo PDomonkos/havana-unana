@@ -11,29 +11,29 @@ import def.Game;
 import def.Tester;
 
 /**
- * Panda osztály
+ * Panda osztÃ¡ly
  *
- * Játékosok álltal nem irányítható állat
+ * JÃ¡tÃ©kosok Ã¡lltal nem irÃ¡nyÃ­thatÃ³ Ã¡llat
  */
 public class Panda extends Animal {
 	/**
-	 * Meghatározza, hogy a panda léphet e magától
+	 * MeghatÃ¡rozza, hogy a panda lÃ©phet e magÃ¡tÃ³l
 	 */
 	protected boolean canStep;
 	/**
-	 * A pandát húzó állat
+	 * A pandÃ¡t hÃºzÃ³ Ã¡llat
 	 */
 	protected Animal leader; 
 	
 	/**
-	 * Beállítja a pandát húzó állatot
+	 * BeÃ¡llÃ­tja a pandÃ¡t hÃºzÃ³ Ã¡llatot
 	 */
 	public void SetLeader(Animal a) {
 		leader=a;
 	}
 	
 	/**
-	 * Konstruktor, a panda alapból léphet
+	 * Konstruktor, a panda alapbÃ³l lÃ©phet
 	 */
 	public Panda() {
 		canStep=true;
@@ -42,9 +42,9 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Panda lezuhan és meghal
+	 * Panda lezuhan Ã©s meghal
 	 * 
-	 * Eltávolítja magát a csempérõl, elengedi a követõit
+	 * EltÃ¡volÃ­tja magÃ¡t a csempÃ©rÅ‘l, elengedi a kÃ¶vetÅ‘it
 	 */
 	public void Die() {
 		
@@ -54,40 +54,41 @@ public class Panda extends Animal {
 		myTile=null;
 		this.Let();
 		
-		//láthatóság
+		//lÃ¡thatÃ³sÃ¡g
 		Game.RemoveSteppable(this);	
 		
 	}
 	
 	/**
-	 * Állat elengedi a mögötte lévõ panda kezét 
+	 * Ãllat elengedi a mÃ¶gÃ¶tte lÃ©vÅ‘ panda kezÃ©t 
 	 * 
-	 * Az elõtte lévõ panda elengedi, a mögötte lévõ pandák is elengedik egymást, felbomlik a sor, mindenki szabadon léphet tovább
+	 * Az elÅ‘tte lÃ©vÅ‘ panda elengedi, a mÃ¶gÃ¶tte lÃ©vÅ‘ pandÃ¡k is elengedik egymÃ¡st, felbomlik a sor, mindenki szabadon lÃ©phet tovÃ¡bb
 	 */
 	public void Let() {
 		
 		if (leader!=null) {
 			leader.ResetFollower();
+			Tester.WriteOutput("%s ELENGEDTE Ã•T: %s", new Object[] {leader, this});
 		}
 		
 		leader=null;
 		this.EnableSteps();
 		
 		if (follower != null) {
+			//Tester.WriteOutput("%s ELENGEDTE Ã•T: %s", new Object[] {this,follower});
 			follower.Let();
 			
-			Tester.WriteOutput("%s ELENGEDTE ÕT: %s", new Object[] {this,follower});
 		}
 		
 	}
 	
 	/**
-	 * Panda véletlenszerûen lép egy szomszédos mezõre, ha léphet
+	 * Panda vÃ©letlenszerÅ±en lÃ©p egy szomszÃ©dos mezÅ‘re, ha lÃ©phet
 	 */
 	public void Step() {
 		if(canStep)
 		{
-			//sikertelen lépés miatt csak
+			//sikertelen lÃ©pÃ©s miatt csak
 			Tile t=myTile;
 			
 			if (Tester.isRandom){
@@ -104,9 +105,9 @@ public class Panda extends Animal {
 				dir=0;
 			}
 			if(t == myTile)
-				Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
+				Tester.WriteOutput("SIKERTELEN LÃ‰PÃ‰S %s", new Object[] {this});
 			else
-				Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
+				Tester.WriteOutput("SIKERES LÃ‰PÃ‰S %s", new Object[] {this});
 		}
 		dir=-1;
 		
@@ -114,7 +115,7 @@ public class Panda extends Animal {
 	
 
 	/**
-	 * Engedi lépni a pandát
+	 * Engedi lÃ©pni a pandÃ¡t
 	 */
 	public void EnableSteps() {
 		
@@ -123,7 +124,7 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Panda nem léphet magától
+	 * Panda nem lÃ©phet magÃ¡tÃ³l
 	 */
 	public void DisableSteps() {
 		
@@ -132,7 +133,7 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Egy másik állat nekiment a pandának, aki visszajelez, hogy ütközött egy pandával
+	 * Egy mÃ¡sik Ã¡llat nekiment a pandÃ¡nak, aki visszajelez, hogy Ã¼tkÃ¶zÃ¶tt egy pandÃ¡val
 	 */
 	public void HitBy(Animal a) {
 		
@@ -141,7 +142,7 @@ public class Panda extends Animal {
 	}
 	
 	/**
-	 * Panda elhagyja a pályát, pontot ad a megfelelõ orángutánnak, és nullra állítja a referenciáit
+	 * Panda elhagyja a pÃ¡lyÃ¡t, pontot ad a megfelelÅ‘ orÃ¡ngutÃ¡nnak, Ã©s nullra Ã¡llÃ­tja a referenciÃ¡it
 	 */
 	public void Exit() {
 
@@ -161,28 +162,28 @@ public class Panda extends Animal {
 	}
 	
 	public void ListAttributes() {
-		String base = new String("NEVEM: %s\n" + "TÍPUSOM: Panda\n" + "CSEMPE, AHOL ÁLLOK: [%s]\n");
+		String base = new String("NEVEM: %s\n" + "TÃPUSOM: Panda\n" + "CSEMPE, AHOL ÃLLOK: [%s]\n");
 		List<Object> obj = new ArrayList<Object>();
 		obj.add(this);
 		obj.add(myTile);
 
 		if (follower == null)
-			base += new String("KÖVETÕM: null\n");
+			base += new String("KÃ–VETÅM: null\n");
 		
 		else {
-			base += new String("KÖVETÕM: %s\n");
+			base += new String("KÃ–VETÅM: %s\n");
 			obj.add(follower);
 		}
 		
 		if(canStep)
-			base +=new String("LÉPHETEK: IGEN\n");
+			base +=new String("LÃ‰PHETEK: IGEN\n");
 		else
-			base +=new String("LÉPHETEK: NEM\n");
+			base +=new String("LÃ‰PHETEK: NEM\n");
 		
 		if (leader == null)
-			base += new String("VEZETÕM: null");
+			base += new String("VEZETÅM: null");
 		else {
-			base += new String("VEZETÕM: %s");
+			base += new String("VEZETÅM: %s");
 			obj.add(leader);
 		}
 

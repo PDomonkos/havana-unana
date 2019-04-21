@@ -1,6 +1,6 @@
-Orangutan o1 LÉTREHOZVA ITT: [t1]
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
-HungryPanda p1 LÉTREHOZVA ITT: [t2]
+ShyPanda p1 LÉTREHOZVA ITT: [t2]
 
 Panda p2 LÉTREHOZVA ITT: [t3]
 
@@ -14,14 +14,14 @@ p1 MEGFOGTA ŐT: p2
 
 p2 MEGFOGTA ŐT: p3
 
-SÍPOLÁS VOLT ITT: t5
+CSILINGELÉS VOLT ITT: t5
 
 p1 ELENGEDTE ŐT: p2
 
 p2 ELENGEDTE ŐT: p3
 
 NEVEM: p1
-TÍPUSOM: HungryPanda
+TÍPUSOM: ShyPanda
 CSEMPE, AHOL ÁLLOK: [t2]
 KÖVETŐM: null
 LÉPHETEK: NEM

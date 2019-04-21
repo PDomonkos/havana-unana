@@ -2,7 +2,7 @@ t1 nt
 t2 nt
 t3 nt
 t4 nt
-t5 vm
+t5 sm
 *
 t1: t4, t5, t2
 t2: t1, t5, t3
@@ -13,7 +13,7 @@ t5: t4, t3, t2, t1
 *
 *
 create Orangutan o1 t1
-create HungryPanda p1 t2
+create ShyPanda p1 t2
 create Panda p2 t3
 create Panda p3 t4
 *

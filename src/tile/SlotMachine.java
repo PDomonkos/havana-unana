@@ -20,7 +20,6 @@ public class SlotMachine extends Tile {
 			Tester.WriteOutput("CSILINGELÉS VOLT ITT: %s", new Object[] {this});
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
-				System.out.println(t.neighbours.length);
 				if (a != null) {
 					a.ReactToJingle();
 				}
