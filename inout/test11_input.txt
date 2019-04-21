@@ -1,6 +1,6 @@
 load maps/test_map11.txt
 grab o1 p1
-grab o1 p2
+grab p1 p2
 setRandom OFF
 move o1 1
 stepAll
