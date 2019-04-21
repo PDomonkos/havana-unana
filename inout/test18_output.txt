@@ -1,4 +1,4 @@
-Orangutan o LÉTREHOZVA ITT: [t1]
+﻿Orangutan o LÉTREHOZVA ITT: [t1]
 
 Panda p LÉTREHOZVA ITT: [t0]
 
@@ -8,9 +8,11 @@ A t2 TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: 1
 
 o MEGFOGTA ŐT: p
 
-SIKERES LÉPÉS o
-
 MEGHALT o ITT: t2
+
+o ELENGEDTE ŐT: p
+
+SIKERES LÉPÉS o
 
 NEVEM: p
 TÍPUSOM: Panda
