@@ -19,12 +19,10 @@ public class LazyPanda extends Panda {
 	 * @param a adott fotel
 	 */
 	public void TakeASeat(Armchair a) {
-		
-		this.Let();
-		a.Accept(this);
-		this.DisableSteps();
-		
 		Tester.WriteOutput("%s LEÜLT ITT: %s", new Object[] {this,a});
+		this.Let();
+		a.Add(this);
+		this.DisableSteps();
 	}
 	
 	@Override
