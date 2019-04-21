@@ -1,10 +1,8 @@
-Panda p LÉTREHOZVA ITT: [t1]
+﻿Panda p LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 
 A t2 TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: 1
-
-SIKERES LÉPÉS p
 
 MEGHALT p ITT: t2
 
