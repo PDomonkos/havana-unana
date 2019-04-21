@@ -52,7 +52,7 @@ public class Tester {
 					break;
 				case "getPosition":
 					Animal an = (Animal)objects.get(arr[1]);
-					WriteOutput("%s %s MEZ’N ¡LL", new Object[] {an, an.getTile()});
+					WriteOutput("%s %s MEZ√ïN √ÅLL", new Object[] {an, an.getTile()});
 					break;
 				case "setWeakTile":
 					Tile current = (Tile)objects.get(arr[1]);

@@ -16,10 +16,8 @@ public class HungryPanda extends Panda {
 	 * A saját csempéjén meghívja az addot
 	 */
 	public void ReactToBeep() {
-		
+		Tester.WriteOutput("UGROTT EGYET %s", new Object[] {this});
 		myTile.Add(this);
-		
-		Tester.WriteOutput("UGROTT EGYETT", new Object[] {this});
 	}
 	
 	@Override

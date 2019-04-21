@@ -14,10 +14,9 @@ public class ShyPanda extends Panda {
 	 * Csilingelés hatására elengedi az eddig húzott panda kezét
 	 */
 	public void ReactToJingle() {
-
+		Tester.WriteOutput("CSILINGELÉST HALLOTT %s", new Object[] {this});
 		if (follower != null)
 			follower.Let();
-
 	}
 
 	@Override

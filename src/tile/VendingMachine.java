@@ -14,14 +14,13 @@ public class VendingMachine extends Tile {
 	 * Lépés: néha sípol, ami a szomszédos csempékig elhallatszik
 	 */
 	public void Step() {
-
+		Tester.WriteOutput("SÍPOLÁS VOLT ITT: %s", new Object[] {this});
 		if (!Tester.isRandom) {
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
 				if (a != null)
 					a.ReactToBeep();
 			}
-			Tester.WriteOutput("SÍPOLÁS VOLT ITT: ", new Object[] {this});
 		}
 		else{
 			Random rand = new Random();
@@ -32,7 +31,7 @@ public class VendingMachine extends Tile {
 					if (a != null)
 						a.ReactToBeep();
 				}
-				Tester.WriteOutput("SÍPOLÁS VOLT ITT: ", new Object[] {this});
+				Tester.WriteOutput("SÍPOLÁS VOLT ITT: %s", new Object[] {this});
 			}
 		}
 		

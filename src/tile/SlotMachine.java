@@ -17,23 +17,25 @@ public class SlotMachine extends Tile {
 	public void Step() {
 
 		if (!Tester.isRandom) {
+			Tester.WriteOutput("CSILINGELÉS VOLT ITT: %s", new Object[] {this});
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
-				if (a != null)
+				System.out.println(t.neighbours.length);
+				if (a != null) {
 					a.ReactToJingle();
+				}
 			}
-			Tester.WriteOutput("CSILINGELÉS VOLT ITT: ", new Object[] {this});
 		}
 		else{
 			Random rand = new Random();
 			int r=rand.nextInt( 10 );
 			if(r>6) {
+				Tester.WriteOutput("CSILINGELÉS VOLT ITT: %s", new Object[] {this});
 				for (Tile t : neighbours) {
 					Animal a=t.GetAnimal();
 					if (a != null)
 						a.ReactToJingle();
 				}
-				Tester.WriteOutput("CSILINGELÉS VOLT ITT: ", new Object[] {this});
 			}
 		}
 		
