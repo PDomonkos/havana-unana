@@ -1,4 +1,4 @@
-LazyPanda p LÉTREHOZVA ITT: t1
+﻿LazyPanda p LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 

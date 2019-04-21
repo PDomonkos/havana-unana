@@ -1,6 +1,6 @@
-LazyPanda p1 LÉTREHOZVA ITT: t1
+﻿LazyPanda p1 LÉTREHOZVA ITT: [t1]
 
-Orangutan o1 LÉTREHOZVA ITT: t2
+Orangutan o1 LÉTREHOZVA ITT: [t2]
 
 SIKERES BETÖLTÉS
 

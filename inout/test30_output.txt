@@ -1,10 +1,10 @@
-Orangutan o1 LÉTREHOZVA ITT: t1
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
-Orangutan o2 LÉTREHOZVA ITT: t2
+Orangutan o2 LÉTREHOZVA ITT: [t2]
 
-Panda p1 LÉTREHOZVA ITT: t3
+Panda p1 LÉTREHOZVA ITT: [t3]
 
-Panda p2 LÉTREHOZVA ITT: t4
+Panda p2 LÉTREHOZVA ITT: [t4]
 
 SIKERES BETÖLTÉS
 
