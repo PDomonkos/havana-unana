@@ -1,7 +1,5 @@
 ﻿HungryPanda p1 LÉTREHOZVA ITT: [t1]
-
 SIKERES BETÖLTÉS
-
 A t1 TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: 1
 
 SÍPOLÁS VOLT ITT: t2
