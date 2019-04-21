@@ -65,6 +65,8 @@ public class Orangutan extends Animal {
 		
 		Tester.WriteOutput("MEGHALT %s ITT: %s", new Object[] {this,myTile});
 		
+		follower.Let();
+		
 		Game.End(this);
 		
 	}	
