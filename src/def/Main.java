@@ -3,13 +3,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Scanner;
 /**
- * FÅ‘ osztÃ¡ly
+ * Fõ osztály
  * 
  */
 public class Main {
 	public static Scanner in;
 	/**
-	 * MenÃ¼ listÃ¡zÃ¡sa, vÃ¡lasztott szcenÃ¡riÃ³ futtatÃ¡sa
+	 * Menü listázása, választott szcenárió futtatása
 	 * 
 	 * @param args parancssori argumentumok
 	 */
@@ -18,15 +18,15 @@ public class Main {
 		boolean exit = false;
 		while (!exit) {
 			try {
-				System.out.println("1.: Egy teszteset futtatÃ¡sa");
-				System.out.println("2.: Ã–sszes teszteset futtatÃ¡sa");
-				System.out.println("3.: KÃ©zi tesztelÃ©s");
-				System.out.println("4.: KilÃ©pÃ©s");
+				System.out.println("1.: Egy teszteset futtatása");
+				System.out.println("2.: Összes teszteset futtatása");
+				System.out.println("3.: Kézi tesztelés");
+				System.out.println("4.: Kilépés");
 				
 				String input = in.nextLine();
 				switch(input) {
 				case "1":
-					System.out.println("Adja meg a teszteset szÃ¡mÃ¡t (1-33)!");
+					System.out.println("Adja meg a teszteset számát (1-33)!");
 					int n= Integer.parseInt(in.nextLine());
 					if(0<n && n<34) {
 						FileReader fr1 = new FileReader("inout/test"+n+"_input.txt");
@@ -38,7 +38,7 @@ public class Main {
 						else System.out.println("Sikertelen!\n");
 					}
 					else
-						System.out.println("HibÃ¡s szÃ¡m\n");
+						System.out.println("Hibás szám\n");
 					break;
 				case "2":
 					int suc=0;
@@ -50,7 +50,7 @@ public class Main {
 						boolean success = Tester.execute(br1,br2,false);
 						if (success) suc++;
 					}
-					System.out.println("A 33 tesztbÅ‘l" + suc + "Sikeres\n");
+					System.out.println("A 33 tesztbõl" + suc + "Sikeres\n");
 					break;
 				case "3":
 			
@@ -59,7 +59,7 @@ public class Main {
 					exit = true;
 					break;
 				default:
-					System.out.println("Ã‰rvÃ©nytelen parancs\n");
+					System.out.println("Érvénytelen parancs\n");
 				}
 			} catch (Exception e) {
 				e.printStackTrace(System.out);

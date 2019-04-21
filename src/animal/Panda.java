@@ -75,7 +75,7 @@ public class Panda extends Animal {
 		this.EnableSteps();
 		
 		if (follower != null) {
-			//Tester.WriteOutput("%s ELENGEDTE ÕT: %s", new Object[] {this,follower});
+			//Tester.WriteOutput("%s ELENGEDTE OT: %s", new Object[] {this,follower});
 			follower.Let();
 			
 		}

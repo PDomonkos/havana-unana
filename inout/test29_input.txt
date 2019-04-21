@@ -4,6 +4,4 @@ stepAll
 setRandom OFF
 stepAll
 stepAll
-stepAll
-stepAll
 listAttributes p
