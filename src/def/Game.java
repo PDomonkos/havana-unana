@@ -53,6 +53,7 @@ public class Game {
 	 */
 	public static void Generate(String inputFileName) {
 		//azonosítás név alapján
+		
 		HashMap<String, Object> things=new HashMap<String, Object>();
 		
 		points = new HashMap<Orangutan, Integer>();
