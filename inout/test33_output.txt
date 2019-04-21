@@ -2,7 +2,7 @@
 
 Orangutan o2 LÉTREHOZVA ITT: [t0]
 
-Panda p1 LÉTREHOZVA ITT: [t2]
+Panda p LÉTREHOZVA ITT: [t2]
 
 SIKERES BETÖLTÉS
 
