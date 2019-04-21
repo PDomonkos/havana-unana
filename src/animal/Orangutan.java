@@ -112,7 +112,7 @@ public class Orangutan extends Animal {
 	public Panda Steal() {
 		Panda ret=follower;
 		follower=null;
-		grabBlock=3;
+		grabBlock=2;
 		return ret;
 	} 
 	
