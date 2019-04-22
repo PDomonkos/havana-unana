@@ -123,7 +123,7 @@ public class Game {
 				
 				Cupboard[] cb_tmp = new Cupboard[neighbours.size()];
 				System.arraycopy(neighbours.toArray(), 0, cb_tmp, 0, neighbours.size());
-				//actual.SetNeighbours(cb_tmp);
+				//actual.SetNeighbours(cb_tmp); Nem a szomszédokat kell állítani, hanem a szekrényszomszédot
 				actual.SetCupboards(cb_tmp);
 			}
 			//negyedik üres sorig entry exithez rendelése

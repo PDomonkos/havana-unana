@@ -148,6 +148,7 @@ public class Panda extends Animal {
 
 		if (leader==null) {
 			((Entry)myTile).AddPoint();
+			follower.SetLeader(null);
 			follower=null;
 			leader=null;
 			myTile.Remove();

@@ -142,7 +142,8 @@ public class Orangutan extends Animal {
 	 */
 	public void Exit() {
 
-		((Entry)myTile).SetOrangutan(this);
+		((Entry)myTile).SetOrangutan(this); 
+		follower.SetLeader(null);		//itt van változtatás
 		follower=null;
 		
 		Tester.WriteOutput("%s KIMENT", new Object[] {this});
