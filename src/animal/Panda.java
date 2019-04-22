@@ -94,7 +94,8 @@ public class Panda extends Animal {
 			if (Tester.isRandom){
 				Tile[] neighbours=myTile.GetNeighbours();
 				Random rand = new Random();
-				Tile t2=neighbours[rand.nextInt( neighbours.length )];
+				int randomszam = rand.nextInt(neighbours.length);
+				Tile t2=neighbours[randomszam % neighbours.length];
 				t2.Accept(this);
 			}
 			if(dir==-1 && !Tester.isRandom) return;			
