@@ -4,11 +4,16 @@ SIKERES BETÖLTÉS
 
 p LEÜLT ITT: t2
 
-SIKERES LÉPÉS p
+NEVEM: p
+TÍPUSOM: LazyPanda
+CSEMPE, AHOL ÁLLOK: [t2]
+KÖVETŐM: null
+LÉPHETEK: NEM
+VEZETŐM: null
 
 NEVEM: p
 TÍPUSOM: LazyPanda
-CSEMPE, AHOL ÁLLOK: [t1]
+CSEMPE, AHOL ÁLLOK: [t2]
 KÖVETŐM: null
 LÉPHETEK: IGEN
 VEZETŐM: null
