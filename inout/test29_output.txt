@@ -4,6 +4,8 @@ SIKERES BETÖLTÉS
 
 p LEÜLT ITT: t2
 
+SIKERES LÉPÉS p
+
 NEVEM: p
 TÍPUSOM: LazyPanda
 CSEMPE, AHOL ÁLLOK: [t1]

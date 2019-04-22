@@ -21,6 +21,7 @@ public class LazyPanda extends Panda {
 	public void TakeASeat(Armchair a) {
 		Tester.WriteOutput("%s LEÜLT ITT: %s", new Object[] {this,a});
 		this.Let();
+		myTile.Remove();
 		a.Add(this);
 		this.DisableSteps();
 	}
