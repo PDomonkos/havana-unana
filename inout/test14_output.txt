@@ -29,6 +29,6 @@ SZOMSZÉDAIM: 0 - t4
 A RAJTAM ÁLLÓ ÁLLAT: null
 
 NEVEM: t4
-TÍPUSOM: Cupboard
+TÍPUSOM: Tile
 SZOMSZÉDAIM: 0 - t3
 A RAJTAM ÁLLÓ ÁLLAT: p1
