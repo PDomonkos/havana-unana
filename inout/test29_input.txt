@@ -2,6 +2,7 @@ load maps/test_map29.txt
 setRandom OFF
 stepAll
 stepAll
+stepAll
 setRandom ON
 stepAll
 listAttributes p
