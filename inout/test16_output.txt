@@ -1,12 +1,12 @@
-Orangutan o LÉTREHOZVA ITT: [t1]
+﻿Orangutan o LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 
 A t2 TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: 1
 
-SIKERES LÉPÉS o
-
 MEGHALT o ITT: t2
+
+SIKERES LÉPÉS o
 
 NEVEM: t2
 TÍPUSOM: WeakTike
