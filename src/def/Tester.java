@@ -104,7 +104,7 @@ public class Tester {
 	
 	public static void WriteOutput(String s, Object[] o) {
 		if (o == null) {
-			System.out.println(s + "\n");
+			if (write) System.out.println(s + "\n");
 			strb_out.append(s);
 		} else {
 			ArrayList<String> stringParams=new ArrayList<String>();
