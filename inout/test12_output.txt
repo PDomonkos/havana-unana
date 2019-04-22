@@ -1,4 +1,4 @@
-Orangutan o1 LÉTREHOZVA ITT: [t1]
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 
@@ -11,6 +11,7 @@ TÍPUSOM: Orangutan
 CSEMPE, AHOL ÁLLOK: [t4]
 KÖVETŐM: null
 MÉG ENNYI KÖRIG NEM FOGHATOK PANDÁT: 0
+
 NEVEM: t1
 TÍPUSOM: Tile
 SZOMSZÉDAIM: 0 - t2
