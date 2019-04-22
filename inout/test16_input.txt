@@ -1,5 +1,5 @@
 load maps/test_map16.txt
 setWeakTile t2 1
-move o1 0
+move o 0
 stepAll
 listAttributes t2
