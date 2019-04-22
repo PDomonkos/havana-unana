@@ -1,8 +1,10 @@
-Orangutan o1 LÉTREHOZVA ITT: [t1]
+﻿Orangutan o1 LÉTREHOZVA ITT: [t1]
 
 Panda p1 LÉTREHOZVA ITT: [t2]
 
 SIKERES BETÖLTÉS
+
+o1 MEGFOGTA ŐT: p1
 
 SIKERES LÉPÉS o1
 
