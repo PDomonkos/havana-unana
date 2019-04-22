@@ -9,7 +9,7 @@ MEGHALT o ITT: t2
 SIKERES LÉPÉS o
 
 NEVEM: t2
-TÍPUSOM: WeakTike
+TÍPUSOM: WeakTile
 SZOMSZÉDAIM: 0 - t1, 1 - t3
 A RAJTAM ÁLLÓ ÁLLAT: null
 TÖRÉSIG MÉG ENNYI VAN HÁTRA: 0
