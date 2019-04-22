@@ -1,7 +1,8 @@
 load maps/test_map29.txt
 setRandom OFF
 stepAll
-setRandom OFF
+setRandom ON
+stepAll
 stepAll
 stepAll
 listAttributes p
