@@ -1,4 +1,4 @@
-Panda p1 LÉTREHOZVA ITT: [t1]
+﻿Panda p1 LÉTREHOZVA ITT: [t1]
 
 SIKERES BETÖLTÉS
 
@@ -9,8 +9,9 @@ SIKERES LÉPÉS p1
 NEVEM: p1
 TÍPUSOM: Panda
 CSEMPE, AHOL ÁLLOK: [t4]
-VEZETŐM: o1
 KÖVETŐM: null
+LÉPHETEK: IGEN
+VEZETŐM: null
 
 NEVEM: t1
 TÍPUSOM: Tile
