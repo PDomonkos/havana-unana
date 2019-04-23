@@ -56,7 +56,9 @@ public class Main {
 					System.out.println("A 33 tesztbõl" + suc + "Sikeres\n");
 					break;
 				case "3":
-			
+					InputStreamReader isr = new InputStreamReader(System.in);
+					BufferedReader br = new BufferedReader(isr);
+					Tester.execute(br, null, true);
 					break;
 				case "4":
 					exit = true;
