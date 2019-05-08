@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.Timer;
+import javax.swing.Timer;
 
 import animal.Animal;
 import animal.HungryPanda;
@@ -22,6 +22,9 @@ import tile.Tile;
 import tile.VendingMachine;
 import tile.WeakTile;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 /**
  * Játékot reprezentáló statikus osztály
  */
@@ -31,13 +34,6 @@ public class Game {
 	 * Léptethetõ dolgok
 	 */
 	static private Steppable[] steppables;
-
-	/**
-	 * timer
-	 */
-	static private Timer timer;
-	
-	//ezt meg kéne oldani hogy hívja updatet
 	
 	/**
 	 * pontok tárolása
