@@ -1,9 +1,11 @@
 package graphics.views;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.List;
 
 import def.Coord;
+import def.Game;
 import graphics.Drawable;
 import tile.Tile;
 
@@ -16,8 +18,9 @@ public class TileView extends Drawable {
 	public TileView(Tile t) {
 		this.t = t;
 		
-		xs = GetAllX();
-		ys = GetAllY();
+		edges=new ArrayList();
+		
+		
 	}
 	
 	//WeakTileViewnak
@@ -48,8 +51,111 @@ public class TileView extends Drawable {
 		return ys;
 	}
 	
-	public void calculateEdges(){
-		
+	
+
+	//szomszédosak-e?
+	private boolean isNeighbour(Tile t1, Tile t2) {	
+		for (Tile t : t2.GetNeighbours()) 
+			if (t==t1)
+				return true;
+		return false;
 	}
+	
+	//közös szomszéd ami nem az eredeti, ha van
+	private Tile GetCommonNeighbour(Tile t1, Tile t2, Tile notThis ) {	
+		for (Tile t1n : t1.GetNeighbours()) 
+			if (isNeighbour(t1n,t2) && t1n!=notThis) 
+				return t1n;
+		return null;	
+	}
+	
+	//sarkok kiszámolása
+	public void calculateEdges() {
+		Tile tmp;
+		
+		//szomszédok tárolása ideiglenesen
+		Tile[] neighbours= t.GetNeighbours();
+		
+		//szomszéd koordináták tárolása
+		List<Coord> nCoords = new ArrayList<Coord>();
+		for (Tile n : neighbours) {
+			nCoords.add(Game.GetCoords(n));
+		} 
+		//saját koordináta
+		Coord c0 = Game.GetCoords(t);
+		
+		//párosával bejárja a szomszédokat
+		for (int i = 0; i < nCoords.size();i++) {
+			
+			//ha szomszédosak a belõlük keletkezõ 3szög középpontja lesz az egyik csúcs
+			//ha nem, de van más közös szomszéduk akkor a keletkezõ 4szög középpontja kell
+			//
+			if( isNeighbour(neighbours[i],neighbours[(i+1) % nCoords.size()]) ) {
+				Coord c1 = nCoords.get(i);
+				Coord c2 = nCoords.get((i+1) % nCoords.size());
+///ez szar lesz még				
+				edges.add( new Coord( (c0.GetX() + c1.GetX() + c2.GetX())/3 , (c0.GetY() + c1.GetY() + c2.GetY())/3 ));			
+			}else if( ( tmp=GetCommonNeighbour(neighbours[i],neighbours[(i+1) % nCoords.size()],t))!=null ) {
+				Coord c1 = nCoords.get(i);
+				Coord c2 = nCoords.get((i+1) % nCoords.size());
+				Coord c3 = Game.GetCoords(tmp);
+				edges.add( new Coord( (c0.GetX() + c1.GetX() + c2.GetX() + c3.GetX())/4 , (c0.GetY() + c1.GetY() + c2.GetY() + c3.GetY())/4 ));
+			}	
+		}
+		
+		//ha valamelyik a szélén van:
+		int xMax=13;
+		int yMax=5;
+		
+		//bal felsõ sarok
+		//jobb felsõ
+		//jobb alsó
+		//bal alsó
+		//felsõ széle
+		//alsó
+		//bal
+		//jobb
+		if(c0.GetX()==0 && c0.GetY()==0) {
+			Coord cc=edges.get(edges.size()-1);
+			edges.add( new Coord(0,cc.GetY()) );
+			edges.add( new Coord(0,0) );
+			edges.add( new Coord(cc.GetX(),0) );
+		}else if(c0.GetX()==xMax && c0.GetY()==0) {
+			Coord cc=edges.get(edges.size()-1);
+			edges.add( new Coord(cc.GetX(),0) );
+			edges.add( new Coord(xMax,0) );
+			edges.add( new Coord(xMax,cc.GetY()) );		
+		}else if(c0.GetX()==xMax && c0.GetY()==yMax) {
+			Coord cc=edges.get(edges.size()-1);
+			edges.add( new Coord(xMax,cc.GetY()) );
+			edges.add( new Coord(xMax,yMax) );
+			edges.add( new Coord(cc.GetX(),yMax) );		
+		}
+		else if(c0.GetX()==0 && c0.GetY()==yMax) {
+			Coord cc=edges.get(edges.size()-1);
+			edges.add( new Coord(cc.GetX(),yMax) );	
+			edges.add( new Coord(0,yMax) );
+			edges.add( new Coord(0,cc.GetY()) );		
+		}else if(c0.GetY()==0) {
+			edges.add( new Coord(edges.get(edges.size()-1).GetX(),0) );	
+			edges.add( new Coord(edges.get(0).GetX(),0) );	
+		}else if(c0.GetY()==yMax) {
+			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMax) );	
+			edges.add( new Coord(edges.get(0).GetX(),yMax) );	
+		}
+		else if(c0.GetX()==0) {
+			edges.add( new Coord(0,edges.get(edges.size()-1).GetY()) );	
+			edges.add( new Coord(0,edges.get(0).GetY()) );	
+		}
+		else if(c0.GetX()==xMax) {
+			edges.add( new Coord(xMax,edges.get(edges.size()-1).GetY()) );	
+			edges.add( new Coord(xMax,edges.get(0).GetY()) );	
+		}	
+		
+
+		xs = GetAllX();
+		ys = GetAllY();
+	}
+
 
 }
