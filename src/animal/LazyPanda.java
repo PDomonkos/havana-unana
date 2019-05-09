@@ -19,7 +19,7 @@ public class LazyPanda extends Panda {
 	 * @param a adott fotel
 	 */
 	public void TakeASeat(Armchair a) {
-		Tester.WriteOutput("%s LEÜLT ITT: %s", new Object[] {this,a});
+
 		this.Let();
 		myTile.Remove();
 		a.Add(this);
@@ -55,6 +55,6 @@ public class LazyPanda extends Panda {
 
 		Object[] objArr = new Object[obj.size()];
 		objArr = obj.toArray();
-		Tester.WriteOutput(base, objArr);
+
 	}
 }

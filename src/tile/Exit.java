@@ -62,6 +62,6 @@ public class Exit extends Tile {
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
+
 	}
 }

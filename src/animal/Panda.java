@@ -48,8 +48,6 @@ public class Panda extends Animal {
 	 */
 	public void Die() {
 		
-		Tester.WriteOutput("MEGHALT %s ITT: %s", new Object[] {this,myTile});
-		
 		myTile.Remove();
 		myTile=null;
 		this.Let();
@@ -68,7 +66,6 @@ public class Panda extends Animal {
 		
 		if (leader!=null) {
 			leader.ResetFollower();
-			Tester.WriteOutput("%s ELENGEDTE ÕT: %s", new Object[] {leader, this});
 		}
 		
 		leader=null;
@@ -91,24 +88,12 @@ public class Panda extends Animal {
 			//sikertelen lépés miatt csak
 			Tile t=myTile;
 			
-			if (Tester.isRandom){
 				Tile[] neighbours=myTile.GetNeighbours();
 				Random rand = new Random();
 				int randomszam = rand.nextInt(neighbours.length);
 				Tile t2=neighbours[randomszam % neighbours.length];
 				t2.Accept(this);
-			}
-			if(dir==-1 && !Tester.isRandom) return;			
-			else if (!Tester.isRandom) {
-				Tile[] neighbours=myTile.GetNeighbours();	
-				Tile t2=neighbours[dir];
-				t2.Accept(this);			
-				dir=0;
-			}
-			if(t == myTile)
-				Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
-			else
-				Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
+
 		}
 		dir=-1;
 		

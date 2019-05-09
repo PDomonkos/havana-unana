@@ -97,7 +97,6 @@ public abstract class Animal implements Steppable {
 		myTile.Add(o);
 		t.Add(this);
 		
-		Tester.WriteOutput("%s HELYET CSERÉLT VELE: %s", new Object[] {o,this});
 	}
 	
 	/**
@@ -112,7 +111,6 @@ public abstract class Animal implements Steppable {
 		p.DisableSteps();
 		p.SetLeader(this);
 		
-		Tester.WriteOutput("%s MEGFOGTA ÕT: %s", new Object[] {this,p});
 	}
 	
 	/**

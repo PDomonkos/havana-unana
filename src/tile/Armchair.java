@@ -93,6 +93,5 @@ public class Armchair extends Tile {
 		base+= new String("MÉG ENNYI KÖRIG PIHENSZ: " + count);
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 }
