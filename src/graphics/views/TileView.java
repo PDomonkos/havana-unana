@@ -14,15 +14,11 @@ import tile.Tile;
 public class TileView extends Drawable {
 	
 	private Tile t;
-<<<<<<< HEAD
 	protected List<Coord> edges;
 	protected int[] xs;
 	protected int[] ys;
-=======
-	private List<Coord> edges;
-	private int[] xs, ys;
+
 	private Color c;
->>>>>>> branch 'Grafika' of https://github.com/PDomonkos/havana-unana
 	
 	public TileView(Tile t) {
 		this.t = t;
