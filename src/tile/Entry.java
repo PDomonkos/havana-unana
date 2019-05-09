@@ -4,7 +4,6 @@ import java.util.List;
 
 import animal.Animal;
 import animal.Orangutan;
-import def.Tester;
 
 /**
  * Bejáratot reprezentáló osztály
@@ -70,6 +69,5 @@ public class Entry extends Tile {
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 }

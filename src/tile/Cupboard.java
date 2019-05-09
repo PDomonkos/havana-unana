@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import animal.Animal;
-import def.Tester;
 
 /**
  * Szekrényt reprezentáló osztály
@@ -77,7 +76,6 @@ public class Cupboard extends Tile {
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 	
 }

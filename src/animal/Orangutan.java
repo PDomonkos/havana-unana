@@ -142,7 +142,6 @@ public class Orangutan extends Animal {
 	 */
 	public void AddPoint() {
 		Game.AddPoint(this);
-		
 	}
 	
 	/**

@@ -3,8 +3,6 @@ package animal;
 import java.util.ArrayList;
 import java.util.List;
 
-import def.Tester;
-
 /**
  * Félõs pandát reprezentáló osztály
  * 
@@ -47,7 +45,6 @@ public class ShyPanda extends Panda {
 
 		Object[] objArr = new Object[obj.size()];
 		objArr = obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 
 }

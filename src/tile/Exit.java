@@ -3,7 +3,6 @@ package tile;
 import java.util.ArrayList;
 import java.util.List;
 
-import def.Tester;
 
 /**
  * Kijáratot reprezentáló osztály
@@ -62,6 +61,6 @@ public class Exit extends Tile {
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
+
 	}
 }
