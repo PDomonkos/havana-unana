@@ -42,9 +42,6 @@ public class Game {
 	static private HashMap<Orangutan, Integer> points;
 	
 	
-	 //Csak a protohoz, a dolgok átadása a testernek
-	private static HashMap<String, Object> testThings;
-	
 	private static Map<Tile, Coord> coords;
 	
 	/**
@@ -162,7 +159,6 @@ public class Game {
 					String tileName=separate1.nextToken();
 					Tile tile=(Tile)things.get(tileName);
 					tile.Add(a);
-					Tester.WriteOutput(type + " " + name + " LÉTREHOZVA ITT: [" + tileName + "]", null);
 				}
 				
 			}
@@ -170,15 +166,12 @@ public class Game {
 			e.printStackTrace();
 			successfullLoad=false;
 		}
-		testThings=things;
 		
 		steppables = new Steppable[orangutans.size() + pandas.size() + tiles.size()];
 		System.arraycopy(orangutans.toArray(), 0, steppables, 0, orangutans.size());
 		System.arraycopy(pandas.toArray(), 0, steppables, orangutans.size(), pandas.size());
 		System.arraycopy(tiles.toArray(), 0, steppables, orangutans.size() + pandas.size(), tiles.size());
 		
-		if(successfullLoad) Tester.WriteOutput("SIKERES BETÖLTÉS", null);
-		else Tester.WriteOutput("SIKERTELEN BETÖLTÉS", null);
 	}
 	
 	/**
@@ -221,8 +214,5 @@ public class Game {
 		return coords.get(t);
 	}
 	
-	public static HashMap<String, Object> GetObjects() {
-		return testThings;
-	}
 }
 
