@@ -13,7 +13,7 @@ import tile.Tile;
 
 public class TileView extends Drawable {
 	
-	private Tile t;
+	protected Tile t;
 	protected List<Coord> edges;
 	protected int[] xs;
 	protected int[] ys;

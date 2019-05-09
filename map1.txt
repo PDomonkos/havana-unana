@@ -1,4 +1,4 @@
-t1 nt 0 0
+t1 wt 0 0
 t2 nt 0 5
 t3 nt 13 0
 t4 nt 13 5
