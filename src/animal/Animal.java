@@ -1,6 +1,5 @@
 package animal;
 import def.Steppable;
-import def.Tester;
 import tile.Armchair;
 import tile.Tile;
 

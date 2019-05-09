@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import animal.Animal;
-import def.Tester;
 
 /**
  * Törékeny csempe
@@ -53,9 +52,6 @@ public class WeakTile extends Tile {
 	public void set_count(int cnt) {
 
 		this.count = cnt;
-
-		Tester.WriteOutput("A %s TÖRÉSÉIG MÉG ENNYI VAN HÁTRA: " + count, new Object[] { this });
-
 	}
 
 	public void ListAttributes() {
@@ -81,6 +77,5 @@ public class WeakTile extends Tile {
 		objArr = obj.toArray();
 
 		base += new String("TÖRÉSIG MÉG ENNYI VAN HÁTRA: " + count);
-		Tester.WriteOutput(base, objArr);
 	}
 }

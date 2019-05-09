@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import def.Game;
-import def.Tester;
 import tile.Entry;
 import tile.Tile;
 

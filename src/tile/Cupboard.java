@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import animal.Animal;
-import def.Tester;
 
 /**
  * Szekrényt reprezentáló osztály

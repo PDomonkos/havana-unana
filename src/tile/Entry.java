@@ -4,7 +4,6 @@ import java.util.List;
 
 import animal.Animal;
 import animal.Orangutan;
-import def.Tester;
 
 /**
  * Bejáratot reprezentáló osztály

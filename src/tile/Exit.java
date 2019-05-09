@@ -3,7 +3,6 @@ package tile;
 import java.util.ArrayList;
 import java.util.List;
 
-import def.Tester;
 
 /**
  * Kijáratot reprezentáló osztály

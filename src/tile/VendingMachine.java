@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import animal.Animal;
-import def.Tester;
 /**
  * Csokiautomatát reprezentáló osztály
  *
@@ -14,28 +13,12 @@ public class VendingMachine extends Tile {
 	 * Lépés: néha sípol, ami a szomszédos csempékig elhallatszik
 	 */
 	public void Step() {
-		Tester.WriteOutput("SÍPOLÁS VOLT ITT: %s", new Object[] {this});
-		if (!Tester.isRandom) {
+
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
 				if (a != null)
 					a.ReactToBeep();
 			}
-		}
-		else{
-			Random rand = new Random();
-			int r=rand.nextInt( 10 );
-			if(r>6) {
-				for (Tile t : neighbours) {
-					Animal a=t.GetAnimal();
-					if (a != null)
-						a.ReactToBeep();
-				}
-				Tester.WriteOutput("SÍPOLÁS VOLT ITT: %s", new Object[] {this});
-			}
-		}
-		
-
 	}
 	
 	/**
@@ -62,6 +45,5 @@ public class VendingMachine extends Tile {
 		base+= new String("A RAJTAM ÁLLÓ ÁLLAT: null");
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 }

@@ -3,7 +3,6 @@ package animal;
 import java.util.ArrayList;
 import java.util.List;
 
-import def.Tester;
 
 /**
  * Éhes pandát reprezentáló osztály

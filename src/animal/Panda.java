@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import def.Main;
-import def.Tester;
 import tile.Tile;
 import tile.Entry;
 import def.Game;
-import def.Tester;
 
 /**
  * Panda osztály
@@ -143,8 +141,6 @@ public class Panda extends Animal {
 			Game.RemoveSteppable(this);
 				
 		}
-		
-		Tester.WriteOutput("%s KIMENT", new Object[] {this});
 				
 	}
 	
@@ -176,6 +172,5 @@ public class Panda extends Animal {
 
 		Object[] objArr = new Object[obj.size()];
 		objArr = obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}	
 }
