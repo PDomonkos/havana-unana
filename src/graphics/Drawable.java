@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public abstract class Drawable {
 	
-	private BufferedImage img;
+	protected BufferedImage img;
 	
 	public abstract void Draw(Graphics g);
 	

@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import graphics.Drawable;
 import tile.WeakTile;
 
-public class WeakTileView extends Drawable {
+public class WeakTileView extends TileView {
 	
 	private WeakTile wt;
 	

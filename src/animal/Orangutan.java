@@ -47,11 +47,6 @@ public class Orangutan extends Animal {
 		Tile t2=neighbours[dir % neighbours.length];
 		t2.Accept(this);
 		
-		dir=0;
-		
-		if(t == myTile) {}
-			
-		else
 		dir=-1;
 	}
 	
@@ -60,8 +55,6 @@ public class Orangutan extends Animal {
 	 * Orángután meghal, vége a játéknak
 	 */
 	public void Die() {
-		
-		
 		Release();
 		
 		myTile.Remove();
@@ -84,7 +77,6 @@ public class Orangutan extends Animal {
 			if (this.follower != null)
 				p.Grab(this.follower);
 			this.follower=p;
-
 			
 			p.DisableSteps();
 			p.SetLeader(this);
@@ -150,7 +142,6 @@ public class Orangutan extends Animal {
 	 */
 	public void AddPoint() {
 		Game.AddPoint(this);
-
 	}
 	
 	/**
