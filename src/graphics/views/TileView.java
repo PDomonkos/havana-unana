@@ -19,6 +19,9 @@ public class TileView extends Drawable {
 		xs = GetAllX();
 		ys = GetAllY();
 	}
+	
+	//WeakTileViewnak
+	protected TileView() {}
 
 	@Override
 	public void Draw(Graphics g) {
@@ -43,6 +46,10 @@ public class TileView extends Drawable {
 		}
 		
 		return ys;
+	}
+	
+	public void calculateEdges(){
+		
 	}
 
 }
