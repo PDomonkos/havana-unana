@@ -19,7 +19,7 @@ import graphics.views.OrangutanView;
 
 public class Window extends JFrame implements ActionListener {
 	
-	private static final int W_WIDTH = 720, W_HEIGHT = 480;
+	private static final int W_WIDTH = 1920, W_HEIGHT = 1000;
 	private static final float DRAW_DT = (float) (1.0 / 30.0), UPDATE_DT = (float) (1.0 / 2.0);
 	private List<Drawable> drawables;
 	private JPanel pane;

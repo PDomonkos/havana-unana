@@ -36,7 +36,7 @@ import java.awt.event.KeyListener;
  */
 public class Game {
 	
-	public static Coord scale=new Coord(50,50);
+	public static Coord scale=new Coord(110,110);
 
 	/**
 	 * Léptethetõ dolgok
