@@ -29,18 +29,16 @@ public class OrangutanView extends Drawable {
 	@Override
 	public void Draw(Graphics g) {
 		Tile t = o.getTile();
-		Coord c = Game.GetCoords(t);
-		c = Coord.Scale(c, Game.scale);
+		Coord c = Game.MVPCoords(t);
 		
 		if (o.GetFollower() != null) {
 			t = o.GetFollower().getTile();
-			Coord c2 = Game.GetCoords(t);
-			c2 = Coord.Scale(c, Game.scale);
+			Coord c2 = Game.MVPCoords(t);
 			g.setColor(Color.black);
 			g.drawLine((int)c2.GetX(), (int)c2.GetY(), (int)c.GetX(), (int)c.GetY());
 		}
 		
-		g.drawImage(img, (int)c.GetX(), (int)c.GetY(), 50, 50, null);
+		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
 	}
 
 }

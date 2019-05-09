@@ -19,6 +19,11 @@ public class Coord {
 	public void SetX(double x) { this.x = x; }
 	public void SetY(double y) { this.y = y; }
 	
+	public void Translate(double x, double y) {
+		this.x += x;
+		this.y += y;
+	}
+	
 	public static Coord Scale(Coord v, Coord scale) {
 		return new Coord(v.x * scale.x, v.y * scale.y);
 	}
