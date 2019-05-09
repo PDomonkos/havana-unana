@@ -153,6 +153,10 @@ public abstract class Animal implements Steppable {
 	public Tile getTile() {
 		return myTile;
 	}
+	
+	public Animal GetFollower() {
+		return follower;
+	}
 }
 
 

@@ -35,6 +35,8 @@ import java.awt.event.KeyListener;
  * Játékot reprezentáló statikus osztály
  */
 public class Game {
+	
+	public static Coord scale;
 
 	/**
 	 * Léptethetõ dolgok
