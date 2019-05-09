@@ -1,7 +1,0 @@
-t1 nt
-*
-*
-*
-*
-create Orangutan o1 t1
-*
