@@ -253,5 +253,10 @@ public class Game {
 		return coords.get(t);
 	}
 	
+	public static void MoveOrangutanPointer(int o) {
+		if (o == 0) ((Orangutan)steppables[0]).IncDir();
+		else ((Orangutan)steppables[1]).IncDir();
+	}
+	
 }
 

@@ -9,8 +9,11 @@ public class KeyEventHandler implements KeyListener {
 	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		///TODO: Game megfelelõ függvényeit hívni
-		System.out.println(arg0.getKeyCode());
+		if (arg0.getKeyChar() == 'a') {
+			Game.MoveOrangutanPointer(0);
+		} else if (arg0.getKeyChar() == 's') {
+			Game.MoveOrangutanPointer(1);
+		}
 	}
 
 	@Override

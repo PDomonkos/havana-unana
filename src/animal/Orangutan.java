@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import def.Game;
-import def.Tester;
 import tile.Entry;
 import tile.Tile;
 
@@ -48,12 +47,6 @@ public class Orangutan extends Animal {
 		Tile t2=neighbours[dir % neighbours.length];
 		t2.Accept(this);
 		
-		dir=0;
-		
-		if(t == myTile)
-			Tester.WriteOutput("SIKERTELEN LÉPÉS %s", new Object[] {this});
-		else
-			Tester.WriteOutput("SIKERES LÉPÉS %s", new Object[] {this});
 		dir=-1;
 	}
 	
@@ -62,9 +55,6 @@ public class Orangutan extends Animal {
 	 * Orángután meghal, vége a játéknak
 	 */
 	public void Die() {
-		
-		Tester.WriteOutput("MEGHALT %s ITT: %s", new Object[] {this,myTile});
-		
 		Release();
 		
 		myTile.Remove();
@@ -87,8 +77,6 @@ public class Orangutan extends Animal {
 			if (this.follower != null)
 				p.Grab(this.follower);
 			this.follower=p;
-			
-			Tester.WriteOutput("%s MEGFOGTA ÕT: %s", new Object[] {this,p});
 			
 			p.DisableSteps();
 			p.SetLeader(this);
@@ -147,8 +135,6 @@ public class Orangutan extends Animal {
 			follower.SetLeader(null);		//itt van változtatás
 		follower=null;
 		
-		Tester.WriteOutput("%s KIMENT", new Object[] {this});
-		
 	}
 
 	/**
@@ -156,8 +142,6 @@ public class Orangutan extends Animal {
 	 */
 	public void AddPoint() {
 		Game.AddPoint(this);
-		
-		Tester.WriteOutput("%s PONTOT KAPOTT", new Object[] {this});
 	}
 	
 	/**
@@ -199,6 +183,5 @@ public class Orangutan extends Animal {
 
 			Object[] objArr = new Object[obj.size()];
 			objArr = obj.toArray();
-			Tester.WriteOutput(base, objArr);
 	}	
 }

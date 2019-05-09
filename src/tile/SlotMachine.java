@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import animal.Animal;
-import def.Tester;
 
 /**
  * Játékgépet reprezentáló osztály
@@ -15,29 +14,12 @@ public class SlotMachine extends Tile {
 	 * Lépés: néha csilingel, ami a szomszédos csempékig elhallatszik
 	 */
 	public void Step() {
-
-		if (!Tester.isRandom) {
-			Tester.WriteOutput("CSILINGELÉS VOLT ITT: %s", new Object[] {this});
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
 				if (a != null) {
 					a.ReactToJingle();
 				}
-			}
-		}
-		else{
-			Random rand = new Random();
-			int r=rand.nextInt( 10 );
-			if(r>6) {
-				Tester.WriteOutput("CSILINGELÉS VOLT ITT: %s", new Object[] {this});
-				for (Tile t : neighbours) {
-					Animal a=t.GetAnimal();
-					if (a != null)
-						a.ReactToJingle();
-				}
-			}
-		}
-		
+			}		
 	}
 	
 	/**
@@ -65,6 +47,5 @@ public class SlotMachine extends Tile {
 		
 		Object[] objArr=new Object[obj.size()];
 		objArr=obj.toArray();
-		Tester.WriteOutput(base, objArr);
 	}
 }
