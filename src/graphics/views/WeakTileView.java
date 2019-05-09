@@ -1,5 +1,6 @@
 package graphics.views;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import graphics.Drawable;
@@ -15,8 +16,9 @@ public class WeakTileView extends TileView {
 
 	@Override
 	public void Draw(Graphics g) {
-		// TODO Auto-generated method stub
-
+		float colorRatio=(float)(wt.GetCount())/(float)20;
+		g.setColor(new Color(255 * colorRatio, 20 * colorRatio, 144 * colorRatio));
+		g.fillPolygon(xs, ys, edges.size());
 	}
 
 }

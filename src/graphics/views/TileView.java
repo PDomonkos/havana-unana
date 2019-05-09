@@ -13,8 +13,9 @@ import tile.Tile;
 public class TileView extends Drawable {
 	
 	private Tile t;
-	private List<Coord> edges;
-	private int[] xs, ys;
+	protected List<Coord> edges;
+	protected int[] xs;
+	protected int[] ys;
 	
 	public TileView(Tile t) {
 		this.t = t;

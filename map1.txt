@@ -12,4 +12,6 @@ t5: t1, t2, t4, t3
 *
 *
 *
+create Panda p1 t1
+create Orangutan o1 t2
 *

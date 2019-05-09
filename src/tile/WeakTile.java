@@ -54,28 +54,7 @@ public class WeakTile extends Tile {
 		this.count = cnt;
 	}
 
-	public void ListAttributes() {
-		String base = new String("NEVEM: %s\n" + "TÍPUSOM: WeakTile\n" + "SZOMSZÉDAIM: ");
-		List<Object> obj = new ArrayList<Object>();
-		obj.add(this);
-		for (int i = 0; i < neighbours.length; i++) {
-			obj.add(neighbours[i]);
-			if (i == neighbours.length - 1)
-				base += i + " - %s\n";
-			else
-				base += i + " - %s, ";
-		}
-
-		if (myAnimal == null)
-			base += new String("A RAJTAM ÁLLÓ ÁLLAT: null\n");
-		else {
-			base += new String("A RAJTAM ÁLLÓ ÁLLAT: %s\n");
-			obj.add(myAnimal);
-		}
-
-		Object[] objArr = new Object[obj.size()];
-		objArr = obj.toArray();
-
-		base += new String("TÖRÉSIG MÉG ENNYI VAN HÁTRA: " + count);
-	}
+	public int GetCount() {
+		return count;
+	}	
 }
