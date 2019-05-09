@@ -2,6 +2,7 @@ package graphics.views;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -20,10 +21,14 @@ public class TileView extends Drawable {
 
 	private Color c;
 	
-	public TileView(Tile t) {
+	BufferedImage img;
+	
+	public TileView(Tile t,BufferedImage _img) {
 		this.t = t;
 		
 		edges=new ArrayList();
+		
+		img=_img;
 		
 		Random rd = new Random();
 		c = new Color((int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0));
@@ -38,6 +43,10 @@ public class TileView extends Drawable {
 		g.fillPolygon(xs, ys, edges.size());
 		g.setColor(Color.black);
 		g.drawPolygon(xs, ys, edges.size());
+		
+		Coord c=Game.MVPCoords(t);
+		if(img!=null)
+		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
 	}
 	
 	public Tile getTile() { return t; }

@@ -10,7 +10,7 @@ public class WeakTileView extends TileView {
 	
 	
 	public WeakTileView(WeakTile wt) {
-		super(wt);
+		super(wt,null);
 	}
 
 	@Override

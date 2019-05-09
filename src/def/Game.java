@@ -1,11 +1,14 @@
 package def;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+
+import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
 import animal.Animal;
@@ -31,6 +34,7 @@ import tile.WeakTile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 /**
  * Játékot reprezentáló statikus osztály
  */
@@ -83,36 +87,61 @@ public class Game {
 				
 				boolean weak=false;
 				
+				Tile actualTile=null;
+				TileView actualTileView=null;
+				
 				//megfelelo típus létrehozása
 				switch(separate.nextToken()) {
-					case "nt":  things.put(name, new Tile()); break;
-					case "wt":  things.put(name, new WeakTile()); weak=true; break;
-					case "cb":  things.put(name, new Cupboard()); break;
-					case "vm":  things.put(name, new VendingMachine()); break;
-					case "sm":  things.put(name, new SlotMachine()); break;
-					case "ac":  things.put(name, new Armchair()); break;
-					case "en":  things.put(name, new Entry()); break;
-					case "ex":  things.put(name, new Exit()); break;
+					case "nt":  
+						actualTile=new Tile();
+						actualTileView = new TileView(actualTile,null);
+						break;
+					case "wt":  
+						actualTile=new WeakTile();
+						weak = true;
+						actualTileView = new WeakTileView((WeakTile)actualTile);
+						break;
+					case "cb": 
+						actualTile=new Cupboard();
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/cupb.jpg")));
+						break;
+					case "vm":  
+						actualTile=new VendingMachine();
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/vending.png")));
+						break;
+					case "sm":  
+						actualTile=new SlotMachine();
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/slot.png")));
+						break;
+					case "ac":  
+						actualTile=new Armchair();
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/armc.png")));
+						break;
+					case "en": 
+						actualTile=new Entry();
+						actualTileView = new TileView(actualTile,null);
+						break;
+					case "ex": 
+						actualTile=new Exit();
+						actualTileView = new TileView(actualTile,null);
+						break;
 					default: successfullLoad=false; break;
 				}
 				
-				Tile actualTile=(Tile)things.get(name);
-				tiles.add(actualTile);
-				
-				//innentol view kezelés
-				int ycoord=Integer.parseInt(separate.nextToken());
-				int xcoord=Integer.parseInt(separate.nextToken());
-				
-				if(weak) {
-					actualTile.set_count(20);
-					tileViews.add(new WeakTileView((WeakTile)actualTile));
+				if(actualTile!=null) {
+					things.put(name, actualTile);
+					tiles.add(actualTile);
+					tileViews.add(actualTileView);
+					window.AddDrawable(actualTileView);
+					
+					int ycoord=Integer.parseInt(separate.nextToken());
+					int xcoord=Integer.parseInt(separate.nextToken());
+					
+					
+					coords.put(actualTile, new Coord(xcoord,ycoord));
 				}
-				else
-					tileViews.add(new TileView(actualTile));
 				
-				window.AddDrawable(tileViews.get(tileViews.size()-1));
 				
-				coords.put(actualTile, new Coord(xcoord,ycoord));
 			}
 			
 			//második üres sorig szomszédokat állít
