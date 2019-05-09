@@ -12,11 +12,18 @@ public class TileView extends Drawable {
 	public TileView(Tile t) {
 		this.t = t;
 	}
+	
+	//WeakTileViewnak
+	protected TileView() {}
 
 	@Override
 	public void Draw(Graphics g) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void calculateEdges(){
+		
 	}
 
 }

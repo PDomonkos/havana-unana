@@ -67,7 +67,7 @@ public class Window extends JFrame implements ActionListener {
 	// Pálya és állatok betöltés
 	private void InitGame() {
 		drawables = new ArrayList<Drawable>();
-		Game.Generate("maps/test_map1.txt");
+		Game.Generate("maps/test_map1.txt", this);
 	}
 	
 	public void AddDrawable(Drawable d) {

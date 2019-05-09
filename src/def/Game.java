@@ -14,6 +14,11 @@ import animal.LazyPanda;
 import animal.Orangutan;
 import animal.Panda;
 import animal.ShyPanda;
+import graphics.Window;
+import graphics.views.AnimalView;
+import graphics.views.OrangutanView;
+import graphics.views.TileView;
+import graphics.views.WeakTileView;
 import tile.Armchair;
 import tile.Cupboard;
 import tile.Entry;
@@ -47,7 +52,7 @@ public class Game {
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
 	 */
-	public static void Generate(String inputFileName) {
+	public static void Generate(String inputFileName, Window window) {
 		//azonosítás név alapján
 		coords = new HashMap<Tile, Coord>();
 		
@@ -58,6 +63,7 @@ public class Game {
 		List<Tile> tiles = new ArrayList<Tile>();
 		List<Panda> pandas = new ArrayList<Panda>();
 		List<Orangutan> orangutans = new ArrayList<Orangutan>();
+		List<TileView> tileViews = new ArrayList<TileView>();
 		
 		//sikeresség vizsgálat
 		boolean successfullLoad=true;
@@ -73,10 +79,12 @@ public class Game {
 				//neve
 				String name=separate.nextToken();
 				
+				boolean weak=false;
+				
 				//megfelelo típus létrehozása
 				switch(separate.nextToken()) {
 					case "nt":  things.put(name, new Tile()); break;
-					case "wt":  things.put(name, new WeakTile()); break;
+					case "wt":  things.put(name, new WeakTile()); weak=true; break;
 					case "cb":  things.put(name, new Cupboard()); break;
 					case "vm":  things.put(name, new VendingMachine()); break;
 					case "sm":  things.put(name, new SlotMachine()); break;
@@ -86,8 +94,23 @@ public class Game {
 					default: successfullLoad=false; break;
 				}
 				
-				tiles.add((Tile)things.get(name));
+				Tile actualTile=(Tile)things.get(name);
+				tiles.add(actualTile);
+				
+				//innentol view kezelés
+				int xcoord=Integer.parseInt(separate.nextToken());
+				int ycoord=Integer.parseInt(separate.nextToken());
+				
+				if(weak)
+					tileViews.add(new WeakTileView((WeakTile)actualTile));
+				else
+					tileViews.add(new TileView(actualTile));
+				
+				window.AddDrawable(tileViews.get(tileViews.size()-1));
+				
+				coords.put(actualTile, new Coord(xcoord,ycoord));
 			}
+			
 			//második üres sorig szomszédokat állít
 			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
@@ -105,6 +128,12 @@ public class Game {
 				System.arraycopy(neighbours.toArray(), 0, tiles_tmp, 0, neighbours.size());
 				actual.SetNeighbours(tiles_tmp);
 			}
+			
+			//tile nézetek poligonjának számítása
+			for(TileView tv : tileViews) {
+				tv.calculateEdges();
+			}
+			
 			//harmadik üres sorig szekrények kapcsolatai
 			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
@@ -138,6 +167,8 @@ public class Game {
 				
 				Animal a = null;
 				String type=separate1.nextToken();
+				
+				
 				switch(type) {
 					case "Panda": a= new Panda(); break;
 					case "Orangutan": a= new Orangutan();break;
@@ -150,8 +181,16 @@ public class Game {
 				if (type.equals("Orangutan")) { 
 					orangutans.add((Orangutan)a);
 					points.put((Orangutan)a, 0);
+					
+					OrangutanView ov=new OrangutanView((Orangutan)a);
+					window.AddDrawable(ov);
 				}
-				else pandas.add((Panda)a);
+				else {
+					pandas.add((Panda)a);
+					
+					AnimalView av=new AnimalView(a);
+					window.AddDrawable(av);
+				}
 				
 				if(a!=null) {
 					String name=separate1.nextToken(); 
