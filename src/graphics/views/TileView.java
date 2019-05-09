@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import def.Coord;
 import def.Game;
@@ -13,16 +14,23 @@ import tile.Tile;
 public class TileView extends Drawable {
 	
 	private Tile t;
+<<<<<<< HEAD
 	protected List<Coord> edges;
 	protected int[] xs;
 	protected int[] ys;
+=======
+	private List<Coord> edges;
+	private int[] xs, ys;
+	private Color c;
+>>>>>>> branch 'Grafika' of https://github.com/PDomonkos/havana-unana
 	
 	public TileView(Tile t) {
 		this.t = t;
 		
 		edges=new ArrayList();
 		
-		
+		Random rd = new Random();
+		c = new Color((int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0));
 	}
 	
 	//WeakTileViewnak
@@ -30,15 +38,15 @@ public class TileView extends Drawable {
 
 	@Override
 	public void Draw(Graphics g) {
-		g.setColor(Color.black);
-		g.drawPolygon(xs, ys, edges.size());
+		g.setColor(c);
+		g.fillPolygon(xs, ys, edges.size());
 	}
 	
 	private int[] GetAllX() {
 		int[] xs = new int[edges.size()];
 		
 		for (int i = 0; i < edges.size(); i++) {
-			xs[i] = (int)(edges.get(i).GetX() * Game.scale.GetX());
+			xs[i] = (int)((edges.get(i).GetX() + 2) * Game.scale.GetX());
 		}
 		
 		return xs;
@@ -48,7 +56,7 @@ public class TileView extends Drawable {
 		int[] ys = new int[edges.size()];
 		
 		for (int i = 0; i < edges.size(); i++) {
-			ys[i] = (int)(edges.get(i).GetY() * Game.scale.GetY());
+			ys[i] = (int)((edges.get(i).GetY() + 2) * Game.scale.GetY());
 		}
 		
 		return ys;
@@ -122,40 +130,40 @@ public class TileView extends Drawable {
 		//jobb
 		if(c0.GetX()==0 && c0.GetY()==0) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(0,cc.GetY()) );
-			edges.add( new Coord(0,0) );
-			edges.add( new Coord(edges.get(0).GetX(),0) );
+			edges.add( new Coord(-1,cc.GetY()) );
+			edges.add( new Coord(-1,-1) );
+			edges.add( new Coord(edges.get(0).GetX(),-1) );
 		}else if(c0.GetX()==xMax && c0.GetY()==0) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(cc.GetX(),0) );
-			edges.add( new Coord(xMax,0) );
-			edges.add( new Coord(xMax,edges.get(0).GetY()) );		
+			edges.add( new Coord(cc.GetX(),-1) );
+			edges.add( new Coord(xMax+1,-1) );
+			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );		
 		}else if(c0.GetX()==xMax && c0.GetY()==yMax) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(xMax,cc.GetY()) );
-			edges.add( new Coord(xMax,yMax) );
-			edges.add( new Coord(edges.get(0).GetX(),yMax) );		
+			edges.add( new Coord(xMax+1,cc.GetY()) );
+			edges.add( new Coord(xMax+1,yMax+1) );
+			edges.add( new Coord(edges.get(0).GetX(),yMax+1) );		
 		}
 		else if(c0.GetX()==0 && c0.GetY()==yMax) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(cc.GetX(),yMax) );	
-			edges.add( new Coord(0,yMax) );
-			edges.add( new Coord(0,edges.get(0).GetY()) );		
+			edges.add( new Coord(cc.GetX(),yMax+1) );	
+			edges.add( new Coord(-1,yMax+1) );
+			edges.add( new Coord(-1,edges.get(0).GetY()) );		
 		}else if(c0.GetY()==0) {
-			edges.add( new Coord(edges.get(edges.size()-1).GetX(),0) );	
-			edges.add( new Coord(edges.get(0).GetX(),0) );	
+			edges.add( new Coord(edges.get(edges.size()-1).GetX(),-1) );	
+			edges.add( new Coord(edges.get(0).GetX(),-1) );	
 		}else if(c0.GetY()==yMax) {
-			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMax) );	
-			edges.add( new Coord(edges.get(0).GetX(),yMax) );	
+			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMax+1) );	
+			edges.add( new Coord(edges.get(0).GetX(),yMax+1) );	
 		}
 		else if(c0.GetX()==0) {
-			edges.add( new Coord(0,edges.get(edges.size()-1).GetY()) );	
-			edges.add( new Coord(0,edges.get(0).GetY()) );	
+			edges.add( new Coord(-1,edges.get(edges.size()-1).GetY()) );	
+			edges.add( new Coord(-1,edges.get(0).GetY()) );	
 		}
 		else if(c0.GetX()==xMax) {
-			edges.add( new Coord(xMax,edges.get(edges.size()-1).GetY()) );	
-			edges.add( new Coord(xMax,edges.get(0).GetY()) );	
-		}	
+			edges.add( new Coord(xMax+1,edges.get(edges.size()-1).GetY()) );	
+			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );	
+		}
 		
 
 		xs = GetAllX();
