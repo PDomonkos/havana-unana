@@ -1,5 +1,0 @@
-load maps/test_map17.txt
-setRandom ON
-setWeakTile t2 1
-stepAll
-listAttributes t2
