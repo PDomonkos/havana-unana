@@ -33,12 +33,9 @@ public class AnimalView extends Drawable {
 	@Override
 	public void Draw(Graphics g) {		
 		Coord actual = Game.GetCoords(a.getTile());
-		try {
 			g.drawImage(img, 0, 0, 50, 50, null);
-			
-		} catch (IOException e) {
+
 			System.out.println("Sikertelen állat kirajzolás.");
-		}
 	}
 
 }
