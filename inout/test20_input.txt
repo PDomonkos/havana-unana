@@ -1,4 +1,0 @@
-load maps/test_map20.txt
-setRandom OFF
-stepAll
-listAttributes t1

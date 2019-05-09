@@ -1,6 +1,0 @@
-load maps/test_map15.txt
-move o 0
-stepAll
-move o 0
-stepAll
-listAttributes t2

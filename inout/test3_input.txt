@@ -1,2 +1,0 @@
-load maps/test_map3.txt
-listAttributes p1

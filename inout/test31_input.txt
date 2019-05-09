@@ -1,4 +1,0 @@
-load maps/test_map31.txt
-setRandom OFF
-move o1 0
-stepAll
