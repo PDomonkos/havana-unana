@@ -184,4 +184,11 @@ public class Orangutan extends Animal {
 			Object[] objArr = new Object[obj.size()];
 			objArr = obj.toArray();
 	}	
+	
+	public Tile getMarkedTile() {
+		if (this.dir == -1) return null;
+		Tile[] neighbours=myTile.GetNeighbours();
+		Tile t2=neighbours[dir % neighbours.length];
+		return t2;
+	}
 }

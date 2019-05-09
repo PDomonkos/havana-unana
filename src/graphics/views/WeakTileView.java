@@ -16,9 +16,9 @@ public class WeakTileView extends TileView {
 
 	@Override
 	public void Draw(Graphics g) {
-		float colorRatio=(float)(wt.GetCount())/(float)20;
+		float colorRatio = (float)(wt.GetCount())/(float)25;
 		g.setColor(new Color(255 * colorRatio, 20 * colorRatio, 144 * colorRatio));
-		g.fillPolygon(xs, ys, edges.size());
+		g.fillPolygon(xs, ys, xs.length);
 	}
 
 }
