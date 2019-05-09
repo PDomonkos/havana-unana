@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 import javax.swing.Timer;
 
@@ -44,12 +45,14 @@ public class Game {
 	 //Csak a protohoz, a dolgok átadása a testernek
 	private static HashMap<String, Object> testThings;
 	
+	private static Map<Tile, Coord> coords;
+	
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
 	 */
 	public static void Generate(String inputFileName) {
 		//azonosítás név alapján
-		
+		coords = new HashMap<Tile, Coord>();
 		HashMap<String, Object> things=new HashMap<String, Object>();
 		
 		points = new HashMap<Orangutan, Integer>();
@@ -211,6 +214,10 @@ public class Game {
 		for (Steppable s: steppables) {
 			s.Step();
 		}
+	}
+	
+	public static Coord GetCoords(Tile t) {
+		
 	}
 	
 	public static HashMap<String, Object> GetObjects() {
