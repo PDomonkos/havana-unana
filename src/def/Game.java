@@ -101,8 +101,10 @@ public class Game {
 				int xcoord=Integer.parseInt(separate.nextToken());
 				int ycoord=Integer.parseInt(separate.nextToken());
 				
-				if(weak)
+				if(weak) {
+					actualTile.set_count(20);
 					tileViews.add(new WeakTileView((WeakTile)actualTile));
+				}
 				else
 					tileViews.add(new TileView(actualTile));
 				
