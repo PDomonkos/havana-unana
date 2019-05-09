@@ -53,6 +53,7 @@ public class Game {
 	public static void Generate(String inputFileName) {
 		//azonosítás név alapján
 		coords = new HashMap<Tile, Coord>();
+		
 		HashMap<String, Object> things=new HashMap<String, Object>();
 		
 		points = new HashMap<Orangutan, Integer>();
@@ -217,7 +218,7 @@ public class Game {
 	}
 	
 	public static Coord GetCoords(Tile t) {
-		
+		return coords.get(t);
 	}
 	
 	public static HashMap<String, Object> GetObjects() {
