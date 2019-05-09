@@ -2,6 +2,7 @@ package graphics.views;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -18,6 +19,16 @@ public class AnimalView extends Drawable {
 	private Animal a;
 	
 	public AnimalView(Animal a) {
+		
+		BufferedImage image;
+		try {
+			image = ImageIO.read(new File("resources/panda.png"));
+			this.SetImage(image);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		this.a = a;
 		try {
 			this.SetImage(ImageIO.read(new File("resources/panda_img.png")));
