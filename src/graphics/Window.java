@@ -11,8 +11,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import animal.Orangutan;
 import def.Game;
 import def.KeyEventHandler;
+import graphics.views.OrangutanView;
 
 
 public class Window extends JFrame implements ActionListener {
