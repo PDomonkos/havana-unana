@@ -100,8 +100,8 @@ public class Game {
 				tiles.add(actualTile);
 				
 				//innentol view kezelés
-				int xcoord=Integer.parseInt(separate.nextToken());
 				int ycoord=Integer.parseInt(separate.nextToken());
+				int xcoord=Integer.parseInt(separate.nextToken());
 				
 				if(weak) {
 					actualTile.set_count(20);
@@ -119,8 +119,10 @@ public class Game {
 			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
 				StringTokenizer separate1=new StringTokenizer(line,":");
+				System.out.println(line);
 				//tile akinek a szomszédait állítjuk
-				Tile actual=(Tile) things.get(separate1.nextToken());
+				String name = separate1.nextToken();
+				Tile actual=(Tile) things.get(name);
 				//, leválasztása
 				StringTokenizer separate2=new StringTokenizer(separate1.nextToken(),", ");
 				//szomszédok azonosítása
@@ -130,12 +132,23 @@ public class Game {
 				}
 				Tile[] tiles_tmp = new Tile[neighbours.size()];
 				System.arraycopy(neighbours.toArray(), 0, tiles_tmp, 0, neighbours.size());
+				if (tiles_tmp == null) {
+					System.out.println("ASD");
+				}
+				
 				actual.SetNeighbours(tiles_tmp);
 			}
-			
 			//tile nézetek poligonjának számítása
+			int k = 0;
 			for(TileView tv : tileViews) {
-				tv.calculateEdges();
+				System.out.println(things.get(tv.getTile()) + " " + k);
+				k++;
+				try {
+					if (tv != null)
+						tv.calculateEdges();
+				} catch (Exception e) {
+					System.exit(0);
+				}
 			}
 			
 			//harmadik üres sorig szekrények kapcsolatai

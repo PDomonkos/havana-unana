@@ -13,6 +13,8 @@ public class KeyEventHandler implements KeyListener {
 			Game.MoveOrangutanPointer(0);
 		} else if (arg0.getKeyChar() == 's') {
 			Game.MoveOrangutanPointer(1);
+		} else if (arg0.getKeyChar() == ' ') {
+			Game.Update();
 		}
 	}
 

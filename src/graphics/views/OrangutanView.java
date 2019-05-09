@@ -33,7 +33,7 @@ public class OrangutanView extends Drawable {
 		
 		Tile m = o.getMarkedTile();
 		if (m != null) {
-			g.setColor(Color.WHITE);
+			g.setColor(Color.red);
 			Coord c3 = Game.MVPCoords(m);
 			g.drawOval((int)c3.GetX() - 25, (int)c3.GetY() - 25, 50, 50);
 		}

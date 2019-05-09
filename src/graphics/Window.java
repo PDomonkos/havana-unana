@@ -41,7 +41,7 @@ public class Window extends JFrame implements ActionListener {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				
-				g.setColor(Color.red);
+				g.setColor(Color.white);
 				g.fillRect(0, 0, W_WIDTH, W_HEIGHT);
 				
 				
@@ -92,7 +92,7 @@ public class Window extends JFrame implements ActionListener {
 			repaint();
 		} else {
 			// Update
-			Game.Update();
+			//Game.Update();
 		}
 	}
 }

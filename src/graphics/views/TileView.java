@@ -36,7 +36,11 @@ public class TileView extends Drawable {
 	public void Draw(Graphics g) {
 		g.setColor(c);
 		g.fillPolygon(xs, ys, edges.size());
+		g.setColor(Color.black);
+		g.drawPolygon(xs, ys, edges.size());
 	}
+	
+	public Tile getTile() { return t; }
 	
 	private int[] GetAllX() {
 		int[] xs = new int[edges.size()];
@@ -61,7 +65,7 @@ public class TileView extends Drawable {
 	
 
 	//szomszédosak-e?
-	private boolean isNeighbour(Tile t1, Tile t2) {	
+	private boolean isNeighbour(Tile t1, Tile t2) {
 		for (Tile t : t2.GetNeighbours()) 
 			if (t==t1)
 				return true;
@@ -154,16 +158,17 @@ public class TileView extends Drawable {
 		}
 		else if(c0.GetX()==0) {
 			edges.add( new Coord(-1,edges.get(edges.size()-1).GetY()) );	
-			edges.add( new Coord(-1,edges.get(0).GetY()) );	
+			edges.add( new Coord(-1,edges.get(0).GetY()) );
 		}
 		else if(c0.GetX()==xMax) {
 			edges.add( new Coord(xMax+1,edges.get(edges.size()-1).GetY()) );	
 			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );	
 		}
 		
-
 		xs = GetAllX();
 		ys = GetAllY();
+		
+		System.out.println(xs.length);
 	}
 
 
