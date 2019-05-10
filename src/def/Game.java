@@ -37,6 +37,8 @@ import java.awt.event.KeyListener;
 public class Game {
 	
 	public static Coord scale=new Coord(110,110);
+	
+	public static int drawmode = 0;
 
 	/**
 	 * Léptethetõ dolgok

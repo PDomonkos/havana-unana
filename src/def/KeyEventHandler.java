@@ -2,8 +2,12 @@ package def;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 
-import graphics.Window;
+import javafx.application.Application;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 public class KeyEventHandler implements KeyListener {
 	
@@ -15,6 +19,12 @@ public class KeyEventHandler implements KeyListener {
 			Game.MoveOrangutanPointer(1);
 		} else if (arg0.getKeyChar() == ' ') {
 			Game.Update();
+		} else if (arg0.getKeyChar() == 'r') {
+			MasterThread t = new MasterThread();
+			Thread thread = new Thread(t);
+			thread.start();
+			
+			Game.drawmode = (Game.drawmode == 0 ? 1 : 0);
 		}
 	}
 

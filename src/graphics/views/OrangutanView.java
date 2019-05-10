@@ -10,17 +10,20 @@ import javax.imageio.ImageIO;
 import animal.Orangutan;
 import def.Coord;
 import def.Game;
+import graphics.AnimatedSprite;
 import graphics.Drawable;
 import tile.Tile;
 
 public class OrangutanView extends Drawable {
 	
 	private Orangutan o;
+	private AnimatedSprite as;
 	
 	public OrangutanView(Orangutan o) {
 		this.o = o;
 		try {
 			this.SetImage(ImageIO.read(new File("resources/orangutan_img.png")));
+			as = new AnimatedSprite(40, 100, "resources/master_img.png");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -45,7 +48,11 @@ public class OrangutanView extends Drawable {
 			g.drawLine((int)c2.GetX(), (int)c2.GetY(), (int)c.GetX(), (int)c.GetY());
 		}
 		
-		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
+		if (Game.drawmode == 0) {
+			g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
+		} else {
+			as.Draw(g, (int)c.GetX() - 25, (int)c.GetY() - 25);
+		}
 	}
 
 }
