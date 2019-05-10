@@ -126,7 +126,8 @@ public class TileView extends Drawable {
 		}
 		
 		//ha valamelyik a szélén van:
-		int xMax=13;
+		int xMax=12;
+		int xMin=1;
 		int yMax=5;
 		
 		//bal felsõ sarok
@@ -137,10 +138,10 @@ public class TileView extends Drawable {
 		//alsó
 		//bal
 		//jobb
-		if(c0.GetX()==0 && c0.GetY()==0) {
+		if(c0.GetX()==xMin && c0.GetY()==0) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(-1,cc.GetY()) );
-			edges.add( new Coord(-1,-1) );
+			edges.add( new Coord(xMin-1,cc.GetY()) );
+			edges.add( new Coord(xMin-1,-1) );
 			edges.add( new Coord(edges.get(0).GetX(),-1) );
 		}else if(c0.GetX()==xMax && c0.GetY()==0) {
 			Coord cc=edges.get(edges.size()-1);
@@ -153,11 +154,11 @@ public class TileView extends Drawable {
 			edges.add( new Coord(xMax+1,yMax+1) );
 			edges.add( new Coord(edges.get(0).GetX(),yMax+1) );		
 		}
-		else if(c0.GetX()==0 && c0.GetY()==yMax) {
+		else if(c0.GetX()==xMin && c0.GetY()==yMax) {
 			Coord cc=edges.get(edges.size()-1);
 			edges.add( new Coord(cc.GetX(),yMax+1) );	
-			edges.add( new Coord(-1,yMax+1) );
-			edges.add( new Coord(-1,edges.get(0).GetY()) );		
+			edges.add( new Coord(xMin-1,yMax+1) );
+			edges.add( new Coord(xMin-1,edges.get(0).GetY()) );		
 		}else if(c0.GetY()==0) {
 			edges.add( new Coord(edges.get(edges.size()-1).GetX(),-1) );	
 			edges.add( new Coord(edges.get(0).GetX(),-1) );	
@@ -165,9 +166,9 @@ public class TileView extends Drawable {
 			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMax+1) );	
 			edges.add( new Coord(edges.get(0).GetX(),yMax+1) );	
 		}
-		else if(c0.GetX()==0) {
-			edges.add( new Coord(-1,edges.get(edges.size()-1).GetY()) );	
-			edges.add( new Coord(-1,edges.get(0).GetY()) );
+		else if(c0.GetX()==xMin) {
+			edges.add( new Coord(xMin-1,edges.get(edges.size()-1).GetY()) );	
+			edges.add( new Coord(xMin-1,edges.get(0).GetY()) );
 		}
 		else if(c0.GetX()==xMax) {
 			edges.add( new Coord(xMax+1,edges.get(edges.size()-1).GetY()) );	
