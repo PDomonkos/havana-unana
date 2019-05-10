@@ -302,7 +302,7 @@ public class Game {
 	public static Coord MVPCoords(Tile t) {
 		Coord c_ = coords.get(t);
 		Coord c = new Coord(c_.GetX(), c_.GetY());
-		c.Translate(2.0, 2.0);
+		c.Translate(2.0, 1.0);
 		c = Coord.Scale(c, scale);
 		return c;
 	}

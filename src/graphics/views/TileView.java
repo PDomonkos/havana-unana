@@ -30,8 +30,10 @@ public class TileView extends Drawable {
 		
 		img=_img;
 		
+		//ez szebb így
 		Random rd = new Random();
-		c = new Color((int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0), (int) (rd.nextDouble() * 255.0));
+		c = new Color(60, (int) (rd.nextDouble() * 155.0), 155);
+		
 	}
 	
 	//WeakTileViewnak
@@ -41,7 +43,7 @@ public class TileView extends Drawable {
 	public void Draw(Graphics g) {
 		g.setColor(c);
 		g.fillPolygon(xs, ys, edges.size());
-		g.setColor(Color.black);
+		g.setColor(Color.white);
 		g.drawPolygon(xs, ys, edges.size());
 		
 		Coord c=Game.MVPCoords(t);
@@ -65,13 +67,11 @@ public class TileView extends Drawable {
 		int[] ys = new int[edges.size()];
 		
 		for (int i = 0; i < edges.size(); i++) {
-			ys[i] = (int)((edges.get(i).GetY() + 2) * Game.scale.GetY());
+			ys[i] = (int)((edges.get(i).GetY() + 1) * Game.scale.GetY());
 		}
 		
 		return ys;
 	}
-	
-	
 
 	//szomszédosak-e?
 	private boolean isNeighbour(Tile t1, Tile t2) {
@@ -102,7 +102,7 @@ public class TileView extends Drawable {
 			nCoords.add(Game.GetCoords(n));
 		} 
 		//saját koordináta
-		Coord c0 = Game.GetCoords(t);
+		Coord c0 = Game.GetCoords(t);		
 		
 		//párosával bejárja a szomszédokat
 		for (int i = 0; i < nCoords.size();i++) {
@@ -129,6 +129,7 @@ public class TileView extends Drawable {
 		int xMax=12;
 		int xMin=1;
 		int yMax=5;
+		int yMin=1;
 		
 		//bal felsõ sarok
 		//jobb felsõ
@@ -138,15 +139,15 @@ public class TileView extends Drawable {
 		//alsó
 		//bal
 		//jobb
-		if(c0.GetX()==xMin && c0.GetY()==0) {
+		if(c0.GetX()==xMin && c0.GetY()==yMin) {
 			Coord cc=edges.get(edges.size()-1);
 			edges.add( new Coord(xMin-1,cc.GetY()) );
-			edges.add( new Coord(xMin-1,-1) );
-			edges.add( new Coord(edges.get(0).GetX(),-1) );
-		}else if(c0.GetX()==xMax && c0.GetY()==0) {
+			edges.add( new Coord(xMin-1,yMin-1) );
+			edges.add( new Coord(edges.get(0).GetX(),yMin-1) );
+		}else if(c0.GetX()==xMax && c0.GetY()==yMin) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(cc.GetX(),-1) );
-			edges.add( new Coord(xMax+1,-1) );
+			edges.add( new Coord(cc.GetX(),yMin-1) );
+			edges.add( new Coord(xMax+1,yMin-1) );
 			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );		
 		}else if(c0.GetX()==xMax && c0.GetY()==yMax) {
 			Coord cc=edges.get(edges.size()-1);
@@ -159,9 +160,9 @@ public class TileView extends Drawable {
 			edges.add( new Coord(cc.GetX(),yMax+1) );	
 			edges.add( new Coord(xMin-1,yMax+1) );
 			edges.add( new Coord(xMin-1,edges.get(0).GetY()) );		
-		}else if(c0.GetY()==0) {
-			edges.add( new Coord(edges.get(edges.size()-1).GetX(),-1) );	
-			edges.add( new Coord(edges.get(0).GetX(),-1) );	
+		}else if(c0.GetY()==yMin) {
+			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMin-1) );	
+			edges.add( new Coord(edges.get(0).GetX(),yMin-1) );	
 		}else if(c0.GetY()==yMax) {
 			edges.add( new Coord(edges.get(edges.size()-1).GetX(),yMax+1) );	
 			edges.add( new Coord(edges.get(0).GetX(),yMax+1) );	
@@ -173,6 +174,34 @@ public class TileView extends Drawable {
 		else if(c0.GetX()==xMax) {
 			edges.add( new Coord(xMax+1,edges.get(edges.size()-1).GetY()) );	
 			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );	
+		}	// innentõl jön a 2 fokú csúcsok ronda de mûködõ megoldása
+		else if(c0.GetY()==yMin-1) {
+			edges.clear();
+			edges.add(new Coord(nCoords.get(1).GetX(),yMin-1));
+			edges.add(new Coord(nCoords.get(0).GetX(),yMin-1));
+			edges.add(new Coord(nCoords.get(0).GetX(),yMin-2));
+			edges.add(new Coord(nCoords.get(1).GetX(),yMin-2));	
+		}	
+		else if(c0.GetY()==yMax+1) {
+			edges.clear();
+			edges.add(new Coord(nCoords.get(1).GetX(),yMax+1));
+			edges.add(new Coord(nCoords.get(0).GetX(),yMax+1));
+			edges.add(new Coord(nCoords.get(0).GetX(),yMax+2));
+			edges.add(new Coord(nCoords.get(1).GetX(),yMax+2));	
+		}
+		else if(c0.GetX()==xMax+1) {
+			edges.clear();
+			edges.add(new Coord(xMax+1,nCoords.get(1).GetY()));
+			edges.add(new Coord(xMax+2,nCoords.get(1).GetY()));
+			edges.add(new Coord(xMax+2,nCoords.get(0).GetY()));
+			edges.add(new Coord(xMax+1,nCoords.get(0).GetY()));
+		}
+		else if(c0.GetX()==xMin-1) {
+			edges.clear();
+			edges.add(new Coord(xMin-1,nCoords.get(1).GetY()));
+			edges.add(new Coord(xMin-2,nCoords.get(1).GetY()));
+			edges.add(new Coord(xMin-2,nCoords.get(0).GetY()));
+			edges.add(new Coord(xMin-1,nCoords.get(0).GetY()));
 		}
 		
 		xs = GetAllX();
