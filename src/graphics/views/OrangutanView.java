@@ -49,7 +49,7 @@ public class OrangutanView extends Drawable {
 			if (id==0)
 				g2.setColor(Color.white);
 			else
-				g2.setColor(Color.black);
+				g2.setColor(Color.yellow);
 			g2.draw(circle);
 		}
 		

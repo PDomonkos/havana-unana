@@ -43,7 +43,7 @@ public class AnimalView extends Drawable {
 			g2.drawLine((int)c2.GetX(), (int)c2.GetY(), (int)c.GetX(), (int)c.GetY());
 		}
 		
-		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
+		g.drawImage(img, (int)c.GetX() - 40, (int)c.GetY() - 40, 80, 80, null);
 	}
 
 }

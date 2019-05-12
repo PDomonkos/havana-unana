@@ -48,7 +48,7 @@ public class TileView extends Drawable {
 		
 		Coord c=Game.MVPCoords(t);
 		if(img!=null)
-		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
+		g.drawImage(img, (int)c.GetX() - 40, (int)c.GetY() - 40, 80, 80, null);
 	}
 	
 	public Tile getTile() { return t; }
