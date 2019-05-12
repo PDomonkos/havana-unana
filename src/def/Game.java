@@ -280,7 +280,7 @@ public class Game {
 	 * @param o vesztes orángután
 	 */
 	public static void End(Orangutan o) {
-
+		
 	}
 	
 	/**
