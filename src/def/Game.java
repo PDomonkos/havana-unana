@@ -284,9 +284,9 @@ public class Game {
 	public static void End(Orangutan o) {
 		JFrame frame=new JFrame();
 		if(o==points.keySet().toArray()[0])
-			JOptionPane.showMessageDialog(frame, "Game over, o1 wins!");
-		else
 			JOptionPane.showMessageDialog(frame, "Game over, o2 wins!");
+		else
+			JOptionPane.showMessageDialog(frame, "Game over, o1 wins!");
 	}
 	
 	/**
