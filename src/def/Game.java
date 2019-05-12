@@ -216,8 +216,10 @@ public class Game {
 				Exit actual=(Exit) things.get(separate1.nextToken());
 				actual.setEntry((Entry)things.get(separate1.nextToken()));
 			}
+			boolean elso = true;
 			//végéig állatok létrehozása
 			while((line=inputBR.readLine()) != null && !line.equals("*")) {
+						
 				StringTokenizer separate1=new StringTokenizer(line," ");
 				//csak create parancsok betöltése
 				if (!separate1.nextToken().equals("create")) continue;
@@ -236,10 +238,16 @@ public class Game {
 				}
 				
 				if (type.equals("Orangutan")) { 
+					
 					orangutans.add((Orangutan)a);
 					points.put((Orangutan)a, 0);
+					OrangutanView ov;
 					
-					OrangutanView ov=new OrangutanView((Orangutan)a);
+					if (elso) {ov=new OrangutanView((Orangutan)a,0);}
+					else {ov=new OrangutanView((Orangutan)a,1);}
+					
+					elso = false;
+					
 					window.AddDrawable(ov);
 				}
 				else {

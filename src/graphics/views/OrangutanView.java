@@ -20,11 +20,16 @@ import tile.Tile;
 public class OrangutanView extends Drawable {
 	
 	private Orangutan o;
+	private int id;
 	
-	public OrangutanView(Orangutan o) {
+	public OrangutanView(Orangutan o, int n) {
 		this.o = o;
+		id =n;
 		try {
-			this.SetImage(ImageIO.read(new File("resources/orangutan_img.png")));
+			if (id == 0)
+				this.SetImage(ImageIO.read(new File("resources/orangutan_img.png")));
+			else
+				this.SetImage(ImageIO.read(new File("resources/orangutan_img0.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -41,7 +46,10 @@ public class OrangutanView extends Drawable {
 			Shape circle = new Ellipse2D.Double((int)c3.GetX() - 25, (int)c3.GetY() - 25, 50, 50);
 			Graphics2D g2 = (Graphics2D) g;
 			g2.setStroke(new BasicStroke(8));
-			g2.setColor(Color.white);
+			if (id==0)
+				g2.setColor(Color.white);
+			else
+				g2.setColor(Color.black);
 			g2.draw(circle);
 		}
 		
@@ -54,7 +62,7 @@ public class OrangutanView extends Drawable {
 			g2.drawLine((int)c2.GetX(), (int)c2.GetY(), (int)c.GetX(), (int)c.GetY());
 		}
 		
-		g.drawImage(img, (int)c.GetX() - 25, (int)c.GetY() - 25, 50, 50, null);
+		g.drawImage(img, (int)c.GetX() - 40, (int)c.GetY() - 40, 80, 80, null);
 	}
 
 }
