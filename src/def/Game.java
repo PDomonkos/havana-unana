@@ -163,7 +163,6 @@ public class Game {
 			while(!(line=inputBR.readLine()).equals("*")) {
 				//: leválasztása
 				StringTokenizer separate1=new StringTokenizer(line,":");
-				System.out.println(line);
 				//tile akinek a szomszédait állítjuk
 				String name = separate1.nextToken();
 				Tile actual=(Tile) things.get(name);
@@ -176,17 +175,12 @@ public class Game {
 				}
 				Tile[] tiles_tmp = new Tile[neighbours.size()];
 				System.arraycopy(neighbours.toArray(), 0, tiles_tmp, 0, neighbours.size());
-				if (tiles_tmp == null) {
-					System.out.println("ASD");
-				}
+				
 				
 				actual.SetNeighbours(tiles_tmp);
 			}
 			//tile nézetek poligonjának számítása
-			int k = 0;
 			for(TileView tv : tileViews) {
-				System.out.println(things.get(tv.getTile()) + " " + k);
-				k++;
 				try {
 					if (tv != null) {
 						tv.calculateEdges();
@@ -284,9 +278,9 @@ public class Game {
 	public static void End(Orangutan o) {
 		JFrame frame=new JFrame();
 		if(o==points.keySet().toArray()[0])
-			JOptionPane.showMessageDialog(frame, "Game over, o1 wins!");
-		else
 			JOptionPane.showMessageDialog(frame, "Game over, o2 wins!");
+		else
+			JOptionPane.showMessageDialog(frame, "Game over, o1 wins!");
 	}
 	
 	/**

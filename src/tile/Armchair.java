@@ -32,6 +32,7 @@ public class Armchair extends Tile {
 	public void Step() {
 		
 		if(myAnimal==null) {
+			if (count==2){
 			Random rand = new Random();
 			int randomszam = rand.nextInt(10);
 				for(Tile n: neighbours) {
@@ -39,13 +40,13 @@ public class Armchair extends Tile {
 					if (a!= null && randomszam % 2 == 0)
 						a.TakeASeat(this);		
 				}
-			
+			}
+			else count++;
 		}else {
 			count--;
 			System.out.println(count);
 			if (count==0) {
 				((Panda)myAnimal).EnableSteps();
-				count=2;
 			}
 		}
 		
