@@ -91,10 +91,10 @@ ex1: en1
 *
 create Orangutan o1 t310
 create Orangutan o2 t42
-create ShyPanda sp1 t00
-create LazyPanda lp1 t59
-create HungryPanda hp1 t44
-create ShyPanda sp2 t39
-create LazyPanda lp2 t25
-create HungryPanda hp2 t09
+create ShyPanda sp1 t510
+create LazyPanda lp1 t35
+create HungryPanda hp1 t03
+create ShyPanda sp2 t05
+create LazyPanda lp2 t111
+create HungryPanda hp2 t013
 *
