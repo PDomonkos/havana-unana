@@ -4,17 +4,23 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
-import animal.Orangutan;
 import def.Game;
 import def.KeyEventHandler;
-import graphics.views.OrangutanView;
+import def.MenuHandler;
 
 
 public class Window extends JFrame implements ActionListener {
@@ -24,6 +30,7 @@ public class Window extends JFrame implements ActionListener {
 	private List<Drawable> drawables;
 	private JPanel pane;
 	private Timer draw_timer, update_timer;
+	private boolean stop;
 	
 	public Window() {
 		// JFrame beállítás
@@ -31,6 +38,28 @@ public class Window extends JFrame implements ActionListener {
 		setSize(W_WIDTH, W_HEIGHT);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		stop = false;
+		
+		// Menu bar
+		JMenuBar menuBar;
+		JMenu menu1, menu2;
+
+		//Create the menu bar.
+		menuBar = new JMenuBar();
+		
+		// Menu handler
+		MenuHandler mh = new MenuHandler(this);
+
+		//Build the first menu.
+		menu1 = new JMenu("New Game");
+		menu1.addMouseListener(mh);
+		menuBar.add(menu1);
+		
+		menu2 = new JMenu("Exit");
+		menu2.addMouseListener(mh);
+		menuBar.add(menu2);
+		
+		this.setJMenuBar(menuBar);
 		
 		// Pálya és állatok betöltés
 		InitGame();
@@ -67,7 +96,7 @@ public class Window extends JFrame implements ActionListener {
 	}
 	
 	// Pálya és állatok betöltés
-	private void InitGame() {
+	public void InitGame() {
 		drawables = new ArrayList<Drawable>();
 		Game.Generate("map1.txt", this);
 	}
@@ -88,11 +117,15 @@ public class Window extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getSource() == draw_timer) {
 			// Újrarajzolás
-			revalidate();
-			repaint();
+			if (!stop) {
+				revalidate();
+				repaint();
+			}
 		} else {
 			// Update
-			//Game.Update();
+			if (!stop) {
+				Game.Update();
+			}
 		}
 	}
 }

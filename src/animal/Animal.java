@@ -81,7 +81,8 @@ public abstract class Animal implements Steppable {
 		myTile.Remove();
 		if (follower != null)
 			follower.Move(myTile); 
-		t.Add(this);
+		if (t != null)
+			t.Add(this);
 		
 	}
 	

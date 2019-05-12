@@ -33,7 +33,8 @@ public class Entry extends Tile {
 	 */
 	public void AddPoint() {
 		
-		myO.AddPoint();
+		if (myO != null)
+			myO.AddPoint();
 		
 	}
 	

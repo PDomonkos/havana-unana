@@ -40,6 +40,8 @@ import java.awt.image.BufferedImage;
  */
 public class Game {
 	
+	private static boolean paused = false;
+	
 	public static Coord scale=new Coord(110,110);
 
 	/**
@@ -56,6 +58,14 @@ public class Game {
 	private static Map<Tile, Coord> coords;
 	//Az állatok és tárgyak ezt használják
 	private static Map<Tile, Coord> MVPcoords;	
+	
+	public static void Pause() {
+		paused = true;
+	}
+	
+	public static void Continue() {
+		paused = false;
+	}
 	
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
@@ -122,11 +132,11 @@ public class Game {
 						break;
 					case "en": 
 						actualTile=new Entry();
-						actualTileView = new TileView(actualTile,null);
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/entry.png")));
 						break;
 					case "ex": 
 						actualTile=new Exit();
-						actualTileView = new TileView(actualTile,null);
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/exit.png")));
 						break;
 					default: successfullLoad=false; break;
 				}
@@ -295,6 +305,7 @@ public class Game {
 	 * Léptethetõ dolgok léptetése
 	 */
 	public static void Update() {
+		if (paused) return;
 		for (Steppable s: steppables) {
 			s.Step();
 		}
@@ -306,6 +317,8 @@ public class Game {
 	
 	public static Coord MVPCoords(Tile t) {
 		Coord c_ = MVPcoords.get(t);
+		// Itt csunyan elszall, ha nem vizsgalok ra
+		if (c_ == null) return new Coord(-10,-10);
 		Coord c = new Coord(c_.GetX(), c_.GetY());
 		c.Translate(2.0, 1.0);
 		c = Coord.Scale(c, scale);

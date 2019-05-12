@@ -86,11 +86,13 @@ public class Panda extends Animal {
 			//sikertelen lépés miatt csak
 			Tile t=myTile;
 			
-				Tile[] neighbours=myTile.GetNeighbours();
-				Random rand = new Random();
-				int randomszam = rand.nextInt(neighbours.length);
-				Tile t2=neighbours[randomszam % neighbours.length];
-				t2.Accept(this);
+				if (myTile != null) {
+					Tile[] neighbours=myTile.GetNeighbours();
+					Random rand = new Random();
+					int randomszam = rand.nextInt(neighbours.length);
+					Tile t2=neighbours[randomszam % neighbours.length];
+					t2.Accept(this);
+				}
 
 		}
 		dir=-1;
@@ -132,7 +134,8 @@ public class Panda extends Animal {
 
 		if (leader==null) {
 			((Entry)myTile).AddPoint();
-			follower.SetLeader(null);
+			if (follower != null)
+				follower.SetLeader(null);
 			follower=null;
 			leader=null;
 			myTile.Remove();
