@@ -54,6 +54,8 @@ public class Game {
 	
 	
 	private static Map<Tile, Coord> coords;
+	//Az állatok és tárgyak ezt használják
+	private static Map<Tile, Coord> MVPcoords;	
 	
 	/**
 	 * Pálya generálása, és kapcsolatok beállítása
@@ -61,6 +63,7 @@ public class Game {
 	public static void Generate(String inputFileName, Window window) {
 		//azonosítás név alapján
 		coords = new HashMap<Tile, Coord>();
+		MVPcoords = new HashMap<Tile, Coord>();
 		
 		HashMap<String, Object> things=new HashMap<String, Object>();
 		
@@ -173,8 +176,10 @@ public class Game {
 				System.out.println(things.get(tv.getTile()) + " " + k);
 				k++;
 				try {
-					if (tv != null)
+					if (tv != null) {
 						tv.calculateEdges();
+						MVPcoords.put(tv.getTile(), tv.GetCenter());
+					}
 				} catch (Exception e) {
 					System.exit(0);
 				}
@@ -300,7 +305,7 @@ public class Game {
 	}
 	
 	public static Coord MVPCoords(Tile t) {
-		Coord c_ = coords.get(t);
+		Coord c_ = MVPcoords.get(t);
 		Coord c = new Coord(c_.GetX(), c_.GetY());
 		c.Translate(2.0, 1.0);
 		c = Coord.Scale(c, scale);

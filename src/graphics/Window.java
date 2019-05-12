@@ -41,7 +41,7 @@ public class Window extends JFrame implements ActionListener {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				
-				g.setColor(Color.white);
+				g.setColor(Color.black);
 				g.fillRect(0, 0, W_WIDTH, W_HEIGHT);
 				
 				

@@ -32,7 +32,7 @@ public class TileView extends Drawable {
 		
 		//ez szebb így
 		Random rd = new Random();
-		c = new Color(60, (int) (rd.nextDouble() * 155.0), 155);
+		c = new Color(140 + (int) (rd.nextDouble() * 40.0), (int) (rd.nextDouble() * 60.0) , (int) (rd.nextDouble() * 40.0));
 		
 	}
 	
@@ -43,7 +43,7 @@ public class TileView extends Drawable {
 	public void Draw(Graphics g) {
 		g.setColor(c);
 		g.fillPolygon(xs, ys, edges.size());
-		g.setColor(Color.white);
+		g.setColor(Color.black);
 		g.drawPolygon(xs, ys, edges.size());
 		
 		Coord c=Game.MVPCoords(t);
@@ -208,6 +208,19 @@ public class TileView extends Drawable {
 		ys = GetAllY();
 		
 		System.out.println(xs.length);
+	}
+	
+	//edges középpontjának elkérése
+	public Coord GetCenter() {
+		double x=0.0;
+		double y=0.0;
+		for (Coord e : edges) {
+			x+=e.GetX();
+			y+=e.GetY();
+		}
+		x=x/edges.size();
+		y=y/edges.size();
+		return new Coord(x,y);
 	}
 
 
