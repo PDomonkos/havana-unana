@@ -131,8 +131,6 @@ public class Orangutan extends Animal {
 	public void Exit() {
 
 		((Entry)myTile).SetOrangutan(this); 
-		if (follower != null)
-			follower.SetLeader(null);		//itt van változtatás
 		follower=null;
 		
 	}

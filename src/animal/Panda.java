@@ -132,17 +132,14 @@ public class Panda extends Animal {
 	 */
 	public void Exit() {
 
-		if (leader==null) {
+		if (leader!=null) {
 			((Entry)myTile).AddPoint();
-			if (follower != null)
-				follower.SetLeader(null);
 			follower=null;
 			leader=null;
 			myTile.Remove();
 			myTile=null;
 
-			Game.RemoveSteppable(this);
-				
+			Game.RemoveSteppable(this);		
 		}
 				
 	}
