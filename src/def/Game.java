@@ -120,7 +120,7 @@ public class Game {
 						break;
 					case "vm":  
 						actualTile=new VendingMachine();
-						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/vending.png")));
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/vending.jpg")));
 						break;
 					case "sm":  
 						actualTile=new SlotMachine();
