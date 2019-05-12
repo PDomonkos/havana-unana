@@ -24,6 +24,5 @@ public class LazyPanda extends Panda {
 		a.Add(this);
 		this.myTile = a;
 		this.DisableSteps();
-		System.out.println("beléptem");
 	}
 }

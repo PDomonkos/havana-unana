@@ -42,7 +42,6 @@ public class Armchair extends Tile {
 			else count++;
 		}else {
 			count--;
-			System.out.println(count);
 			if (count==0) {
 				((Panda)myAnimal).EnableSteps();
 			}
