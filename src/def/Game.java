@@ -44,7 +44,7 @@ public class Game {
 	
 	private static boolean paused = false;
 	
-	public static Coord scale=new Coord(110,110);
+	public static Coord scale=new Coord(124,145);
 
 	/**
 	 * Léptethetõ dolgok
@@ -327,7 +327,7 @@ public class Game {
 		// Itt csunyan elszall, ha nem vizsgalok ra
 		if (c_ == null) return new Coord(-10,-10);
 		Coord c = new Coord(c_.GetX(), c_.GetY());
-		c.Translate(2.0, 1.0);
+		c.Translate(1.2, 0.2);
 		c = Coord.Scale(c, scale);
 		return c;
 	}

@@ -1,7 +1,5 @@
 package tile;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import animal.Animal;
@@ -49,8 +47,6 @@ public class Armchair extends Tile {
 				((Panda)myAnimal).EnableSteps();
 			}
 		}
-		
-		
 	}
 	
 	/**

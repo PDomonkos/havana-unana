@@ -57,7 +57,7 @@ public class TileView extends Drawable {
 		int[] xs = new int[edges.size()];
 		
 		for (int i = 0; i < edges.size(); i++) {
-			xs[i] = (int)((edges.get(i).GetX() + 2) * Game.scale.GetX());
+			xs[i] = (int)((edges.get(i).GetX() + 1.2) * Game.scale.GetX());
 		}
 		
 		return xs;
@@ -67,7 +67,7 @@ public class TileView extends Drawable {
 		int[] ys = new int[edges.size()];
 		
 		for (int i = 0; i < edges.size(); i++) {
-			ys[i] = (int)((edges.get(i).GetY() + 1) * Game.scale.GetY());
+			ys[i] = (int)((edges.get(i).GetY() + 0.2) * Game.scale.GetY());
 		}
 		
 		return ys;
@@ -146,7 +146,7 @@ public class TileView extends Drawable {
 			edges.add( new Coord(edges.get(0).GetX(),yMin-1) );
 		}else if(c0.GetX()==xMax && c0.GetY()==yMin) {
 			Coord cc=edges.get(edges.size()-1);
-			edges.add( new Coord(cc.GetX(),yMin-1) );
+			edges.add( new Coord(xMax+1,yMin-1) );
 			edges.add( new Coord(xMax+1,yMin-1) );
 			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );		
 		}else if(c0.GetX()==xMax && c0.GetY()==yMax) {
@@ -176,18 +176,14 @@ public class TileView extends Drawable {
 			edges.add( new Coord(xMax+1,edges.get(0).GetY()) );	
 		}	// innentõl jön a 2 fokú csúcsok ronda de mûködõ megoldása
 		else if(c0.GetY()==yMin-1) {
-			edges.clear();
-			edges.add(new Coord(nCoords.get(1).GetX(),yMin-1));
-			edges.add(new Coord(nCoords.get(0).GetX(),yMin-1));
-			edges.add(new Coord(nCoords.get(0).GetX(),yMin-2));
-			edges.add(new Coord(nCoords.get(1).GetX(),yMin-2));	
+			edges.remove(0);
+			edges.add(new Coord(c0.GetX(),yMin-1));
+			edges.add(new Coord(xMax+1,yMin-1));
 		}	
 		else if(c0.GetY()==yMax+1) {
-			edges.clear();
-			edges.add(new Coord(nCoords.get(1).GetX(),yMax+1));
-			edges.add(new Coord(nCoords.get(0).GetX(),yMax+1));
-			edges.add(new Coord(nCoords.get(0).GetX(),yMax+2));
-			edges.add(new Coord(nCoords.get(1).GetX(),yMax+2));	
+			edges.remove(0);
+			edges.add(new Coord(c0.GetX()+0.5,yMax+1));
+			edges.add(new Coord(nCoords.get(0).GetX()-0.5,yMax+1));
 		}
 		else if(c0.GetX()==xMax+1) {
 			edges.clear();
