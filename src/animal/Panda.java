@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import def.Main;
 import tile.Tile;
 import tile.Entry;
 import def.Game;
