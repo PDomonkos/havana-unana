@@ -289,7 +289,14 @@ public class Game {
 	 * @param o orángután
 	 */
 	public static void AddPoint(Orangutan o) {
-
+		int newpoint = points.get(o).intValue() + 1;
+		points.put(o, newpoint);
+	}
+	
+	public static int GetPoint(int i) {
+		// Lehet ennel rondabban? :D
+		if (i == 0) return (int) points.values().toArray()[0];
+		return (int) points.values().toArray()[1];
 	}
 	
 	/**

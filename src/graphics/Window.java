@@ -70,6 +70,7 @@ public class Window extends JFrame implements ActionListener {
 			public void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				
+				// Hatter
 				g.setColor(Color.black);
 				g.fillRect(0, 0, W_WIDTH, W_HEIGHT);
 				
@@ -78,6 +79,11 @@ public class Window extends JFrame implements ActionListener {
 				for (Drawable d : drawables) {
 					d.Draw(g);
 				}
+				
+				// Pontok
+				g.setColor(Color.white);
+				g.drawString("Player1: " + Game.GetPoint(0), 10, 10);
+				g.drawString("Player2: " + Game.GetPoint(1), 10, 30);
 			}
 		};
 		
@@ -124,7 +130,7 @@ public class Window extends JFrame implements ActionListener {
 		} else {
 			// Update
 			if (!stop) {
-				Game.Update();
+				//Game.Update();
 			}
 		}
 	}

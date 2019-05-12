@@ -86,7 +86,8 @@ t513: t510, t412
 *
 *
 *
-create Orangutan o t310
+create Orangutan o1 t310
+create Orangutan o2 t42
 create ShyPanda sp1 t00
 create LazyPanda lp1 t59
 create HungryPanda hp1 t44
