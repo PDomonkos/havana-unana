@@ -118,11 +118,11 @@ public class Game {
 						break;
 					case "cb": 
 						actualTile=new Cupboard();
-						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/cupb.jpg")));
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/cupb.png")));
 						break;
 					case "vm":  
 						actualTile=new VendingMachine();
-						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/vending.jpg")));
+						actualTileView = new TileView(actualTile,ImageIO.read(new File("resources/vending2.png")));
 						break;
 					case "sm":  
 						actualTile=new SlotMachine();

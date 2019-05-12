@@ -13,7 +13,6 @@ public class VendingMachine extends Tile {
 	 * Lépés: néha sípol, ami a szomszédos csempékig elhallatszik
 	 */
 	public void Step() {
-
 			for (Tile t : neighbours) {
 				Animal a=t.GetAnimal();
 				if (a != null)
