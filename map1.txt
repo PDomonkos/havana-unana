@@ -98,5 +98,3 @@ create ShyPanda sp2 t39
 create LazyPanda lp2 t25
 create HungryPanda hp2 t09
 *
-
-
