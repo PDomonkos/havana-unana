@@ -207,7 +207,6 @@ public class TileView extends Drawable {
 		xs = GetAllX();
 		ys = GetAllY();
 		
-		System.out.println(xs.length);
 	}
 	
 	//edges középpontjának elkérése
