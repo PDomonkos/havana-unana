@@ -84,7 +84,10 @@ t59: vm57, t49, t510
 t510: t59, wt410, t513
 t513: t510, t412
 *
+cb413: t53
+t53: cb413
 *
+ex1: en1
 *
 create Orangutan o1 t310
 create Orangutan o2 t42

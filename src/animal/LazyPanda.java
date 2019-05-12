@@ -22,7 +22,9 @@ public class LazyPanda extends Panda {
 		this.Let();
 		myTile.Remove();
 		a.Add(this);
+		this.myTile = a;
 		this.DisableSteps();
+		System.out.println("beléptem");
 	}
 	
 	@Override
