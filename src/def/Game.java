@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import animal.Animal;
@@ -280,7 +282,11 @@ public class Game {
 	 * @param o vesztes orángután
 	 */
 	public static void End(Orangutan o) {
-		
+		JFrame frame=new JFrame();
+		if(o==points.keySet().toArray()[0])
+			JOptionPane.showMessageDialog(frame, "Game over, o1 wins!");
+		else
+			JOptionPane.showMessageDialog(frame, "Game over, o2 wins!");
 	}
 	
 	/**

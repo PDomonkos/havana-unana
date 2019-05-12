@@ -26,8 +26,8 @@ public class WeakTile extends Tile {
 	 * számláló csökkentése
 	 */
 	private void DecreaseCount() {
-
-		count--;
+		if(count!=0)
+			count--;
 
 	}
 
