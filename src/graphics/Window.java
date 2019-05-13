@@ -130,7 +130,7 @@ public class Window extends JFrame implements ActionListener {
 		} else {
 			// Update
 			if (!stop) {
-				//Game.Update();
+				Game.Update();
 			}
 		}
 	}
