@@ -101,7 +101,7 @@ public class Window extends JFrame implements ActionListener {
 		draw_timer.start();
 	}
 	
-	// Pálya és állatok betöltés
+	// Pálya és állatok betöltéss
 	public void InitGame() {
 		drawables = new ArrayList<Drawable>();
 		Game.Generate("map1.txt", this);
