@@ -11,7 +11,7 @@ public class KeyEventHandler implements KeyListener {
 	public void keyPressed(KeyEvent arg0) {
 		if (arg0.getKeyChar() == 'a') {
 			Game.MoveOrangutanPointer(0);
-		} else if (arg0.getKeyChar() == 's') {
+		} else if (arg0.getKeyChar() == 'l') {
 			Game.MoveOrangutanPointer(1);
 		} 
 	}

@@ -42,6 +42,9 @@ import java.awt.image.BufferedImage;
  */
 public class Game {
 	
+	//panda száma
+	private static int pandas = 6;
+	
 	private static boolean paused = false;
 	
 	public static Coord scale=new Coord(124,145);
@@ -313,7 +316,15 @@ public class Game {
 	 * @param s az adott léptethetõ dolog
 	 */
 	public static void RemoveSteppable(Steppable s) {
-		
+		pandas--;
+		if (pandas==0) {
+			JFrame frame=new JFrame();
+			if (points.get(points.keySet().toArray()[0]) > points.get(points.keySet().toArray()[1]) )
+				JOptionPane.showMessageDialog(frame, "player1 wins!");
+			else if (points.get(points.keySet().toArray()[0]) < points.get(points.keySet().toArray()[1]) )
+				JOptionPane.showMessageDialog(frame, "player2 wins!");
+			else JOptionPane.showMessageDialog(frame, "Draw!");
+		}
 	}
 	
 	/**
